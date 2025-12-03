@@ -203,6 +203,80 @@ Too easy.
 Again, domain BS.
 
 \subsection*{Problem 12}
+??
 
+\subsection*{Problem 13}
+(a)
+Let $\sigma: n \mapsto 2n$.
+
+\noindent
+(b)
+Let $\sigma: \mathbb{R} \rightarrow (0, 1)$, which is easily found if you know real analysis.
+
+\noindent
+(c)
+$A$ is infinite, so it has a map $f: A \rightarrow a$, where $a \subset A$. Then, we use the identity function on $S \setminus A$. Combining the two functions, we effectively get a bijection $g: S \rightarrow s$ where $s \subset S$:
+$$g(x) = \begin{cases}
+    f(x) & x \in A \\
+    i(x) & x \in S \setminus A
+\end{cases}$$
+
+\subsection*{Problem 14}
+Classic exercise in real analysis.
+
+\subsection*{Problems 15 and 16}
+Obvious.
+
+\section{The Integers}
+
+\subsection*{Problem 1}
+$$a \mid b \quad \Rightarrow \quad b = k_1 a$$
+$$b \mid a \quad \Rightarrow \quad a = k_2 b$$
+Where $k_1, k_2$ are integers. But we know $k_2 = \frac{1}{k_1}$, and in order for $k_2$ to remain an integer, $k_1$ must be equal to 1 or -1 (this can be proved by induction). Hence, $b = (\pm 1)a = \pm a$.
+
+\subsection*{Problem 2}
+$$b \mid g, \quad b \mid h \quad \Rightarrow \quad b \mid mg, \quad b \mid nh \quad \Rightarrow \quad b \mid mg + nh$$
+
+\subsection*{Problem 3}
+Let $d = \frac{ab}{(a, b)} = \frac{a}{(a, b)} b$. Since $(a, b) \mid a$, then $\frac{a}{(a, b)}$ is an integer, hence $b \mid d$. The same procedure can be done for $a \mid d$. Hence, $d$ satisfies the first property.
+
+For the second property, first note that if $a = m(a, b)$ and $b = n(a, b)$, then $(m, n) = 1$. Suppose for contradiction that $k \mid m$ and $k \mid n$ for some $k > 1$. Then
+$$k(a, b) \mid m(a, b) = a$$
+and
+$$k(a, b) \mid n(a, b) = b$$
+hence $k(a, b) \mid a, b$ but $k(a, b) \nmid (a, b)$, contradicting the fact that $(a, b)$ is the GCD. Hence $(m, n) = 1$.
+
+SKIP.
+
+\subsection*{Problem 4}
+$$am = bn$$
+Since $(a, b) = 1$, and $a \mid bn$, then $a \mid n$. Hence $ab \mid nb = x$.
+
+\subsection*{Problem 5}
+(a)
+Obviously, $p_1^{\delta_1} \ldots p_k^{\delta_k}$ divides both $a$ and $b$. Now, suppose $x \mid a, b$. We can develop its prime factorization. So $x = p_1^{\omega_1} \ldots p_k^{\omega_k} \mid a, b$. Which means $p_i^{\omega_i} \mid a, b$, for each $i$. But $p_i^{\omega_i}$ is coprime with every other prime of $a, b$, so it must divide the non-coprime part, which only consists of the prime equal to him, hence $p_i^{\omega_i} \mid p_i^{\alpha_i}$ and $p_i^{\omega_i} \mid p_i^{\beta_i}$. Hence, it must divide the minumum power, so $\omega_i \mid \min(\alpha_i, \beta_i) = p_i^{\delta_i}$. Multiplying every $p_i^{\omega_i}$ together, we get $p_1^{\omega_1} \ldots p_k^{\omega_k} \mid p_1^{\delta_1} \ldots p_k^{\delta_k}$, which gives us our desired result.
+
+\noindent
+(b)
+We use the formula proven in Problem 3.
+$$[a, b] = \frac{ab}{(a, b)}$$
+Let's concentrate on a single prime at a time. For prime $i$, we have
+$$p_i^{\gamma_i} = \frac{p_i^{\alpha_i} p_i^{\beta_i}}{p_i^{min(\alpha_i, \beta_i)}}$$
+$$= p_i^{\alpha_i + \beta_i - \min(\alpha_i, \beta_i)}$$
+$$= p_i^{\max(\alpha_i, \beta_i)}$$
+
+\subsection*{Problem 6}
+Proof by induction. Base case. $r_{n - 1}$ is divisible by $r_n$.
+$$r_{n - 1} = q_n r_n + r_{n + 1} = q_n r_n + 0 = q_n r_n$$
+And obviously, $r_n$ is divisible by $r_n$.
+
+Now, suppose $r_{k - 1}$ and $r_k$ are divisible by $r_k$, then
+$$r_{k - 2} = q_{k - 1} r_{k - 1} + r_k$$
+indicates that $r_{k - 2}$ is obviously divisible by $r_k$. Here, we thus proved:
+$$r_k \mid r_k \text{ and } r_k \mid r_{k - 1} \quad \Rightarrow \quad r_k \mid r_{k - 1} \text{ and } r_k \mid r_{k - 2}$$
+which completes our induction step. ($a$ and $b$ are precisely $r_{(-1)}$ and $r_0$.)
+
+\subsection*{Problem 7}
+Fuh naw.
 
 \end{document}
