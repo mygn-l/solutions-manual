@@ -1,0 +1,208 @@
+\documentclass{book}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{bm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+
+\graphicspath{ {./} }
+
+\title{Abstract Algebra Herstein - Solutions Manual}
+\author{Mingruifu Lin}
+\date{September 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Preliminary Notions}
+
+\section{Set Theory}
+
+\subsection*{Problem 1}
+(a)
+We expand the definitions $A \subseteq B$ and $B \subseteq C$:
+$$x \in A \Rightarrow x \in B$$
+$$x \in B \Rightarrow x \in C$$
+Suppose $x \in A$. Then by modus ponens, $x \in B$. Again by modus ponens, $x \in C$. Hence, by conditional proof, $x \in A \Rightarrow x \in C$. This is the definition of $A \subseteq C$.
+
+\noindent
+(b)
+Suppose $x \in A \cup B$. We check two cases. If $x \in A$, then $x \in A$. If $x \in B$, then using $B \subseteq A$ and modus ponens, we get $x \in A$, hence $x \in A$. Thus $A \cup B \subseteq A$.
+
+For the reverse direction, suppose $x \in A$. Then $x \in A \cup B$ by disjunction introduction. Thus $A \subseteq A \cup B$. Hence proven.
+
+\noindent
+(c)
+Too lazy. Disjunctions are always tedious, as seen previously.
+
+\subsection*{Problem 2}
+(a)
+For intersection:
+$$x \in A \cap B$$
+$$\Leftrightarrow x \in A \text{ and } x \in B$$
+$$\Leftrightarrow x \in B \cap A$$
+For union: Too lazy. Again, too many disjunctions.
+
+\noindent
+(b)
+Same idea as (a). Simply apply conjunction elimination twice, then conjunction introduction twice.
+
+\subsection*{Problem 3}
+Here we gooooo.
+
+Suppose $x \in A \cup (B \cap C)$. If $x \in A$, then $x \in A \cup B$ and $x \in A \cup C$, hence $x \in (A \cup B) \cap (A \cup C)$. Otherwise, $x \in B \cap C$, so $x \in B$ and $x \in C$, thus $x \in B \cup A$ and $x \in C \cup A$, hence $x \in (A \cup B) \cap (A \cup C)$. Hence $A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)$.
+
+For the reverse direction, suppose $x \in (A \cup B) \cap (A \cup C)$. Then $x \in A \cup B$ and $x \in A \cup C$. If $x \in A$, then $x \in A \cup (B \cap C)$. If $x \in B$, then, in order to satisfy the second statement, either $x \in A$, which we've seen, or $x \in C$. In the latter case, we thus have $x \in B \cap C$, hence $x \in (B \cap C) \cup A$. In all cases, we have $x \in A \cup (B \cap C)$. Hence $(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)$. Hence proven.
+
+\subsection*{Problem 4}
+(a)
+$$x \in (A \cap B)'$$
+$$\Rightarrow x \not \in A \cap B$$
+Using the fact $\neg(A \land B) = \neg A \lor \neg B$:
+$$\Rightarrow x \not \in A \text{ or } x \not \in B$$
+$$\Rightarrow x \in A' \text{ or } x \in B'$$
+$$\Rightarrow x \in A' \cup B'$$
+Too lazy to prove the reverse direction.
+
+\noindent
+(b)
+Too lazy.
+
+\subsection*{Problem 5}
+Idk what I'm allowed to do bro.
+
+\subsection*{Problem 6}
+Include or exclude an element.
+
+\subsection*{Problem 7}
+At least $39\%$ like both. At most $63\%$ like both.
+
+\subsection*{Problems 8, 9}
+Too lazy, skipped.
+
+\subsection*{Problem 10}
+(a)
+No. The common ancestor could be different for each pair.
+
+\noindent
+(b)
+No. For example, one at far left, one in middle, one at far right.
+
+\noindent
+(c)
+Yes.
+
+\noindent
+(d)
+Yes.
+
+\noindent
+(e)
+No. Equivalence relation must be reflexive.
+
+\noindent
+(f)
+Yes.
+
+\subsection*{Problem 11}
+(a)
+The reflexive property guarantees the existence of equivalence classes on non-empty sets, whereas the other properties do not.
+
+\noindent
+(b)
+Idk. Maybe $a \in R \Rightarrow a \sim a$.
+
+\subsection*{Problems 12 and 13}
+Too lazy.
+
+\section{Mappings}
+
+\subsection*{Problem 1}
+(a)
+Onto, but not one-to-one.
+
+\noindent
+(b)
+Both onto and one-to-one. The inverse image is $t \sigma^{-1} = \sqrt{t}$.
+
+\noindent
+(c)
+Neither onto nor one-to-one.
+
+\noindent
+(d)
+One-to-one, but not onto.
+
+\subsection*{Problem 2}
+Simply take $f(s \times t) = t \times s$.
+
+\subsection*{Problem 3}
+Too lazy. Seems obvious.
+
+\subsection*{Problem 4}
+(a)
+Any bijective function has an inverse, which is also a bijection.
+
+\noindent
+(b)
+Simply take the composition of the bijection.
+
+\subsection*{Problem 5}
+???
+
+\subsection*{Problem 6}
+This is akin to Cantor's diagonal argument. In the original argument, we create a real number which differs from every listed real number by a single digit, hence it is not in the list. Here, the idea is similar.
+
+Suppose I have a bijection $f: S \rightarrow S^*$, where each $s \in S$ is mapped to a subset $f(s) \in S^*$. Let me construct the set $B = \{ s \in S \mid s \not \in f(s) \}$. In other words, this is the set of elements which are not contained in the subset associated with them. As you see, $B$ differs from $f(s)$ by the single element $s$ for each $f(s)$. If $f(s)$ contains $s$, then $B$ does not contain $s$, and if $f(s)$ does not contain $s$, then $B$ contains $s$. Since for all bijections $f$, we can such a set $B$, hence there exists no bijection between $S$ and $S^*$.
+
+\subsection*{Problem 7}
+There are $n!$ ways to permute $n$ objects.
+
+\subsection*{Problem 8}
+(a) and (b)
+??
+
+\noindent
+(c)
+For (a), as we learned in real analysis, you can map $[0, 1)$ to $\mathbb{R}$, so you repeat the procedure for every $[n, n + 1)$ for $n \in \mathbb{Z}$. This is onto, but not one-to-one. For (b), simply map $\mathbb{R}$ to $(0, 1)$, which is one-to-one, but not onto.
+
+\subsection*{Problem 9}
+(a)
+Using the real numbers again, let $\sigma: \mathbb{R} \rightarrow \mathbb{R}$ and $\tau: (0, 1) \rightarrow \mathbb{R}$, but the range of $\sigma$ is $(0, 1)$.
+
+\noindent
+(b)
+Just some domain BS. The first function must be one-to-one, but its range may not cover the entire domain of the second function. So you can do whatever you want to the things outside of the domain.
+
+\subsection*{Problem 10}
+Classic real analysis exercise. Skipped.
+
+\subsection*{Problem 11}
+(a)
+Obvious?
+
+\noindent
+(b)
+Too easy.
+
+\noindent
+(c)
+Again, domain BS.
+
+\subsection*{Problem 12}
+
+
+\end{document}

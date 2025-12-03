@@ -1,0 +1,710 @@
+\documentclass{book}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{bm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+
+\graphicspath{ {./} }
+
+\title{Analysis Abbott - Solutions Manual}
+\author{Mingruifu Lin}
+\date{September 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{The Real Numbers}
+
+\section{}
+\section{Some Preliminaries}
+
+\subsection*{Exercise 1.2.1}
+(a)
+We have the same equation:
+$$a^2 = 3b^2$$
+which requires $b$ to contain a factor of $3$, making both divisible by $3$, violating the premise that the fraction is irreducible. With $6$, it's the same thing, we must find the $2$ and $3$ inside $b$.
+
+\noindent
+(b)
+It breaks down because we have
+$$a^2 = 2 \cdot 2 \cdot b^2$$
+where we can find the factor of $2$ already, without requiring $b$ to possess it.
+
+\subsection*{Exercise 1.2.2}
+$$2^r = 2^{\frac{a}{b}} = 3$$
+$$2^a = 3^b$$
+Clearly, impossible, no matter what $a, b$ you choose.
+
+\subsection*{Exercise 1.2.3}
+(a)
+False. Consider $A_n = (-\frac{1}{n}, \frac{1}{n})$. The intersection is $\{0\}$.
+
+\noindent
+(b)
+True. Notice that $A_m \subseteq A_n$ whenever $m \geq n$, hence $A_m \subseteq A_1$. Also, if $x \in \bigcap A_n$ then, for some $n$, we have $x \in A_n \subseteq A_1$, hence $x \in A_1$. Hence, $\bigcap A_n \subseteq A_1$, so it must be finite since $A_1$ is finite.
+
+For the next part, since each $A_n$ is finite, we can take the maximum of each set, which is guaranteed to exist by being non-empty. The maxima decrease as a sequence, but can only decrease finitely many times, after which the elements must remain identical. Notice that this identical value is contained in each $A_n$, hence contained in their intersection, making the intersection non-empty.
+
+\noindent
+(c)
+False. Take $A = \varnothing$, and take $B = C = \{ x \}$. The left side is $\varnothing$, while the right side is $\{ x \}$.
+
+\noindent
+(d)
+True. This can be proved using formal logic.
+
+\noindent
+(e)
+True. This can be proved using formal logic.
+
+\subsection*{Exercise 1.2.4}
+Let $A_1$ be the even numbers with an additional element $1$. Let $A_2$ be the multiples of $3$ that are not multiples of $2$. Let $A_3$ be the multiples of $5$ that are not multiples of $2$ nor $3$. And so on.
+
+\subsection*{Exercise 1.2.5}
+This can be proved using formal logic.
+
+\subsection*{Exercise 1.2.6}
+(a)
+Verified.
+
+\noindent
+(b)
+$$(a + b)^2 = a^2 + 2ab + b^2 \leq |a|^2 + 2|a||b| + |b|^2 = (|a| + |b|)^2$$
+Taking the square root on both ends yields
+$$|a + b| \leq ||a| + |b|| = |a| + |b|$$
+where we accept that
+$$\sqrt{x^2} = |x|$$
+
+\noindent
+(c)
+$$|a - b|$$
+$$= |a - c + c - d + d - b|$$
+$$\leq |a - c| + |c - d + d - b|$$
+$$\leq |a - c| + |c - d| + |d - b|$$
+
+\noindent
+(d)
+$$|a| = |a - b + b| \leq |a - b| + |b|$$
+$$\Rightarrow |a| - |b| \leq |a - b|$$
+By symmetry, $-(|a| - |b|) = |b| - |a| \leq |b - a| = |a - b|$. Hence,
+$$||a| - |b|| \leq |a - b|$$
+
+\subsection*{Exercise 1.2.7}
+(a)
+$f(A) = [0, 4]$ and $f(B) = [1, 16]$.
+$$f(A \cap B) = f([1, 2]) = [1, 4] = f(A) \cap f(B)$$
+$$f(A \cup B) = f([0, 4]) = [0, 16] = f(A) \cup f(B)$$
+
+\noindent
+(b)
+Let $A = [-2, -1]$ and $B = [1, 2]$. Then $f(A \cap B) = f(\varnothing) = \varnothing$. But $f(A) = [1, 4]$ and $f(B) = [1, 4]$, so $f(A) \cap f(B) = [1, 4] \neq \varnothing$.
+
+\noindent
+(c)
+$$\{ g(x) \mid x \in A \cap B \} \subseteq \{ g(x) \mid x \in A \}$$
+$$\{ g(x) \mid x \in A \cap B \} \subseteq \{ g(x) \mid x \in B \}$$
+$$\Rightarrow \{ g(x) \mid x \in A \cap B \} \subseteq \{ g(x) \mid x \in A \} \cap \{ g(x) \mid x \in B \}$$
+
+\noindent
+(d)
+Conjecture:
+$$g(A \cup B) = g(A) \cup g(B)$$
+Proof:
+$$\{ g(x) \mid x \in A \} \subseteq \{ g(x) \mid x \in A \cup B \}$$
+$$\{ g(x) \mid x \in B \} \subseteq \{ g(x) \mid x \in A \cup B \}$$
+$$\Rightarrow \{ g(x) \mid x \in A \} \cup \{ g(x) \mid x \in B \} \subseteq \{ g(x) \mid x \in A \cup B \}$$
+Reverse direction:
+$$g(x) \in g(A \cup B)$$
+$$\Rightarrow x \in A \cup B$$
+If $x \in A \Rightarrow g(x) \in g(A)$. Likewise, if $x \in B \Rightarrow g(x) \in g(B)$. Hence, $g(x) \in g(A \cup B) \Rightarrow g(x) \in g(A)$ or $g(x) \in g(B)$, which is the definition of
+$$g(A \cup B) \subseteq g(A) \cup g(B)$$
+
+\subsection*{Exercise 1.2.8}
+(a)
+$f(n) = 2n$
+
+\noindent
+(b)
+$f(n) = \lfloor \frac{n + 1}{2} \rfloor$
+
+\noindent
+(c)
+$f(n) = (-1)^n \lfloor \frac{n}{2} \rfloor$.
+
+\subsection*{Exercise 1.2.9}
+(a)
+$f^{-1}(A) = [0, 2]$ and $f^{-1}(B) = [0, 1]$. We have $f^{-1}(A \cap B) = f^{-1}([0, 1]) = [0, 1]$ and $f^{-1}(A) \cap f^{-1}(B) = [0,1]$, so yes, the intersection is correct. Then we have $f^{-1}(A \cup B) = f^{-1}([-1, 4]) = [0, 2]$ and $f^{-1}(A) \cup f^{-1}(B) = [0,2]$, so yes, the union is correct.
+
+\noindent
+(b)
+For intersection:
+$$x \in g^{-1}(A \cap B)$$
+$$\Leftrightarrow g(x) \in A \cap B$$
+$$\Leftrightarrow [g(x) \in A] \land [g(x) \in B]$$
+$$\Leftrightarrow [x \in g^{-1}(A)] \land [x \in g^{-1}(B)]$$
+$$\Leftrightarrow x \in g^{-1}(A) \cap g^{-1}(B)$$
+For union:
+$$x \in g^{-1}(A \cup B)$$
+$$\Rightarrow g(x) \in A \cup B$$
+If $g(x) \in A$, then $x \in g^{-1}(A)$, hence $x$ is in whatever unions with that thing, so $x \in g^{-1}(A) \cup g^{-1}(B)$. The same procedure goes for $g(x) \in B$. For the reverse direction, suppose that
+$$x \in g^{-1}(A) \cup g^{-1}(B)$$
+If $x \in g^{-1}(A)$, then $g(x) \in A$, so $g(x)$ is in whatever unions with that thing, so $g(x) \in A \cup B$, hence $x \in g^{-1}(A \cup B)$. The same procedure goes for $x \in g^{-1}(B)$.
+
+\subsection*{Exercise 1.2.10}
+(a)
+False. Consider $a = b $. It is true that $a < b + \epsilon$ for every $\epsilon > 0$. However, it is false that $a < b$.
+
+\noindent
+(b)
+False, same as part (a).
+
+\noindent
+(c)
+True. If $a = b$, then $a < b + \epsilon$ for all $\epsilon > 0$. If $a < b$, then $a < b + \epsilon$. For the reverse direction, if $a < b + \epsilon$ for all $\epsilon > 0$, consider $a = b$, which works. Since $a = b$ works, then anything smaller than $b$ also works, i.e. $a < b$ works. Hence $a \leq b$.
+
+\subsection*{Exercise 1.2.11}
+(a)
+There exists real numbers $a < b$ such that $a + \frac{1}{n} \geq b$ for all $n \in \mathbb{N}$.
+
+\noindent
+(b)
+For all $x > 0$, there exists $n \in \mathbb{N}$ such that $x \geq \frac{1}{n}$.
+
+\noindent
+(c)
+There exists two distinct real numbers such that there is no rational number between them.
+
+\subsection*{Exercise 1.2.12}
+(a)
+$$y_1 = 6 > -6$$
+so the base case is true. Now, suppose $y_n > -6$. Then
+$$y_{n + 1} = \frac{2y_n - 6}{3} = \frac{2}{3}y_n - 2 > \frac{2}{3}(-6) - 2 = -6$$
+hence the induction step is complete.
+
+\noindent
+(b)
+$y_2 = 2$ and $y_1 = 6$ so the base case is true. Now suppose $y_n > y_{n + 1}$, then
+$$2y_n > 2y_{n + 1}$$
+$$\Rightarrow 2y_n - 6 > 2y_{n + 1} - 6$$
+$$\Rightarrow \frac{2y_n - 6}{3} > \frac{2y_{n + 1} - 6}{3}$$
+where no sign-flip occurs because the factors are positive.
+$$\Rightarrow y_{n + 1} > y_{n + 2}$$
+
+\subsection*{Exercise 1.2.13}
+(a)
+$(A_1)^c = A_1^c$ so the base case is true. Now, suppose $\left( \bigcup_{i = 1}^n A_i \right)^c = \bigcap_{i = 1}^n A_i^c$, then
+$$\left( \bigcup_{i = 1}^{n + 1} A_i \right)^c$$
+$$= \left( \left(\bigcup_{i = 1}^n A_i \right) \cup A_{n + 1} \right)^c$$
+$$= \left(\bigcup_{i = 1}^n A_i \right)^c \cap A_{n + 1}^C$$
+$$= \left( \bigcap_{i = 1}^n A_i^c \right) \cap A_{n + 1}^C$$
+$$= \left( \bigcap_{i = 1}^{n + 1} A_i^c \right)$$
+hence the induction step is complete.
+
+\noindent
+(b)
+$B_n = (0, \frac{1}{n})$
+
+\noindent
+(c)
+$$x \in \left( \bigcup_{i = 1}^n A_i \right)^c$$
+$$\Rightarrow x \not \in \bigcup_{i = 1}^n A_i$$
+Suppose for contradiction that $x \in A_i$ for some $i$, then it implies that $x \in \bigcup_{i = 1}^n A_i$, which contradicts our assumption. Hence, $x \not \in A_i$ for all $i$, or equivalently, $x \in A_i^c$ for all $i$. Hence,
+$$\Rightarrow x \in \bigcap_{i = 1}^n A_i^c$$
+For the reverse direction,
+$$x \in \bigcap_{i = 1}^n A_i^c$$
+$$\Rightarrow (\forall i) x \not \in A_i$$
+Suppose for contradiction that
+$$x \not \in \left( \bigcup_{i = 1}^n A_i \right)^c$$
+$$\Rightarrow x \in \bigcup_{i = 1}^n A_i$$
+$$\Rightarrow (\exists i) x \in A_i$$
+which contradicts our assumption. Hence,
+$$x \in \left( \bigcup_{i = 1}^n A_i \right)^c$$
+The equality is thus proved.
+
+\section{The Axiom of Completeness}
+
+\subsection*{Exercise 1.3.1}
+(a)
+Given a set $A$ that is bounded below, the infimum of $A$ is a real number $x$ such that
+\begin{enumerate}
+    \item $x$ is a lower bound of $A$
+    \item $x \geq y$ for every lower bound $y$ of $A$
+\end{enumerate}
+
+\noindent
+(b)
+Too lazy
+
+\subsection*{Exercise 1.3.2}
+(a)
+$B = \{1\}$
+
+\noindent
+(b)
+Impossible.
+
+\noindent
+(c)
+$B = \{ \frac{1}{n} \mid n \in \mathbb{N} \}$
+
+\subsection*{Exercise 1.3.3}
+(a)
+$\sup B$ satisfies the second criterion, since by definition of $\sup B$ first property, we know $\sup B \geq b$ for all $b \in B$, which are precisely all the lower bounds $b$ of $A$. Also, by definition of $\sup B$ second property, we know $\sup B \leq a$ for all upper bounds $a$, which are precisely a superset of $A$. Hence, proven.
+
+\noindent
+(b)
+Supremum implies infimum exists, since we can construct and define it from the supremum.
+
+\subsection*{Exercise 1.3.4}
+(a)
+$$\sup \left( \bigcup_{k = 1}^n A_k \right) = \max(\sup A_1, \sup A_2, \ldots, \sup A_n)$$
+
+\noindent
+(b)
+No, we would use
+$$\sup \left( \bigcup_{k = 1}^\infty A_k \right) = \sup(\{ \sup A_k \mid k \in \mathbb{N} \})$$
+
+\subsection*{Exercise 1.3.5}
+(a)
+For all $a \in A$,
+$$\sup A \geq a$$
+$$\Rightarrow c \sup A \geq ca$$
+hence $c \sup A$ is an upperbound of $cA$. Also, every upper bounds of $cA$ is of the form $cb$ for some upper bound $b$ of $A$.
+$$\sup A \leq b$$
+$$\Rightarrow c \sup A \leq cb$$
+hence $c \sup A$ is smaller or equal to every upper bound of $cA$. Hence, the two criteria are satisfied, making $\sup(cA) = c \sup A$.
+
+\noindent
+(b)
+$$\sup(cA) = c\inf(A)$$
+
+\subsection*{Exercise 1.3.6}
+(a)
+$s \geq a$ and $t \geq b$ for all $a, b \in A, B$. Hence $s + t \geq a + b$, hence $s + t$ is an upper bound of $A + B$.
+
+(b) (c) (d) Too lazy
+
+\subsection*{Exercise 1.3.7}
+It already satisfies the property of being an upper bound. Now, for every upper bound $b$ of $A$, we have $b \geq x$ for all $x \in A$, which includes $x = a$ since $a \in A$, which gives the inequality: $b \geq a$. This means that every upper bound of $A$ is greater or equal to $a$, completing the second property of supremum.
+
+\subsection*{Exercise 1.3.8}
+(a)
+Infimum: 0. Supremum: 1.
+
+\noindent
+(b)
+Infimum: -1. Supremum: 1.
+
+\noindent
+(c)
+Infimum: $\frac{1}{4}$. Supremum: $\frac{1}{3}$.
+
+\noindent
+(d)
+Infimum: 0. Supremum: 1.
+
+\subsection*{Exercise 1.3.9}
+(a)
+Either $\sup B \in B$ or $\sup B \not \in B$. In the first case, we simply take $b = \sup B$. This works because $\sup B > \sup A > a$ for all $a \in A$, hence $\sup B$ is the upper bound for which we were looking. In the second case, notice that there exist $b \in B$ arbitrarily close to $\sup B$. Suppose for contradiction that this is not the case, i.e. there is a distance $\epsilon > 0$ empty zone around the supposed $\sup B$. Then we can simply take a number between $\sup B - \epsilon$ and $\sup B$. This number is an upper bound of $B$ smaller than $\sup B$, contradicting the second property of supremum. Hence, there always exists $b \in B$ such that $|b - \sup B| < \frac{1}{n}$ for all $n \in \mathbb{N}$. To complete the proof, since $\sup A < \sup B$, we set $\frac{1}{n} \approx |\sup B - \sup A|$, and find $b \in B$ within this distance to be our upper bound, which is guaranteed to exist.
+
+\noindent
+(b)
+Consider $A = \{ 1 \}$ and $B = \{ 1 - \frac{1}{n} \mid n \in \mathbb{N} \}$. Here, $\sup A = \sup B = 1$, but none of the elements of $B$ is greater than $1 \in A$.
+
+\subsection*{Exercise 1.3.10}
+(a)
+Let $c = \sup A$. It exists because $A$ is non-empty and each element of $A$ is bounded above by an element of $B$ non-empty as well. By first property of supremum, $c \geq a$ for all $a \in A$. By the second property of supremum, $c \leq b$ for all upper bounds $b$ of $A$. By definition, $B$ happens to be precisely the set of upper bounds of $A$, hence $c \leq b$ for all $b \in B$. Thus, $\sup A$ satisfies the requirement for $c$ in the cut property.
+
+\noindent
+(b)
+Let $E$ be a non-empty set bounded above. Let $B$ be the set of upper bounds of $E$. Also, let $A$ be the set of lower bounds of $B$. By the cut property (it is easy to verify that these sets satisfy the criteria), there exists $c$ such that $c \geq a$ and $c \leq b$ for all $a, b \in A, B$. Now, already, $c$ satisfies the second property of supremum of $E$, since it's smaller or equal to all upper bounds of $E$. Next, since for every $e \in E$, we have $e \leq b$ for all $b \in B$ (by definition of $B$), i.e. every $e$ is precisely a lower bound of $B$, hence we can claim $E \subseteq A$. Thus, $c \geq e$ for every $e \in E$, completing the proof.
+
+\noindent
+(c)
+Again, we can just take $A = \{ a \mid a^2 < 2 \}$ and $B = \{ b \mid b^2 > 2 \}$. Clearly, $c = \sqrt{2}$ does not exist.
+
+\subsection*{Exercise 1.3.11}
+(a)
+True. Suppose for contradiction that $\sup B < \sup A$, then we can find $a \in A$ arbitarily close to $\sup A$ such that $a > \sup B \geq b$, for all $b \in B$. But if $a > b$ for all $b \in B$, this implies $a$ is different from every $b \in B$, hence contradicting the assumption that $A \subseteq B$.
+
+\noindent
+(b)
+True. Between every two distinct real numbers, we can find another distinct real number. Call it $c$. By definition, $c > \sup A \geq a$ and $c < \inf B \leq b$ for all $a, b \in A, B$.
+
+\noindent
+(c)
+False. Take $A = \{ \frac{1}{n} \mid n \in \mathbb{N} \}$ and $B = \{ -\frac{1}{n} \mid n \in \mathbb{N} \}$. Clearly, $c = 0$ satisfies $a < c < b$ for every $a, b \in A, B$, but $\sup B = \inf A = 0$.
+
+\section{Consequences of Completeness}
+
+\subsection*{Exercise 1.4.1}
+(a)
+$$ab = \left(\frac{p}{q}\right) \left(\frac{m}{n}\right) = \frac{pm}{qn}$$
+Clearly, $pm$ and $qn$ are integers, hence the fraction is a rational number.
+$$a + b = \frac{p}{q} + \frac{m}{n} = \frac{pn + mq}{qn}$$
+Clearly, $pn + mq$ and $qn$ are integers, hence the fraction is a rational number.
+
+\noindent
+(b)
+Suppose for contradiction that $a + t = b \in \mathbb{Q}$. We can rearrange the equation as $b - a = t$. In part (a), we showed that the sum of two rationals is rational, hence this would make $t$ rational as well, contradicting our assumption. Hence $a + t$ is irrational.
+
+Suppose for contradiction that $at = b \in \mathbb{Q}$. We can rearrange the equation as $\frac{b}{a} = t$. In part (a), we showed that the product of two rationals is rational, hence this would make $t$ rational as well, contradicting our assumption. Hence, $at$ is irrational.
+
+\noindent
+(c)
+No, irrationals are not closed under addition and multiplication. For example, if $s = 1 - \sqrt{2}$ and $t = 1 + \sqrt{2}$, by the previous part (b), they are irrational, but their sum is $2$, which is rational. The same thing happens with multiplication, such as $s = t = \sqrt{2}$.
+
+\subsection*{Exercise 1.4.2}
+For the first property of supremum, suppose $s$ is not an upper bound of $A$. Then there exists $a \in A$ such that $a > s$. By the Archimedean property, we can find $\frac{1}{n} < a - s$ (i.e. between $a$ and $s$ we can find an ever smaller distance), thus $s + \frac{1}{n} < a$, contradicting the assumption that $s + \frac{1}{n}$ is an upper bound for all $a \in A$. Hence, $s$ must be an upper bound of $A$.
+
+A similar procedure is used for the second property of supremum.
+
+\subsection*{Exercise 1.4.3}
+Clearly, every negative number is not in $(0, \frac{1}{n})$ for every $n$. Zero is also excluded. Now, suppose there exists $x > 0$ such that $x \in \bigcap_{n = 1}^\infty (0, \frac{1}{n})$. However, by the Archimedean property, we can find $\frac{1}{n} < x$, hence there exists $(0, \frac{1}{n})$ which does not contain $x$, contradicting our assumption. Hence, no element exists in this intersection.
+
+\subsection*{Exercise 1.4.4}
+Too lazy.
+
+\subsection*{Exercise 1.4.5}
+Too lazy.
+
+\subsection*{Exercise 1.4.6}
+(a)
+Not dense.
+
+\noindent
+(b)
+Dense.
+
+\noindent
+(c)
+No dense.
+
+\subsection*{Exercise 1.4.7}
+Too lazy
+
+\subsection*{Exercise 1.4.8}
+(a)
+Let $A = \{ 1 - \frac{1}{n} \mid n = 2m, \quad m \in \mathbb{N} \}$ and $B = \{ 1 - \frac{1}{n} \mid n = 2m - 1, \quad m \in \mathbb{N} \}$.
+
+\noindent
+(b)
+Let $J_n = (-\frac{1}{n}, \frac{1}{n})$.
+
+\noindent
+(c)
+Let $L_n = [n, \infty)$.
+
+\noindent
+(d)
+Impossible. If the intersection is non-empty, then there are some elements that are included in every $I_n$ no matter how far you go.
+
+\section{Cardinality}
+
+\subsection*{Exercise 1.5.1}
+Too lazy.
+
+\subsection*{Exercise 1.5.2}
+They are either not nested or not bounded.
+
+\subsection*{Exercise 1.5.3}
+Too lazy.
+
+\subsection*{Exercise 1.5.4}
+(a)
+Let $f(x) = \tan\left(\frac{\pi}{b - \mu}(x - \mu)\right)$ where $\mu = \frac{a + b}{2}$.
+
+\noindent
+(b)
+Let $f(x) = \ln(x - a)$.
+
+\noindent
+(c)
+Let $f\left(\frac{1}{n}\right) = \frac{1}{n + 1}$ for $n \in \mathbb{N}$. Let $f(0) = \frac{1}{2}$. Let $f(x) = x$ otherwise.
+
+\subsection*{Exercise 1.5.5}
+(a)
+Let $f(x) = x$.
+
+\noindent
+(b)
+If $f$ is a bijection, then $f^{-1}$ exists and also a bijection.
+
+\noindent
+(c)
+$f: A \rightarrow B$ bijection and $g: B \rightarrow C$ bijection implies that $g \circ f: A \rightarrow C$ is a bijection as well.
+
+\subsection*{Exercise 1.5.6}
+(a)
+Let each open interval be $\left(\frac{1}{n + 1}, \frac{1}{n}\right)$ for $n \in \mathbb{N}$.
+
+\noindent
+(b)
+Impossible. Each open set contains a rational number, hence the number of disjoint open sets is limited by the countability of rationals.
+
+\subsection*{Exercise 1.5.7}
+(a)
+Let $f(s) = (s, 0)$.
+
+\noindent
+(b)
+For each $s \in (0, 1)$, choose a unique decimal expansion $0.s_1t_1s_2t_2\ldots$, where $s, t$ are digits (0 to 9). Some have multiple representations, but just choose something that you like. We can construct a point $(0.s_1s_2\ldots, 0.t_1t_2\ldots)$. Clearly, it's bijective.
+
+\subsection*{Exercise 1.5.8}
+For every $\frac{1}{n}$, the number of $b \in B$ such that $b > \frac{1}{n}$ must be finite (because there would be divergent series if that wasn't the case). Separate $B$ into these finite chunks of $B \cap [\frac{1}{n + 1}, \frac{1}{n})$, with the first chunk being $B \cap [1, \infty)$. Notice that every $b \in B$ must fall within such a chunk (because we assumed $b > 0$). Notice also that the number of chunks are countable. Since a countable union of finite sets is countable, then $B$ is countable.
+
+\subsection*{Exercise 1.5.9}
+(a)
+$\sqrt{2}$ solves the equation $x^2 - 2 = 0$.
+
+\noindent
+$\sqrt[3]{2}$ solves the equation $x^3 - 2 = 0$.
+
+\noindent
+Too lazy to solve the third one.
+
+\noindent
+(b) and (c)
+Each algebraic number can be associated with a polynomial. Each polynomial is a finite list of integers. Hence, the algebraic numbers are countable.
+
+\subsection*{Exercise 1.5.10}
+(a)
+Similar to exercise 1.5.8, assume $C \cap [\frac{1}{n}, 1]$ is countable for every $n \in \mathbb{N}$. Separating into chunks, we see again that $C$ is countable, with the starting $0$ negligible. By contradiction, there must exists a $\frac{1}{n}$ that makes $C \cap [\frac{1}{n}, 1]$ uncountable. Simply set your $a$ to be between $0$ and $\frac{1}{n}$.
+
+\noindent
+(b)
+No, $\alpha = \sup A$ cannot be in $A$. Suppose for contradiction that $\alpha \in A$, then $C \cap [\alpha, 1]$ would be uncountable. This means that $C \cap [\alpha + \frac{1}{n}, 1]$ would be countable for every $n \in \mathbb{N}$. As we saw previously, the countable union of disjoint countable chunks is countable, therefore $C \cap (\alpha, 1]$ is countable. Appending the missing $\{ \alpha \}$ gives us $\{ \alpha \} \cup (C \cap (\alpha, 1]) = (C \cup \{ \alpha \}) \cap [\alpha, 1]$ which remains countable. This is simply a set with a negligible additional element compared to $C \cap [\alpha, 1]$, hence the latter is also uncountable. Hence proven.
+
+\noindent
+(c)
+No. Simply choose $C = \{ \frac{1}{n} \mid n \in \mathbb{N} \}$. No matter how close $a$ gets to $0$, there will always be finite terms of $C$ after $a$.
+
+\subsection*{Exercise 1.5.11}
+(a)
+Well, if we have the partition already, simply define
+$$h(x) =
+\begin{cases}
+    g^{-1}(x) & x \in A \\
+    f(x) & x \in A'
+\end{cases}$$
+which is clearly a bijection.
+
+\noindent
+(b)
+We use proof by induction.
+$$A_1 = X \setminus g(Y)$$
+$$f(A_1) \subseteq Y \Rightarrow g(f(A_1)) \subseteq g(Y)$$
+Notice that $g(f(A_1)) = A_2$. Here, we see that $A_1$ discards $g(Y)$, while $A_2$ is a subset of $g(Y)$, hence $A_1, A_2$ must be disjoint. So the base case is true.
+
+Now, suppose $A_1, \ldots, A_n$ are pairwise disjoint. Then $f(A_1), \ldots, f(A_n)$ are pairwise disjoint by injectivity of $f$. Then $g(f(A_1)), \ldots, g(f(A_n))$ are pairwise disjoint by injectivity of $g$. But these are precisely $A_2, \ldots, A_{n + 1}$, so these are pairwise disjoint. Also, $A_{n + 1}$ which is contained in $g(Y)$ must be pairwise disjoint with $A_1$ which discards $g(Y)$. Hence, $A_1, \ldots, A_{n + 1}$ are pairwise disjoint, so induction step complete. You can interleave the procedure for showing $f(A_n)$ among these sentences.
+
+\noindent
+(c)
+This is obvious. Each $A_n$ is mapped to $f(A_n)$, so the disjoint union of $A_n$ is mapped to the disjoint union of $f(A_n)$.
+
+\noindent
+(d)
+Since $B'$ and $B$ are disjoint, then $g(B')$ and $g(B)$ are disjoint by injectivity of $g$, and their union covers the entire $g(Y)$ portion. Notice that $g(B)$ and $A \setminus g(Y)$ cover $A$ entirely. $A'$ only consists of the remaining $g(Y) \setminus g(B)$, which is thus covered by $g(B')$ by surjection of $g: Y \rightarrow g(Y)$.
+
+\section{Cantor's Theorem}
+
+\subsection*{Exercise 1.6.1}
+This is obvious. They have the same cardinality.
+
+\subsection*{Exercise 1.6.2}
+(a)
+The first digit differs.
+
+\noindent
+(b)
+The n-th digit differs.
+
+\noindent
+(c)
+We created a real number that is not bijected with a natural. In fact, for every such supposed bijection, we can find a real number not bijected to a natural, hence there exists not bijection of $(0, 1)$ with the naturals, making it uncountable.
+
+\subsection*{Exercise 1.6.3}
+(a)
+The constructed number need not be rational.
+
+\noindent
+(b)
+Too lazy. Idk, but prob not an issue. Gut instincts.
+
+\subsection*{Exercise 1.6.4}
+These are binary numbers, which are uncountable.
+
+\subsection*{Exercise 1.6.5}
+Too lazy. Same for the next exercises.
+
+\subsection*{Exercise 1.6.9}
+The power set of naturals is akin to binary numbers, which are uncountable.
+
+\subsection*{Exercise 1.6.10}
+(a)
+Countable. This is $\mathbb{N} \times \mathbb{N}$.
+
+\noindent
+(b)
+Uncountable. These are the binary numbers.
+
+\noindent
+(c)
+Yes. Partition the naturals into groups of 2. Given a binary number, look at the digit at each position, if the digit is 0, choose the left one in the group, if the digit is 1, choose the right one in the group.
+
+\chapter{Sequences and Series}
+
+\section{The Limit of a Sequence}
+
+\subsection*{Exercise 2.2.1}
+Any bounded sequence "verconges". For example, $a_n = (-1)^n$, which works for $\epsilon = 1.5$. In fact, the sequence converges to every $x \in \mathbb{R}$.
+
+\subsection*{Exercise 2.2.2}
+Hell nah.
+
+\subsection*{Exercise 2.2.3}
+(a)
+There exists a college in the United States such that all students are less than seven feet tall.
+
+\noindent
+(b)
+There exists a college in the United States such that all professors give C, D, E, or F, for at least one student.
+
+\noindent
+(c)
+All colleges in the United States have a student who is less than six feet tall.
+
+\subsection*{Exercise 2.2.4}
+(a)
+Consider the sequence where you insert zeros after skipping 1 term, then skipping 2 terms, then skipping 3 terms, and so on. The rest is all filled with one's, so you still have infinite one's.
+
+\noindent
+(b)
+Impossible. I'll transcribe what it means for there to be infinite 1's: For every $n \in \mathbb{N}$, we can find $a_m = 1$ for $m > n$. If it converges to $L \neq 1$, then take $0 < \epsilon < |L - 1|$ and you have a contradiction.
+
+\noindent
+(c)
+Same as (a).
+
+\subsection*{Exercise 2.2.5}
+Hell nah. They are easy to find.
+
+\subsection*{Exercise 2.2.6}
+For every $\epsilon > 0$, we can find sufficiently large $m$ such that
+$$|a_m - a| < \epsilon$$
+$$|a_m - b| < \epsilon$$
+Thus,
+$$|a_m - a| + |a_m - b| < 2\epsilon$$
+or equivalently
+$$|a_m - a| + |b - a_m| < 2\epsilon$$
+By triangle inequality,
+$$2\epsilon > |a_m - a| + |b - a_m| \geq |a_m - a + b - a_m| = |b - a|$$
+Hence $a = b$.
+
+\subsection*{Exercise 2.2.7}
+(a)
+Frequently.
+
+\noindent
+(b)
+Eventually is stronger.
+
+\noindent
+(c)
+$a_n$ converges to $L$ if, for every $\epsilon > 0$, all terms $a_n$ eventually fall within the set $(L - \epsilon, L + \epsilon)$.
+
+\noindent
+(d)
+Not necessarily eventually, but necessarily frequently.
+
+\subsection*{Exercise 2.2.8}
+(a)
+Yes.
+
+\noindent
+(b)
+Yes.
+
+\noindent
+(c)
+No. Consider $\{ 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, \ldots \}$, i.e. we skip larger and larger steps when adding the zeros.
+
+\noindent
+(d)
+Too lazy.
+
+\section{The Algebraic and Order Limit Theorems}
+
+\subsection*{Exercise 2.3.1}
+(a)
+Let $\sqrt{x_n} \rightarrow L$. Since $\sqrt{x_n} \geq 0$, then $L \geq 0$ by order limit theorem. Also since $\sqrt{x_n} \leq x_n$ and $x_n \rightarrow 0$, then $L \leq 0$ by order limit theorem. Hence $L = 0$.
+
+\noindent
+(b)
+Too lazy.
+
+\subsection*{Exercise 2.3.2}
+Fuh naw.
+
+\subsection*{Exercise 2.3.3}
+Simply use order limit theorem twice. Let $y_n \rightarrow y$.
+$$x_n \leq y_n \Rightarrow l \leq y$$
+$$y_n \leq z_n \Rightarrow y \leq l$$
+Hence $y = l$.
+
+\subsection*{Exercise 2.3.4}
+Fuh naw.
+
+\subsection*{Exercise 2.3.5}
+Too easy.
+
+\subsection*{Exercise 2.3.6}
+Too lazy.
+
+\subsection*{Exercise 2.3.7}
+(a)
+Let $x_n = n$ and $y_n = -n$.
+
+\noindent
+(b)
+Impossible.
+
+\noindent
+(c)
+Let $b_n = \frac{1}{n}$.
+
+\noindent
+(d)
+Impossible.
+
+\noindent
+(e)
+Let $a_n = \frac{1}{n}$ and $b_n = n$. The idea is to make the denominator zero, which violates the division theorem.
+
+\subsection*{Exercise 2.3.8}
+(a)
+Simply apply algebraic limit theorems.
+
+\noindent
+(b)
+Choose any function with a point-discontinuity.
+
+\subsection*{Exercise 2.3.9}
+(a)
+We can't use algebraic limit theorem because $a_n$ is not convergent.
+
+\end{document}

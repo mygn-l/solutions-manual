@@ -1,0 +1,119 @@
+\documentclass{book}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{bm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+
+\graphicspath{ {./} }
+
+\title{Combinatorics Cameron - Solutions Manual}
+\author{Mingruifu Lin}
+\date{September 2025}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{On Numbers and Counting}
+
+\subsection*{Exercise 1}
+The assumption that there is a largest natural number is wrong.
+
+\subsection*{Exercise 2}
+Fuh naw.
+
+\subsection*{Exercise 3}
+(a)
+Clearly, the base case works: $1 > \frac{1}{e}$. Now suppose
+$$n! > \left(\frac{n}{e}\right)^n$$
+Then
+$$(n + 1) n! > (n + 1)\left(\frac{n}{e}\right)^{n}$$
+We derive the right hand side:
+$$= (n + 1)\left(\frac{n}{n + 1}\right)^{n}\left(\frac{n + 1}{e}\right)^{n}$$
+Using the fact that $(1 + \frac{1}{n})^n < e \quad \Rightarrow \quad \frac{1}{(1 + \frac{1}{n})^n} > \frac{1}{e} \quad \Rightarrow \quad \left(\frac{n}{n + 1}\right)^n > \frac{1}{e}$, we replace the middle term to create the inequality
+$$> (n + 1)\frac{1}{e}\left(\frac{n + 1}{e}\right)^{n}$$
+$$= \left(\frac{n + 1}{e}\right)^{n + 1}$$
+Hence induction step completed.
+
+\noindent
+(b)
+The first inequality is equivalent to
+$$\sqrt[n]{n!} < \frac{n + 1}{2}$$
+The left side is the geometric mean from 1 to $n$. The right side is the arithmetic mean from 1 to $n$. The theorem tells us that the geometric mean is smaller than the arithmetic mean.
+
+Once again, we use the same strategy as (a).
+$$n! < \left(\frac{n + 1}{2}\right)^n$$
+$$= \left(\frac{n}{n}\right)^n \left(\frac{n + 1}{2}\right)^n$$
+$$= \left(\frac{n + 1}{n}\right)^n \left(\frac{n}{2}\right)^n$$
+$$= \left(1 + \frac{1}{n}\right)^n \left(\frac{n}{2}\right)^n$$
+$$< e \left(\frac{n}{2}\right)^n$$
+Hence proven.
+
+\subsection*{Exercise 4}
+No idea.
+
+\subsection*{Exercise 5}
+Ambiguously phrased.
+
+\subsection*{Exercise 6}
+Verified.
+
+\subsection*{Exercise 7}
+Verified.
+
+\subsection*{Exercise 8}
+There are $2^n$ configurations of inputs. Let's list them on a single row. Then, for each of the $2^n$ configurations, we have 2 options, either true or false, hence $2^{2^n}$ boolean functions. This is akin to choosing from the subset of $2^n$ configurations those who bear the value "true", and labelling the rest "false".
+
+\subsection*{Exercise 9}
+I guess they can start from the existence of the empty set, which gives 0. Then work their way up using this axiom.
+
+\subsection*{Exercise 10}
+We can easily use L'Hopital to deduce that $\lim_{n \rightarrow \infty} \frac{g(n)}{f(n)} \geq \lim_{n \rightarrow \infty} \frac{ab^n}{bn^d} = \infty$. This means that it is unbounded, hence we can find $C = 1$ such that $\frac{g(n)}{f(n)} > C = 1$, hence $g(n) > f(n)$. Too lazy to find the equality point.
+
+\subsection*{Exercise 11}
+For the first, since $b$ subsets each with $k$ elements, then the combined total count of elements of $bk$. For the second, there are $v$ elements, each found in exactly $r$ subsets, which adds up to $vr$, which is also the combined total count of elements in subsets. Too lazy for examples.
+
+\subsection*{Exercise 12}
+(i)
+Suppose $c = ab$. If $a$ is even, then
+$$c = \frac{a}{2} (2b)$$
+If $a$ is odd, then
+$$c = ab - b + b$$
+$$= (a - 1)b + b$$
+$$= \frac{a - 1}{2}(2b) + b$$
+At the end of the algorithm after $n$ steps, we have $c = 1b_n + b_{i_1} + b_{i_2} + \cdots + b_{i_m}$, where, as per the instructions, we have $a_n = 1$. The $b_i$ come from the shedding of the odd $a$'s. Hence proven.
+
+\noindent
+(ii)
+Idk, too lazy.
+
+\noindent
+(iii)
+Fuh naw.
+
+\subsection*{Exercise 13}
+Yeah, Buddha is dumb af.
+
+\subsection*{Exercise 14}
+Number of books:
+$$B = 25^{410 \cdot 40 \cdot 80}$$
+Number of rooms:
+$$R = \frac{B}{20 \cdot 35}$$
+
+\subsection*{Exercise 15}
+Hell nah.
+
+\end{document}
