@@ -276,7 +276,96 @@ indicates that $r_{k - 2}$ is obviously divisible by $r_k$. Here, we thus proved
 $$r_k \mid r_k \text{ and } r_k \mid r_{k - 1} \quad \Rightarrow \quad r_k \mid r_{k - 1} \text{ and } r_k \mid r_{k - 2}$$
 which completes our induction step. ($a$ and $b$ are precisely $r_{(-1)}$ and $r_0$.)
 
+\chapter{Group Theory}
+
+\section{Some Preliminary Lemmas}
+
+\subsection*{Problem 1}
+(a)
+No. Not associative
+
+\noindent
+(b)
+No. Missing inverse.
+
+\noindent
+(c)
+Yes.
+
+\noindent
+(d)
+Yes.
+
+\subsection*{Problem 2}
+Just repeatedly swap.
+
+\subsection*{Problem 3}
+For all $a, b$, we have
+$$(a \cdot b)^2 = a^2 \cdot b^2$$
+$$a \cdot b \cdot a \cdot b = a \cdot a \cdot b \cdot b$$
+Take inverse on each end.
+$$\Rightarrow b \cdot a = a \cdot b$$
+
+\subsection*{Problem 4}
+We are given (1)
+$$(ab)^i = a^i b^i$$
+and (2)
+$$(ab)^{i + 1} = a^{i + 1} b^{i + 1}$$
+$$\Rightarrow (ba)^i = a^i b^i$$
+and (3)
+$$(ab)^{i + 2} = a^{i + 2} b^{i + 2}$$
+$$\Rightarrow (ba)^{i + 1} = a^{i + 1} b^{i + 1}$$
+We substitute (2) into (3), then regroup, giving the result (4)
+$$\Rightarrow (ba)^{i + 1} = a (ba)^i b$$
+$$\Rightarrow ba (ba)^i = ab (ab)^i$$
+Notice that we can equate $a^i b^i$ in (1) and (2), giving the result (5)
+$$(ab)^i = a^i b^i = (ba)^i$$
+Now, we substitute (5) into (4), which becomes
+$$\Rightarrow ba (ba)^i = ab (ba)^i$$
+Taking the inverse on each side gives the desired result.
+
+\subsection*{Problem 5}
+??
+
+\subsection*{Problem 6}
+Let $x = 1 \leftrightarrow 2$. Let $y = 2 \leftrightarrow 3$. Then $(xy)^2$ will cause $123 \rightarrow 312$, while $x^2 y^2$ would be identity $123 \rightarrow 123$.
+
 \subsection*{Problem 7}
-Fuh naw.
+The identity operation, as well as the 2-element swaps, satisfy $x^2 = e$. The 3-element cycles satisfy $x^3 = e$. It's then easy to count.
+
+\subsection*{Problem 8}
+Suppose for contradiction that $a^N \neq e$ for all $N \in \mathbb{N}$. We show that this implies $a^X \neq a^Y$ for all pairs $X \neq Y$. Suppose for (nested) contradiction that $a^X = a^Y$ for some pair $X > Y > 1$. Then taking the inverse on both sides yields $a^{X - Y} = e$, contradicting the fact that $a^N \neq e$ for all $N$. Hence, $a^X \neq a^Y$, i.e. the powers of $a$ are pairwise distinct. However, we know our group is finite, but $a^N$ creates infinite distinct elements. Hence, it must be false, so $a^N = e$ for some $N$.
+
+\subsection*{Problem 9}
+(a)
+$$G = \{ e, x, y \}$$
+Since identity $e$ is unique, then $xy \neq x$. Because, otherwise, we would have $y = e$, which is false. Similarly, $xy \neq y$. So, using the fact that groups are closed, $xy$ must have some result in $G$, the only one left being $xy = e$. Property of inverse implies that $yx = e$ as well. Hence $x$ commutes with $y$. Finally, we know the identity commutes with every elements. Hence proven.
+
+\noindent
+(b)
+$$G = \{ e, x, y, z \}$$
+
+Suppose $xy = yx = e$, then $xz$ cannot equal $x$ nor $z$, because neither is equal to the unique $e$. It also cannot equal $e$, because $x, y$ are already inverse pairs, and inverses are unique, so $z$ cannot be another inverse. Hence $xz$ can only equal $y$, by the closure property. This procedure is repeated for $zx, yz, zy$, which must equal $y, x, x$ respectively. Hence, $xy = yx = e$ and $xz = zx = y$ and $yz = zy = x$, where $e$ already commutes with everyone.
+
+Now, suppose $x^2 = e$ and $y^2 = e$. Since inverses are unique, we have $z^2 = e$. And thus $xy = yx = z$ and $xz = zx = y$ and $yz = zy = x$ (same logic as before, none can be identity, and none is inverse pair). And $e$ already commutes with everyone.
+
+All cases have been gone over. Hence proven.
+
+\noindent
+(c)
+Too lazy. We know every group of prime order must be cyclic, therefore abelian.
+
+\subsection*{Problem 10}
+For every pair $x, y$, we have
+$$(xy)^2 = e = ee = x^2 y^2$$
+$$\Rightarrow xyxy = xxyy$$
+Taking inverse on both extremities of each side yields
+$$yx = xy$$
+
+\subsection*{Problem 11}
+Inverses come in pairs. But $e$ is paired with itself. So if the group order is even, then there is an odd number of non-$e$ elements. Hence, another element must be paired with itself.
+
+\subsection*{Problem 12}
+
 
 \end{document}
