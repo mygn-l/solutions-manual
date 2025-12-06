@@ -145,8 +145,12 @@ $$\binom{221}{110}$$
 $$\binom{221}{110} \binom{200}{100}$$
 
 \subsection*{Exercise 10}
-(a) If he chooses 0 stat courses, he chooses 7 of the 15 non-stat courses. If he chooses 1 stat courses, he chooses 6 of the 15 non-stat courses. If he chooses 2 stat courses, he chooses 5 of the 15 non-stat courses. And so on. He stops at 5 stat courses.
-$$\binom{5}{0}\binom{15}{7} + \binom{5}{1}\binom{15}{6} + \binom{5}{2}\binom{15}{5} + \binom{5}{3}\binom{15}{4} + \binom{5}{4}\binom{15}{3} + \binom{5}{5}\binom{15}{2}$$
+(a) If he chooses 1 stat courses, he chooses 6 of the 15 non-stat courses. If he chooses 2 stat courses, he chooses 5 of the 15 non-stat courses. And so on. He stops at 5 stat courses.
+$$\binom{5}{1}\binom{15}{6} + \binom{5}{2}\binom{15}{5} + \binom{5}{3}\binom{15}{4} + \binom{5}{4}\binom{15}{3} + \binom{5}{5}\binom{15}{2}$$
+
+\subsubsection*{Approach 2}
+(a) Finding all combinations with at least 1 statistics course is equivalent to the complement of having 0 statistics course. The total amount of combinations can be written as $\binom{20}{7}$. The amount of combinations without statistics courses is $\binom{15}{7}$.
+$$\binom{20}{7} - \binom{15}{7}$$
 
 \noindent
 (b) Some configurations are repeated if we use that formula.
@@ -171,7 +175,7 @@ $$\binom{52}{13}$$
 $$\binom{52}{13} \binom{39}{13} \binom{26}{13}$$
 
 \noindent
-(c) Obviously, once the first player picks 13 cards, there are not still 52 cards left to choose.
+(c) A card can only be included in a one hand. Once 13 cards are picked, they are not replaced in the pack.
 
 \subsection*{Exercise 13}
 Think of each card type as a box where you throw pebbles. There are 52 boxes, and you have 10 pebbles. Notice that each box has a capacity of 10, so we are safe from pebble overflow.
@@ -342,10 +346,10 @@ $$2(r - 10)(r - 6) = 0$$
 Either $r = 10$ and $g = 6$, or $r = 6$ and $g = 10$.
 
 \subsection*{Exercise 34}
-I don't play poker.
+$$\frac{4\binom{13}{5}}{\binom{52}{5}}$$
 
 \subsection*{Exercise 35}
-What is a suit?
+$$\frac{44\binom{13}{2}\binom{4}{2}^2}{\binom{52}{5}}$$
 
 \subsection*{Exercise 36}
 This is the same problem as shuffling letters of a word, with possibly repeated letters.
