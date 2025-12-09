@@ -366,6 +366,40 @@ $$yx = xy$$
 Inverses come in pairs. But $e$ is paired with itself. So if the group order is even, then there is an odd number of non-$e$ elements. Hence, another element must be paired with itself.
 
 \subsection*{Problem 12}
+Inverse is commutative:
+$$ay = e$$
+$$yay = ye$$
+$$yay = y$$
+$$yayy^{-1} = yy^{-1}$$
+$$ya = e$$
+We use this result to prove identity is commutative:
+$$ae = a$$
+$$aya = a$$
+$$ea = a$$
 
+\subsection*{Problem 13}
+??
+
+\subsection*{Problem 14}
+Since the group is finite, for every $a$, there exists $m$ such that $a^m = a$. Let $e_a = a^{m - 1}$ be an identity of $a$. It's clear by associativity that it's both left and right identity of $a$.
+
+Let $a^{-1} = a^{m - 2}$ be an inverse of $a$. It's also clear by associativity that it's both left and right inverse of $a$.
+
+Suppose $ab = e_a$. Recall that $a \cdot a^{m - 2} = a^{m - 1} = e_a$. Hence,
+$$ab = e_a = a \cdot a^{m - 2}$$
+$$\Rightarrow b = a^{m - 2}$$
+by left cancellation law. Thus, each element's inverse is unique. The same procedure also shows that each element's identity is unique.
+
+Suppose $a e_a = a$. Then
+$$a e_a c = ac$$
+$$\Rightarrow e_a c = c$$
+by left cancellation law. Hence, every element shares an identity pairwise. Since every element also only has a single identity, then all identities are equal.
+
+\subsection*{Problem 15}
+(a)
+It's already finite, closed, and associative. Suppose for contradiction that $ab \equiv ac \mod p$, but $b \not \equiv c \mod p$, where $a, b, c \in \{ 1, \ldots, p - 1\}$. Then $ab - ac = a(b - c) \equiv 0 \mod p$. Hence $p \mid a(b - c) = am$ where clearly $m < p$. Now, since $p$ is prime, it must divide one of the factors $a$ or $m$. But $a < p$ and $m < p$, thus we have a contradiction. Hence, it must be that $b \equiv c \mod p$. Hence, by Problem 14, this is a group.
+
+\noindent
+(b)
 
 \end{document}
