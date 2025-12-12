@@ -400,6 +400,115 @@ by left cancellation law. Hence, every element shares an identity pairwise. Sinc
 It's already finite, closed, and associative. Suppose for contradiction that $ab \equiv ac \mod p$, but $b \not \equiv c \mod p$, where $a, b, c \in \{ 1, \ldots, p - 1\}$. Then $ab - ac = a(b - c) \equiv 0 \mod p$. Hence $p \mid a(b - c) = am$ where clearly $m < p$. Now, since $p$ is prime, it must divide one of the factors $a$ or $m$. But $a < p$ and $m < p$, thus we have a contradiction. Hence, it must be that $b \equiv c \mod p$. Hence, by Problem 14, this is a group.
 
 \noindent
-(b)
+(b) Skip
+
+\subsection*{Problem 16}
+??
+
+\subsection*{Problem 17}
+Consider the naturals $\mathbb{N} = \{1, 2, \ldots \}$ under addition. It's associative and closed, and the cancellation laws work. However, the latter still don't allow us to dip lower than $1$. Hence, we don't have access to the identity element.
+
+\subsection*{Problem 18}
+Since inverses are organized in pairs, we have
+$$e \quad \begin{array}{c c c c}
+    a_1 & a_2 & \cdots & a_{n - 1} \\
+    b_1 & b_2 & \cdots & b_{n - 1}
+\end{array} \quad c$$
+Let us define the product as follows:
+$$a_i b_i = b_i a_i = e$$
+$$c^2 = e$$
+Idk...
+
+\subsection*{Problem 19}
+Nah.
+
+\subsection*{Problem 20}
+It is closed. Suppose $\det(A), \det(B) \in \mathbb{Q}$. Then,
+$$\det(AB) = \det(A) \det(B) \in \mathbb{Q}$$
+It is associative, because matrix multiplication is inherently associative. There exists the identity matrix which has determinant 1, and clearly $1 \in \mathbb{Q}$. And since determinant is nonzero, then there exists an inverse for each matrix.
+
+\subsection*{Problem 21}
+It is closed:
+$$\begin{pmatrix}
+    a & b \\
+    0 & d
+\end{pmatrix}
+\begin{pmatrix}
+    e & f \\
+    0 & h
+\end{pmatrix}
+=\begin{pmatrix}
+    ae & af + bh \\
+    0 & dh
+\end{pmatrix}$$
+and since $ad, eh \neq 0$, then $adeh = (ae)(dh) \neq 0$. Matrix multiplication is inherently associative. The identity matrix satisfies the conditions. And since $ad$ is the determinant, which is nonzero, then every matrix has an inverse. Finally,
+$$\begin{pmatrix}
+    e & f \\
+    0 & h
+\end{pmatrix}
+\begin{pmatrix}
+    a & b \\
+    0 & d
+\end{pmatrix}
+=\begin{pmatrix}
+    ae & be + df \\
+    0 & dh
+\end{pmatrix}$$
+so it is not abelian.
+
+\subsection*{Problem 22}
+Clearly closed and associative. The identity satisfies the conditions also. Next, since $a$ is nonzero, then $a^{-1}$ exists and is also nonzero. Therefore their product is nonzero. And $a a^{-1} = 1$ is precisely their determinant, which is nonzero, hence the inverse exists. Finally, diagonal matrices are commutative, hence the group is abelian.
+
+\subsection*{Problem 23}
+$$\begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    -1 & 0 \\
+    0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    1 & 0 \\
+    0 & -1
+\end{pmatrix}
+\begin{pmatrix}
+    -1 & 0 \\
+    0 & -1
+\end{pmatrix}$$
+
+\subsection*{Problem 24}
+We can simply make an exhaustive list:
+$$\begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    0 & 1 \\
+    1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+    0 & 1 \\
+    1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    1 & 0 \\
+    1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    1 & 1 \\
+    1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+    1 & 1 \\
+    0 & 1
+\end{pmatrix}$$
+It contains 6 elements. The identity is present. If you check all cases, you will see that it is closed and each element has an inverse. Matrix multiplication is already associative.
+
+\subsection*{Problem 25}
+Too lazy.
+
+\subsection*{Problem 26}
+Too lazy.
 
 \end{document}
