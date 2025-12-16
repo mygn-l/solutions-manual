@@ -705,6 +705,541 @@ Choose any function with a point-discontinuity.
 
 \subsection*{Exercise 2.3.9}
 (a)
-We can't use algebraic limit theorem because $a_n$ is not convergent.
+We can't use algebraic limit theorem because $a_n$ need not have a limit. Now, to prove the statement, since $a_n$ is bounded, there exists $C \in \mathbb{R}$ such that
+$$-C \leq a_n \leq C$$
+Thus,
+$$-C \cdot b_n \leq a_n \cdot b_n \leq C \cdot b_n$$
+$$\lim \left( -C \cdot b_n \right) \leq \lim \left( a_n \cdot b_n \right) \leq \lim \left( C \cdot b_n \right)$$
+$$0 \leq \lim \left( a_n \cdot b_n \right) \leq 0$$
+Hence, $\lim a_n b_n = 0$.
+
+\noindent
+(b)
+No, if $b_n$ has nonzero limit, then $a_n b_n$ need not converge.
+
+\noindent
+(c)
+Too lazy.
+
+\subsection*{Exercise 2.3.10}
+(a)
+False. If $a_n = b_n = n$, then $\lim (a_n - b_n) = 0$, but $\lim a_n = \lim b_n = \infty$.
+
+\noindent
+(b)
+True...
+
+\noindent
+(c)
+True.
+$$\lim b_n = \lim \left( a_n + (b_n - a_n) \right)$$
+$$= \lim a_n + \lim (b_n - a_n)$$
+$$= a + 0 = a$$
+
+\noindent
+(d)
+True... $a_n$ simply acts as $\epsilon$ here.
+
+\subsection*{Exercise 2.3.11}
+Too lazy.
+
+\subsection*{Exercise 2.3.12}
+(a)
+False. For example, $\max B \in B$ and $a_n = \max B + \frac{1}{n}$.
+
+\noindent
+(b)
+True. By definition, closed sets contain their limits.
+
+\noindent
+(c)
+False. Just use the $\sqrt{2}$ example.
+
+\subsection*{Exercise 2.3.13}
+(a)
+$$\lim_{n \rightarrow \infty} \left( \lim_{m \rightarrow \infty} \frac{m}{m + n} \right) = \lim_{n \rightarrow \infty} 1 = 1$$
+$$\lim_{m \rightarrow \infty} \left( \lim_{n \rightarrow \infty} \frac{m}{m + n} \right) = \lim_{m \rightarrow \infty} 0 = 0$$
+
+\noindent
+(b)
+$\lim_{m, n \rightarrow \infty} \frac{1}{m + n} = 0$ exists. The two iterated limits give the same value 0. $\lim_{m, n \rightarrow \infty} \frac{mn}{m^2 + n^2} = 0$ exists. The two iterated limits also give the same value 0.
+
+\noindent
+(c)
+I gave up and searched online. Here is the example:
+$$a_{mn} = \frac{(-1)^m}{n} + \frac{(-1)^n}{m}$$
+
+\noindent
+(d) and (e) Too lazy.
+
+\section{The Monotone Convergence Theorem and Infinite Series}
+
+\subsection*{Exercise 2.4.1}
+(a)
+It's decreasing and bounded below by $\frac{1}{4}$.
+
+\noindent
+(b)
+This simply excludes the first term, which does not change its limiting behavior.
+
+\noindent
+(c)
+$$\lim x_{n + 1} = \lim \frac{1}{4 - x_n}$$
+$$\lim x_n = \lim \frac{1}{4 - x_n}$$
+$$\lim x_n = \frac{1}{4 - \lim x_n}$$
+$$(\lim x_n)^2 - 4 \lim x_n + 1 = 0$$
+$$\lim x_n = 2 \pm \sqrt{3}$$
+Here, $\lim x_n = 2 - \sqrt{3}$ makes more sense given our starting values.
+
+\subsection*{Exercise 2.4.2}
+(a)
+We have no information about monotonicity or boundedness, or any condition strong enough.
+
+\noindent
+(b)
+Too lazy. But either yes or no, after testing for conditions.
+
+\subsection*{Exercise 2.4.3}
+(a)
+$$x_{n + 1} = \sqrt{2 + x_n}$$
+$$\lim x_{n + 1} = \lim \sqrt{2 + x_n}$$
+$$\lim x_n = \sqrt{2 + \lim x_n}$$
+$$L^2 = 2 + L$$
+$$L = 2$$
+($L = -1$ does not make sense.)
+
+\noindent
+(b)
+Too lazy.
+
+\subsection*{Exercise 2.4.4}
+(a)
+Too lazy.
+
+\noindent
+(b)
+The closed intervals each have a lower bound. These lower bounds are increasing and bounded above by the first interval's upper bound. Hence, by MCT, the sequence is convergent. Since arbitrary intersection of closed sets is closed, and closed sets contain all their limit points, then the limit of the sequence is inside the intersection.
+
+\subsection*{Exercise 2.4.5+}
+Too lazy. Skipped.
+
+\section{Subsequences and the Bolzano-Weierstrass Theorem}
+
+\subsection*{Exercise 2.5.1}
+(a)
+Impossible. The subsequence is a sequence itself, and since it's bounded, then the subsequence must contain a convergent subsequence. Since this convergent subsequence is a subsequence of the subsequence, then it's also a subsequence of the original sequence.
+
+\noindent
+(b)
+Simply take a sequence $a_n = 1 - \frac{1}{n}$ for $n$ odd, and $a_n = \frac{1}{n}$ for $n$ even.
+
+\noindent
+(c)
+Take the sequence $1, 1, \frac{1}{2}, 1, \frac{1}{2}, \frac{1}{3}, 1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, 1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \ldots$.
+
+\noindent
+(d)
+Same sequence as (c).
+
+\subsection*{Exercise 2.5.2}
+(a)
+True. If every subsequence converges, then take the subsequence that only excludes the first term. Their tails obviously behave the same way.
+
+\noindent
+(b)
+True. This is the contrapositive of Bolzano-Weierstrass.
+
+\noindent
+(c)
+True. If every subsequence converged to the same limit, then the original sequence converges, which is a contradiction.
+
+\noindent
+(d)
+True. Bounded above by the limit of that particular subsequence.
+
+\subsection*{Exercises 2.5.3 and 2.5.4}
+Too lazy. Skipped.
+
+\subsection*{Exercise 2.5.5}
+Too lazy.
+
+\subsection*{Exercise 2.5.6}
+$$\lim b^{\frac{1}{n}} = b^{\lim \frac{1}{n}} = b^0 = 1$$
+
+\subsection*{Exercise 2.5.7}
+Too lazy.
+
+\subsection*{Exercise 2.5.8}
+(a)
+Kind of obvious. For the infinite case, just let $a_n = \frac{1}{n}$ for $n$ odd, and $a_n = 0$ for $n$ even.
+
+\noindent
+(b)
+??
+
+\subsection*{Exercise 2.5.9}
+Too lazy.
+
+\section{The Cauchy Criterion}
+
+\subsection*{Exercise 2.6.1}
+$$|a_N - a| + |a - a_M| < \epsilon_N + \epsilon_M$$
+Take the max between $N$ and $M$, call it $T$, to get
+$$|a_n - a| + |a - a_m| < 2 \epsilon_T$$
+whenever $n, m > T$. This $\epsilon$ can be shrunk indefinitely by increasing $T$, hence
+$$|a_n - a + a - a_m| < \epsilon$$
+$$|a_n - a_m| < \epsilon$$
+for all $\epsilon > 0$.
+
+\subsection*{Exercise 2.6.2}
+(a)
+Take any convergent alternating series.
+
+\noindent
+(b)
+Impossible. Cauchy is bounded, hence its subsequences must be bounded.
+
+\noindent
+(c)
+Impossible. For every term of a divergent monotone sequence, you can find another term strictly greater, later in the sequence. (Or strictly smaller, if it's decreasing.) If that was not the case, then all later terms are equal, which contradicts the fact that it diverges. Anyways, since we can always find greater terms, the Cauchy criterion is violated.
+
+\noindent
+(d)
+Just take any unbounded sequence with a convergent subsequence, such as alternating $a_n = 0$ and $a_n = n$ for odd/even indices.
+
+\subsection*{Exercise 2.6.3}
+(a)
+For every $\epsilon$, there exists $n, m, a, b$ such that
+$$|x_n - x_m| + |y_a - y_b| < 2\epsilon$$
+Take the max of $n, a$ and $m, b$, call them $s, t$. We still have
+$$|x_s - x_t| + |y_s - y_t| < 2\epsilon$$
+Hence,
+$$|x_s - x_t + y_s - y_t| < 2\epsilon$$
+$$|(x_s + y_s) - (x_t + y_t)| < 2\epsilon$$
+
+\noindent
+(b)
+Too lazy.
+
+\subsection*{Exercises 2.6.4+}
+Too lazy. Skipped.
+
+\chapter{Basic Topology of $\mathbb{R}$}
+
+\section*{Open and Closed Sets}
+
+\subsection*{Exercise 3.2.1}
+(a)
+When taking the $\min$, we assumed the set of $\epsilon$ is finite.
+
+\noindent
+(b)
+$$O_n = \left( -\frac{1}{n}, \frac{1}{n} \right)$$
+
+\subsection*{Exercise 3.2.2}
+(a)
+The limit points of $A$ are $-1$ and $1$. The limit points of $B$ are $[0, 1]$.
+
+\noindent
+(b)
+$A$ and $B$ are neither open nor closed.
+
+\noindent
+(c)
+Every point of $A$ is isolated. None of the points in $B$ are isolated.
+
+\noindent
+(d)
+Simply take the union of the limit points found in (a) with the original sets.
+
+\subsection*{Exercise 3.2.3}
+(a)
+Not open: every $\epsilon$-neighborhood contains irrational numbers. Not closed: every irrational number is a limit point not contained in $\mathbb{Q}$.
+
+\noindent
+(b)
+Not open: every $\epsilon$-neighborhood contains non-integral numbers. It's closed though.
+
+\noindent
+(c)
+It's open. Not closed: $0$ is a limit point.
+
+\noindent
+(d)
+Not open: obvious. Not closed: the series has a limit not contained in the set.
+
+\noindent
+(e)
+Not open: obvious. Closed: the series is not convergent, hence we need not care whether its limit is contained in the set or not.
+
+\subsection*{Exercise 3.2.4}
+(a)
+For every $N_\epsilon$ of $\sup A$, there exists $a \in A$ such that $a \in N_\epsilon$. Suppose that this is not the case. Then that means there exists an upper bound smaller than $\sup A$ in the interval $(\sup A - \epsilon, \sup A)$, which contradicts the definition of $\sup A$. Hence, we can contruct a sequence $a_n$ for each smaller $N_\epsilon$, which converges to $\sup A$.
+
+\noindent
+(b)
+No. There are no elements in the set greater than the supremum, hence the right side of the $\epsilon$-neighborhood will always be floating.
+
+\subsection*{Exercise 3.2.5}
+By Theorem 3.2.5, every convergent sequence's limit must be contained in $F$. Every convergent sequence is a Cauchy sequence, hence every Cauchy sequence has a limit in $F$.
+
+\subsection*{Exercise 3.2.6}
+(a)
+True. We can the arbitrary union of the neighborhoods of each rational number, which gives $\mathbb{R}$.
+
+\noindent
+(b)
+True. Assuming the closed sets $C_n$ are still bounded, then the sequence $\{\sup C_m \mid m \in \mathbb{N}\}$ is decreasing and bounded below by $\inf C_1$. We argue that $\lim \sup C_m$ must be contained in $\bigcap_{n \in \mathbb{N}} C_n$. Since $\sup C_m \in C_m$ for all $m \in \mathbb{N}$, and $C_a \subseteq C_b$ for $b < a$, then $\sup C_a \in C_b$ for all $b < a$. In other words, each $C_n$ contains all but finitely many elements of $\sup C_m$. Since each $C_n$ is closed, then each $C_n$ contains all of its limit points, which includes the limit of $\sup C_m$. Hence, since $\sup C_m \in C_n$ for all $n \in \mathbb{N}$, then $\sup C_m$ must lie in their intersection as well.
+
+\noindent
+(c)
+True. Given an element $a$ of a non-empty open set, we can find $N_\epsilon$ around $a$ contained within the set. Since there's always a rational number closer to any real number, then the neighborhood of $a$ must contain a rational number as well. By subset relation, the rational number is also contained within the open set.
+
+\noindent
+(d)
+False. Simply create a sequence $a_n$ that approaches $\sqrt{2}$ where $a_n \not \in \mathbb{Q}$ for all $n$, and take the union $\{ a_n \mid n \in \mathbb{N} \} \cup \{ \sqrt{2} \}$.
+
+\noindent
+(e)
+True. It's formed by a sequence of nested closed sets, and so the intersection, which is the Cantor set, must be closed as well.
+
+\subsection*{Exercise 3.2.7}
+(a)
+Let $a_n$ be a sequence in $L$ with limit $a$. Since each $a_n$ is a limit point of $A$, then we can always find $b_n \in A$ such that $|b_n - a_n| < \epsilon$ for all $\epsilon$. Hence, $b_n$ also approaches $a$. Since $A$ is closed, then it must contain the limit of $b_n$. Hence, $\lim b_n = a$ is a limit point of $A$, hence $a \in L$. Since $a_n$ was an arbitrarily chosen sequence in $L$, then every limit point of $L$ is contained in $L$. Hence $L$ is closed.
+
+\noindent
+(b)
+If $x \in A$, then since $A$ is closed, we can find a sequence in $A$ approaching $x$, so $x$ is a limit point of $A$. If $x \in L$, then since every limit points of $L$ is a limit point of $A$, then $x$ is a limit point of $A$. To prove the theorem, since every limit point $x$ of $A \cup L$ is a limit point of $A$, then $x \in L \subseteq A \cup L$, hence $A \cup L$ is closed.
+
+\subsection*{Exercise 3.2.8}
+(a)
+Closed. Closure is always closed.
+
+\noindent
+(b)
+Open. This is equivalent to $A \cap B^c$, where $B^c$ is obviously open.
+
+\noindent
+(c)
+Open. $A^c$ is closed, so its union with $B$ is closed. So the whole complement is open.
+
+\noindent
+(d)
+Closed. This is equivalent to $B \cap (A \cup A^c)$.
+
+\noindent
+(e)
+Neither. One is open, the other is closed. So their intersection is unclear.
+
+\subsection*{Exercise 3.2.9}
+(a)
+For the first Morgan equation.
+$$x \in \left( \bigcup_{\lambda \in \Lambda} E_\lambda \right)^c$$
+$$\Leftrightarrow \neg \left( x \in \bigcup_{\lambda \in \Lambda} E_\lambda \right)$$
+$$\underset{\text{def}}{\Leftrightarrow} \neg [(\exists \lambda \in \Lambda)(x \in E_\lambda)]$$
+$$\Leftrightarrow (\forall \lambda \in \Lambda) (\neg (x \in E_\lambda))$$
+$$\Leftrightarrow (\forall \lambda \in \Lambda) (x \in (E_\lambda)^c)$$
+$$\underset{\text{def}}{\Leftrightarrow} x \in \bigcap_{\lambda \in \Lambda} (E_\lambda)^c$$
+For the second Morgan equation.
+$$x \in \left( \bigcap_{\lambda \in \Lambda} E_\lambda \right)^c$$
+$$\Leftrightarrow \neg \left( x \in \bigcap_{\lambda \in \Lambda} E_\lambda \right)$$
+$$\underset{\text{def}}{\Leftrightarrow} \neg [(\forall \lambda \in \Lambda)(x \in E_\lambda)]$$
+$$\Leftrightarrow (\exists \lambda \in \Lambda) (\neg (x \in E_\lambda))$$
+$$\Leftrightarrow (\exists \lambda \in \Lambda) (x \in (E_\lambda)^c)$$
+$$\Leftrightarrow x \in \bigcup_{\lambda \in \Lambda} (E_\lambda)^c$$
+
+\noindent
+(b)
+Given closed sets $A_n$,
+$$\bigcap A_n = \left( \bigcup A_n^c \right)^c$$
+Since $A_n^c$ is open, then their arbitrary union is open, hence the whole complement is closed, hence $\bigcap A_n$ is closed.
+
+\subsection*{Exercise 3.2.10}
+(i)
+Impossible. A countable set is a sequence. Since the sequence is bounded by $[0, 1]$, then there exists a convergent subsequence by Bolzano-Weierstrass. The limit of that subsequence is a limit point.
+
+\noindent
+(ii)
+Possible. Take the rational numbers between $[0, 1]$. None is isolated, and it's countable.
+
+\noindent
+(iii)
+Impossible. Each isolated point has an $\epsilon$-neighborhood containing no other points. Each neighborhood contains a rational number. Hence, there is a bijection from the set of neighborhoods to the rationals. Hence, the set of neighborhoods is countable, thus the isolated points are countable.
+
+\subsection*{Exercises 3.2.11+}
+Too lazy.
+
+\section*{Compact Sets}
+
+\subsection*{Exercise 3.3.1}
+Since $K$ is non-empty and bounded, it must have a supremum. Since it's closed, it must contain its supremum.
+
+\subsection*{Exercise 3.3.2}
+(a)
+Not compact. It's not bounded. So take the sequence $a_n = n$.
+
+\noindent
+(b)
+Not compact. It's not closed. Take any monotone sequence converging to $\sqrt{2}$.
+
+\noindent
+(c)
+Compact. It's closed and bounded.
+
+\noindent
+(d)
+Not compact. It's not closed. The sequence itself is convergent, thus its subsequences also converge to the same limit. But the limit is not contained in the sequence.
+
+\noindent
+(e)
+Not compact. It's not closed. The sequence itself is convergent, thus its subsequences also converge to the same limit. But the limit is not contained in the sequence.
+
+\subsection*{Exercise 3.3.3}
+Since $K$ is bounded, every sequence in $K$ has a convergent subsequence by Bolzano-Weierstrass. Since $K$ is closed, the convergent subsequences, which are themselves sequences, must have limits in $K$.
+
+\subsection*{Exercise 3.3.4}
+(a)
+Definitely closed.
+
+\noindent
+(b)
+Definitely closed.
+
+\noindent
+(c)
+Neither.
+
+\noindent
+(d)
+Neither.
+
+\subsection*{Exercise 3.3.5+}
+Too lazy.
+
+\section*{Perfect Sets and Connected Sets}
+
+\subsection*{Exercise 3.4.1}
+Since $K$ is compact, then its intersection with anything is bounded. Since both $K$ and $P$ are closed, then their intersection is closed. Hence, it's compact.
+
+However, for example, if $K$ is a single point, and $K \subseteq P$, then its intersection with $P$ is a single point, which is isolated, hence it's not perfect.
+
+\subsection*{Exercise 3.4.2}
+No. A perfect set has uncountably many elements.
+
+\subsection*{Exercise 3.4.3}
+Too lazy.
+
+\subsection*{Exercise 3.4.4}
+(a)
+It's still compact and perfect.
+
+\noindent
+(b)
+The smaller versions are $\frac{3}{8}$ of the bigger versions, and their volume is half. Hence, when you scale by $\frac{8}{3}$, your volume gets scaled by $2$. The dimension is $\log_{\frac{8}{3}} 2 \approx 0.706695052611$. The length is still zero.
+
+\subsection*{Exercise 3.4.5}
+Since $U, V$ are open and disjoint, then around each point $u \in U$, there's a neighborhood $N_\epsilon(u)$ which contains no point of $V$. Hence, no sequence of $V$ converges to $u \in U$. And vice-versa. Hence, their are disconnected. Since $A$ and $B$ are subsets of $U, V$, then simply elevate their sequences into the space of $U, V$, hence proving that $A, B$ are disconnected.
+
+\subsection*{Exercise 3.4.6}
+Suppose $E$ is connected. Then for every disjoint sets $A, B$ satisfying $A \cup B = E$, by definition of connectedness, we know
+$$\bar{A} \cap B \neq \varnothing$$
+or
+$$\bar{B} \cap A \neq \varnothing$$
+In the first case, since $\bar{A} = A \cup L_A$, but $A \cap B = \varnothing$, then it must be that $L_A \cap B \neq \varnothing$. Hence, there exists a limit point of $A$ contained in $B$. The second case follows a similar procedure.
+
+The reverse direction is obvious. If there's a convergent sequence in $A$ with limit in $B$, then $\bar{A} \cap B \neq \varnothing$. The case for a convergence sequence in $B$ follows a similar procedure.
+
+\subsection*{Exercise 3.4.7}
+(a)
+Between every two distinct real number $x, y$ lies an irrational number $x < c < y$. Clearly, $E \cap (-\infty, c)$ and $E \cap (c, \infty)$ are disconnected components of $E$ which contain $x$ and $y$ respectively.
+
+\noindent
+(b)
+Yes. The argument is identical to the rational numbers'.
+
+\subsection*{Exercises 3.4.8+}
+Too lazy.
+
+\section*{Baire's Theorem}
+
+\subsection*{Exercise 3.5.1}
+$$A = \bigcap A_n$$
+where $A_n$ are open. Then,
+$$A^c = \left( \bigcap A_n \right)^c = \bigcup A_n^c$$
+which is a countable union of closed sets.
+
+\subsection*{Exercise 3.5.2}
+(a)
+Countable.
+
+\noindent
+(b)
+Finite.
+
+\noindent
+(c)
+Finite. Explanation from online: for each rational number $q$, create the singleton set $\{ q \}$. Each singleton is clearly $G_\delta$, since it's the countable intersection of neighborhoods around $q$. We can do the countable union of the singletons to get $\mathbb{Q}$. However, $\mathbb{Q}$ is not $G_\delta$ (as we'll see later). Hence, the countable union of $G_\delta$ is not necessarily $G_\delta$.
+
+\noindent
+(d)
+Countable.
+
+\subsection*{Exercise 3.5.3}
+(a)
+Take the intersection of open sets of the form $(a - \epsilon, b + \epsilon)$ for $\epsilon > 0$.
+
+\noindent
+(b)
+Take the intersection of open sets of the form $(a, b + \epsilon)$ for $\epsilon > 0$. Or take the union of closed sets of the form $[a + \epsilon, b]$ for $\epsilon > 0$.
+
+\noindent
+(c)
+Take the union of rational singletons to get $\mathbb{Q}$. Its complement, the irrationals, is thus $G_\delta$ by Exercise 3.5.1. Another way to prove the irrationals is to consider open sets of the form $(-\infty, q) \cup (q, \infty)$, where $q$ is rational. Since $\mathbb{Q}$ is countable, we can simply take the countable intersection of all these open sets, which effectively puncture the number line at the precise location of rationals.
+
+\subsection*{Exercise 3.5.4}
+Take a point $g_1 \in G_1$. Since it's open, I can find $N_\epsilon (g_1) \subseteq G_1$. Since $G_2$ is dense, then there exists a point $g_2 \in G_2$ such that $g_2 \in (g_1 - \epsilon, g_1)$. Since $G_2$ is open, then I can find $N_\delta (g_2) \subseteq G_2$. Clearly, I can find one that satisfies $N_\delta (g_2) \subseteq N_\epsilon (g_1)$. Now, simply let $I_1$ be a closed set inside $N_\epsilon (g_1)$, and $I_2$ be a closed set inside $N_\delta (g_2)$. Clearly, I can still make them keep their subset relation. We continue this process to create every $I_n$. This intersection must be non-empty by Nested Interval Property. And since $I_n \subseteq G_n$ for all $n$, then the intersection of $G_n$ must also be non-empty.
+
+\subsection*{Exercises 3.5.5+}
+??
+
+\subsection*{Exercise 3.5.8}
+Suppose $\bar{E}^c$ is dense. Then for every neighborhood $N_\epsilon (x) \subseteq \bar{E}$, you can $y \in \bar{E}^c$ such that $y \in N_\epsilon$. However, $y \not \in \bar{E}$. Hence, $N_\epsilon$ cannot be an open subset of $\bar{E}$. Since $x$ was arbitrarily chosen, it follows that $\bar{E}$ does not contain non-empty open subsets, hence $E$ is nowhere-dense.
+
+Suppose $E$ is nowhere-dense. Since $\bar{E}$ contains no open sets, then for every neighborhood $N_\epsilon (x)$ for $x \in \mathbb{R}$, we want $N_\epsilon (x) \not \subseteq \bar{E}$. Hence, for each such neighborhood, there must exist a point $y \in N_\epsilon (x)$ such that $y \not \in \bar{E}$, i.e. $y \in \bar{E}^c$. Thus, we are able to approach every point of $\mathbb{R}$ using a sequence found in $\bar{E}^c$. Hence, $\bar{E}^c$ is dense.
+
+\subsection*{Exercise 3.5.9}
+(a)
+Nowhere dense.
+
+\noindent
+(b)
+Nowhere dense.
+
+\noindent
+(c)
+Dense.
+
+\noindent
+(d)
+Nowhere dense.
+
+\subsection*{Exercise 3.5.10}
+$$\bigcup E_n = \mathbb{R}$$
+$$\Rightarrow \bigcup \bar{E}_n = \mathbb{R}$$
+$$\Rightarrow \left( \bigcup \bar{E}_n \right)^c = \varnothing$$
+$$\Rightarrow \bigcap \bar{E}_n^c = \varnothing$$
+Then, ???
+
+\chapter{Functional Limits and Continuity}
+
+\section*{Functional Limits}
+
+\subsection*{Exercise 4.2.1}
+Too lazy.
+
+\subsection*{Exercise 4.2.2}
+Too lazy.
+
+\subsection*{Exercise 4.2.3}
 
 \end{document}
