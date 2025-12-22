@@ -568,6 +568,7 @@ Yes. Partition the naturals into groups of 2. Given a binary number, look at the
 
 \chapter{Sequences and Series}
 
+\section{}
 \section{The Limit of a Sequence}
 
 \subsection*{Exercise 2.2.1}
@@ -926,7 +927,8 @@ Too lazy. Skipped.
 
 \chapter{Basic Topology of $\mathbb{R}$}
 
-\section*{Open and Closed Sets}
+\section{}
+\section{Open and Closed Sets}
 
 \subsection*{Exercise 3.2.1}
 (a)
@@ -1069,7 +1071,7 @@ Impossible. Each isolated point has an $\epsilon$-neighborhood containing no oth
 \subsection*{Exercises 3.2.11+}
 Too lazy.
 
-\section*{Compact Sets}
+\section{Compact Sets}
 
 \subsection*{Exercise 3.3.1}
 Since $K$ is non-empty and bounded, it must have a supremum. Since it's closed, it must contain its supremum.
@@ -1116,7 +1118,7 @@ Neither.
 \subsection*{Exercise 3.3.5+}
 Too lazy.
 
-\section*{Perfect Sets and Connected Sets}
+\section{Perfect Sets and Connected Sets}
 
 \subsection*{Exercise 3.4.1}
 Since $K$ is compact, then its intersection with anything is bounded. Since both $K$ and $P$ are closed, then their intersection is closed. Hence, it's compact.
@@ -1160,7 +1162,7 @@ Yes. The argument is identical to the rational numbers'.
 \subsection*{Exercises 3.4.8+}
 Too lazy.
 
-\section*{Baire's Theorem}
+\section{Baire's Theorem}
 
 \subsection*{Exercise 3.5.1}
 $$A = \bigcap A_n$$
@@ -1232,7 +1234,8 @@ Then, ???
 
 \chapter{Functional Limits and Continuity}
 
-\section*{Functional Limits}
+\section{}
+\section{Functional Limits}
 
 \subsection*{Exercise 4.2.1}
 Too lazy.
@@ -1241,5 +1244,105 @@ Too lazy.
 Too lazy.
 
 \subsection*{Exercise 4.2.3}
+We already know it's discontinuous at every rational number.
+
+\subsection*{Exercise 4.2.4}
+(a)
+We want $\frac{1}{[[x]]} \leq \frac{6}{10}$. Thus $x = 2$. Anything lower will become $\frac{1}{1}$ which is greater than $\frac{6}{10}$. For $\frac{1}{[[x]]} \geq -\frac{4}{10}$, everything works, so $x = \infty$. Hence, we must choose $\delta = 10 - 2 = 8$, ignoring the infinity.
+
+\noindent
+(b)
+Too lazy.
+
+\noindent
+(c)
+$\epsilon = \frac{1}{9} - \frac{1}{10}$
+
+\subsection*{Exercise 4.2.5}
+Too lazy.
+
+\subsection*{Exercise 4.2.6}
+(a)
+True. Everything within distance $\delta$.
+
+\noindent
+(b)
+False. We can create a point discontinuity.
+
+\noindent
+(c)
+True. This is a property of the composition of continuous functions.
+
+\noindent
+(d)
+False. Consider $f = \frac{1}{x}$ and $g = x^2$ on the domain $(0, \infty)$.
+
+\subsection*{Exercise 4.2.7}
+Use the Squeeze Theorem. For any sequence $x_n \rightarrow c$, we have $f(x_n)$ and $g(x_n)$ which are sequences as well. We know $g(x_n) \rightarrow 0$. We know $-M \leq f(x_n) \leq M$. So we have
+$$-Mg(x_n) \leq f(x_n)g(x_n) \leq Mg(x_n)$$
+$$\lim -Mg(x_n) \leq \lim f(x_n)g(x_n) \leq \lim Mg(x_n)$$
+$$-M\lim g(x_n) \leq \lim f(x_n)g(x_n) \leq M\lim g(x_n)$$
+$$0 \leq \lim f(x_n)g(x_n) \leq 0$$
+Hence $f(x_n)g(x_n) \rightarrow 0$ as $x_n \rightarrow c$. Since the sequence $x_n$ was chosen arbitarily, by definition we have $\lim_{x \rightarrow c} f(x)g(x) = 0$.
+
+\subsection*{Exercise 4.2.8}
+Too lazy.
+
+\subsection*{Exercise 4.2.9}
+(a)
+Given $M > 0$, choose $\delta = \frac{1}{2\sqrt{M}}$. Then the smallest is achieved when either $f(x) = f(\delta) = 4M$ or $f(x) = f(-\delta) = 4M$. Clearly, $4M > M$.
+
+\noindent
+(b)
+$\lim_{x \rightarrow \infty} f(x) = L$ means that for all $\epsilon > 0$, we can find $M > 0$ such that whenever $x > M$, then $|f(x) - L| < \epsilon$. Too lazy to show.
+
+\noindent
+(c)
+$\lim_{x \rightarrow \infty} f(x) = \infty$ means that for all $M > 0$, we can find $N > 0$ such that whenever $x > N$, then $f(x) > M$. Too lazy for example.
+
+\subsection*{Exercise 4.2.10}
+(a)
+$\lim_{x \rightarrow a+} f(x) = L$ means that for all $\epsilon > 0$, we can find $\delta > 0$ such that whenever $0 < x - a < \delta$, then $|f(x) - L| < \epsilon$. Too lazy for left side.
+
+\noindent
+(b)
+We can choose the same $\epsilon$, then choose the smallest $\delta$. We combine $0 < x - a < \delta$ and $-\delta < x - a < 0$ to give $0 < |x - a| < \delta$ that satisfies $|f(x) - L| < \epsilon$.
+
+\subsection*{Exercise 4.2.11}
+This is simply an application of the "Sequence" Squeeze Theorem to the sequence definition of functional limits.
+
+\section{Continuous Functions}
+
+\subsection*{Exercise 4.3.1}
+Too lazy.
+
+\subsection*{Exercise 4.3.2}
+(a)
+The constant function.
+
+\noindent
+(b)
+The linear function $y = x$. It is not onetinuous, since things at a distance of $1$ are not equal to the center.
+
+\noindent
+(c)
+The linear function $y = 2x$. It is not equaltinuous, since distinct $y$'s separated by $\epsilon$ required $\delta \leq \frac{\epsilon}{2}$.
+
+\noindent
+(d)
+They are equivalent. If we can find $\delta > 0$ that satisfies the inequality in continuity, then a smaller $\delta$ will still satisfy the inequality, so we can choose arbitrary $\delta < \epsilon$ that still works, thus satisfying lesstinuity. Likewise, if we find $\delta < \epsilon$ for lesstinuity, then we effectively found $\delta$ for continuity, regardless of whether it's smaller or greater than $\epsilon$.
+
+\subsection*{Exercise 4.3.3}
+(a)
+Suppose we have $h(x) = g(f(x))$.
+
+Given $\epsilon > 0$, using the continuity of $g$, we can find $\delta_g$ such that $|f(x) - f(c)| < \delta_g$ implies $|g(f(x)) - g(f(c))| < \epsilon$, where $f(x)$ and $f(c)$ are points in the domain of $g$. But they are also points in the range of $f$. Hence, we can treat $\delta_g$ as $\epsilon_f$. Since we have $|f(x) - f(c)| < \delta_g = \epsilon_f$, using the continuity of $f$, we can find $\delta > 0$ such that $|x - c| < \delta$ implies $|f(x) - f(c) < \epsilon_f$. Hence, we have a logical chain:
+$$|x - c| < \delta \quad \Rightarrow \quad |f(x) - f(c)| < \epsilon_f = \delta_g \quad \Rightarrow \quad |g(f(x)) - g(f(c))| < \epsilon$$
+Hence, given any $\epsilon$, we can find such a $\delta$ that creates this implication. Notice that $g(f(x))$ is precisely equal to $h(x)$, so replacing it in the implication gives us the desired result. QED.
+
+\noindent
+(b)
+$$x_n \rightarrow c \quad \Rightarrow \quad f(x_n) \rightarrow f(c) \quad \Rightarrow \quad g(f(x_n)) \rightarrow g(f(c))$$
+The main difference from (a) is that we do not need to backtrack to show existence of anything.
 
 \end{document}
