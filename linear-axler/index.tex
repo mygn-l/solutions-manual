@@ -1,0 +1,291 @@
+\documentclass{book}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{bm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+
+\graphicspath{ {./} }
+
+\title{Linear Algebra Axler - Solutions Manual}
+\author{Mingruifu Lin}
+\date{September 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Vector Spaces}
+
+\section{Rn and Cn}
+
+\subsection*{Exercise 1.A.1}
+$$(a + bi)(c + di) = 1$$
+$$\Rightarrow ac - bd = 1 \text{ and } ad + bc = 0$$
+Solving for $c$ and $d$ gives
+$$c = \frac{a}{a^2 + b^2} \text{ and } d = \frac{-b}{a^2 + b^2}$$
+Hence,
+$$\frac{1}{a + bi} = \frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2}i$$
+
+\subsection*{Exercise 1.A.2}
+Just compute it.
+$$\left(\frac{-1 + \sqrt{3}i}{2}\right)^3 = 1$$
+
+\subsection*{Exercise 1.A.3}
+$$(a + bi)^2 = i$$
+$$\Rightarrow a^2 - b^2 = 0 \text{ and } 2ab = 1$$
+$$\Rightarrow |a| = |b| \text{ and } ab = \frac{1}{2}$$
+Hence, the roots are
+$$-\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}i \text{ and } \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i$$
+
+\subsection*{Exercise 1.A.4}
+$$\alpha + \beta$$
+$$= (a + bi) + (c + di)$$
+$$= (a + c) + (b + d)i$$
+$$= (c + a) + (d + b)i$$
+$$= (c + di) + (a + bi)$$
+$$= \beta + \alpha$$
+
+\subsection*{Exercise 1.A.5}
+Too lazy.
+
+\subsection*{Exercise 1.A.6}
+Too lazy.
+
+\subsection*{Exercise 1.A.7}
+Given $\alpha = a + bi$, choose $\beta = -\alpha = -a - bi$.
+$$\alpha + \beta = (a - a) + (b - b)i = 0$$
+
+\subsection*{Exercise 1.A.8}
+Given $\alpha = a + bi$, choose $\beta = \frac{\bar{\alpha}}{|\alpha|^2} = \frac{a - bi}{a^2 + b^2}$.
+$$\alpha \beta = \frac{(a + bi)(a - bi)}{a^2 + b^2} = \frac{a^2 + b^2}{a^2 + b^2} = 1$$
+
+\subsection*{Exercise 1.A.9}
+Too lazy.
+
+\subsection*{Exercise 1.A.10}
+$$2x = (5, 9, -6, 8) - (4, -3, 1, 7) = (1, 12, -7, 1)$$
+$$\Rightarrow x = \left(\frac{1}{2}, 6, -\frac{7}{2}, \frac{1}{2}\right)$$
+
+\subsection*{Exercise 1.A.11}
+Vectors not collinear.
+
+\subsection*{Exercise 1.A.12}
+Too lazy.
+
+\subsection*{Exercise 1.A.13}
+Too lazy.
+
+\subsection*{Exercise 1.A.14}
+$$1x = 1(x_1, x_2, \ldots, x_n) = (1x_1, 1x_2, \ldots, 1x_n) = (x_1, x_2, \ldots, x_n) = x$$
+
+\subsection*{Exercise 1.A.15}
+Too lazy.
+
+\subsection*{Exercise 1.A.16}
+Too lazy.
+
+\section{Definition of Vector Space}
+
+\subsection*{Exercise 1.B.1}
+We use commutativity.
+$$(-v) + v = v + (-v) = 0$$
+$$\Rightarrow -(-v) = v$$
+
+\subsection*{Exercise 1.B.2}
+Suppose for contradiction that $a \neq 0$ and $v \neq 0$. Then $v_i \neq 0$ for some $i$. Hence, $av = (av_1, \ldots, av_i, \ldots, av_n)$ where $av_i \neq 0$, which contradicts $av = 0$.
+
+\subsection*{Exercise 1.B.3}
+$v + (-v + w) = (v + (-v)) + w = 0 + w = w$, hence we can set $3x = -v + w$, so $x = \frac{1}{3}(-v + w)$ which clearly exists by the axioms.
+
+\subsection*{Exercise 1.B.4}
+The identity is missing.
+
+\subsection*{Exercise 1.B.5}
+For every $v$, we can create $(-1)v$. Clearly, $(-1)v \in V$. Also,
+$$v + (-1)v = 1v + (-1)v = (1 + (-1))v = 0v = 0$$
+where we used $0v = 0$ in the last equality. Hence, every $v \in V$ has an inverse $(-1)v$.
+
+\subsection*{Exercise 1.B.6}
+No, it's not associative:
+$$(\infty + (-\infty)) + (-\infty) = 0 + (-\infty) = -\infty$$
+but
+$$\infty + ((-\infty) + (-\infty)) = \infty + (-\infty) = 0$$
+
+\section{Subspaces}
+
+\subsection*{Exercise 1.C.1}
+(a)
+Yes. $(0, 0, 0)$ satisfies the condition. If $x_1 + 2x_2 + 3x_3 = 0$ and $y_1 + 2y_2 + 3y_3 = 0$, then $(x_1 + y_1) + 2(x_2 + y_2) + 3(x_3 + y_3) = 0$, hence it's closed under addition. Also, if $x_1 + 2x_2 + 3x_3 = 0$ and $a \in \mathbb{F}$, then $ax_1 + 2ax_2 + 3ax_3 = 0$, hence it's closed under scalar multiplication.
+
+\noindent
+(b)
+No. $0 \not \in V$.
+
+\noindent
+(c)
+No. It's not closed under addition. $x_1 x_2 x_3 = 0$ implies at least one of them is $0$. For example, we have $(1, 0, 0)$ and $(0, 1, 1)$. But their sum $(1, 1, 1)$ does not satisfy the conditions.
+
+\noindent
+(d)
+Yes. $(0, 0, 0)$ satisfies the condition. If $x_1 = 5x_3$ and $y_1 = 5y_3$, then $x_1 + y_1 = 5x_3 + 5y_3 = 5(x_3 + y_3)$, so it's closed under addition. If $x_1 = 5x_3$ and $a \in \mathbb{F}$, then $ax_1 = 5ax_3$ still holds, so it's closed under scalar multiplication.
+
+\subsection*{Exercise 1.C.2}
+Whut is dat. Too lazy.
+
+\subsection*{Exercise 1.C.3}
+The constant zero function $f_0: (-4, 4) \rightarrow \mathbb{R}$ with $f_0(x) = 0$ for all $x \in (-4, 4)$ is the additive identity. Clearly, $f_0'(-1) = 0 = 3 f_0(2)$.
+
+Now, for any two functions $f, g$ satisfying the conditions, i.e. $f'(-1) = 3f(2)$ and $g'(-1) = 3g(2)$, and denoting $(f + g)(x) = f(x) + g(x)$, we have $(f + g)'(-1) = f'(-1) + g'(-1) = 3f(2) + 3g(2) = 3(f + g)(2)$, where the first equality comes from the linearity of differentiation.
+
+Finally, if $f'(-1) = 3f(2)$ and $a \in \mathbb{F}$, and denoting $(af)(x) = a f(x)$, then $(af)'(-1) = a f'(-1) = a (3f(2)) = 3 (af)(2)$, where the first equality comes from the linearity of differentiation.
+
+\subsection*{Exercise 1.C.4}
+If $\int_0^1 f = \int_0^1 g = b$, then $\int_0^1 (f + g) = 2b$. We want the vector space to be closed under addition, so the sum must also satisfy the condition, namely that its integral be $b$. Hence, we require $2b = b$, and $0$ is the only solution.
+
+Likewise, if the integrals of functions are zero, then the integral of their sum is also zero, by linearity of integration. The zero function, which is the additive identity, satisfies the condition as well. Finally, integration's linearity also guarantees that the scaled function also has integral zero.
+
+\subsection*{Exercise 1.C.5}
+Depends on the field. If the field is limited to real numbers, then yes, it's a subspace. If the field is the entire complex numbers, then obviously it's not closed under scalar multiplication, so not a subspace.
+
+\subsection*{Exercise 1.C.6}
+(a) Yes. $a^3 = b^3$ implies $a = b$. The additive identity $(0, 0, 0)$ clearly satisfies the condition. If $x_1 = x_3$ and $y_1 = y_3$, then $x_1 + y_1 = x_3 + y_3$, so it's closed under addition. And if $x_1 = x_3$ and $a \in \mathbb{F}$, then $ax_1 = ax_3$ still holds.
+
+(b) No. In the complex numbers, $a^3 = b^3$ can potentially admit 3 solutions.
+
+\subsection*{Exercise 1.C.7}
+Take all vectors of the form $(a, b)$ where $a, b \in \mathbb{Z}$. Since the field is still $\mathbb{R}$, then we are missing the space between the lattice points, so it's not closed under scalar multiplication.
+
+\subsection*{Exercise 1.C.8}
+Take all vectors of the form $(a, 0)$ and $(0, b)$ where $a, b \in \mathbb{R}$. It's not closed under addition.
+
+\subsection*{Exercise 1.C.9}
+No. It's not closed under addition. When the periods of two functions are incommensurable, their sum is aperiodic. For example, let
+$$f(x) = \begin{cases}
+    1 & \text{if } x \in \mathbb{Z} \\
+    0 & \text{otherwise}
+\end{cases}$$
+$$g(x) = \begin{cases}
+    1 & \text{if } x = k\pi \text{ for } k \in \mathbb{Z} \\
+    0 & \text{otherwise}
+\end{cases}$$
+In other words, $f$ evaluates to 1 at every integer, while $g$ evaluates to 1 at every multiple of $\pi$. Let $h = f + g$. Clearly, $h(0) = 2$. However, it will never reappear, because $f(x) = 1$ only at rational $x$, whereas $g(x) = 1$ only at irrational $x$. Thus $h(0) \neq h(0 + p)$ for all $p \in \mathbb{R}$. Hence $h$ is aperiodic.
+
+\subsection*{Exercise 1.C.10}
+Since $0 \in U_1$ and $0 \in U_2$, then $0 \in U_1 \cap U_2$.
+
+If $v_1, v_2 \in U_1 \cap U_2$, then $v_1, v_2 \in U_1$, so $v_1 + v_2 \in U_1$. Likewise, the intersection also gives us $v_1, v_2 \in U_2$, so $v_1 + v_2 \in U_2$. Hence $v_1 + v_2 \in U_1 \cap U_2$.
+
+Finally, if $v \in U_1 \cap U_2$, then $v \in U_1$, so $av \in U_1$. Likewise, we also have $v \in U_2$, so $av \in U_2$. Hence $av \in U_1 \cap U_2$.
+
+\subsection*{Exercise 1.C.11}
+Simply extend Exercise 1.C.11 to the infinite case.
+
+\subsection*{Exercise 1.C.12}
+Let $U_1 \cup U_2$ be a subspace. Suppose that $U_1 \not \subseteq U_2$ and $U_2 \not \subseteq U_1$. Then I can find $v_1 \in U_1 \setminus U_2$ and $v_2 \in U_2 \setminus U_1$. Then $v_1 + v_2 = v_3 \not \in U_1$, because otherwise $v_3 - v_1 = v_2 \in U_1$, contradicting $v_2 \in U_1 \setminus U_2$. Likewise, $v_3 \not \in U_2$. Thus, it's not closed under addition, so $U_1 \cup U_2$ would not be a subspace. Hence, one of $U_1 \subseteq U_2$ and $U_2 \subseteq U_1$ must be true.
+
+The other direction is easy.
+
+\subsection*{Exercise 1.C.13}
+Too lazy. Maybe hard, idk.
+
+\subsection*{Exercise 1.C.14}
+Too lazy.
+
+\subsection*{Exercise 1.C.15}
+$U + U = U$, because it's closed under addition.
+
+\subsection*{Exercise 1.C.16}
+Well, $U + W$ is a subspace, hence its addition is commutative, so indeed $U + W = W + U$.
+
+\subsection*{Exercise 1.C.17}
+Again, yes. $U_1 + U_2 + U_3$ is a subspace, so its addition is associative, so indeed $(U_1 + U_2) + U_3 = U_1 + (U_2 + U_3)$.
+
+\subsection*{Exercise 1.C.18}
+There is an additive identity, which is the space $\{ 0 \}$. However, the only space that has an additive inverse is $\{ 0 \}$ itself. Every other space contains some form of $\{ 0, v, \ldots \}$. If we try to find an inverse space, it will also contain some form of $\{ 0, w, \ldots \}$. Taking their sum, we realize we can always select $0$ from the first space, and some nonzero element $w$ from the second space, to give $0 + w = w$. Hence, their sum can never be $\{ 0 \}$.
+
+\subsection*{Exercise 1.C.19}
+False. Let $W = \{ (a, 0) \mid a \in \mathbb{R} \}$, which is visually a horizontal line passing through the origin. Let $U_1 = \{ (a, a) \mid a \in \mathbb{R} \}$, which is visually a diagonal line passing through the origin. Let $U_2 = \{ (0, a) \mid a \in \mathbb{R} \}$, which is visually a vertical line passing through the origin. Clearly, $U_1 + W$ and $U_2 + W$ both give the whole space $\mathbb{R}^2$. But $U_1 \neq U_2$.
+
+\subsection*{Exercises 1.C.20+}
+Too lazy.
+
+\chapter{Finite-Dimensional Vector Spaces}
+
+\section{Span and Linear Independence}
+
+\subsection*{Exercise 2.A.1}
+Compute their linear combination:
+$$a_1 (v_1 - v_2) + a_2 (v_2 - v_3) + a_3 (v_3 - v_4) + a_4 (v_4)$$
+$$= a_1 v_1 + (a_2 - a_1) v_2 + (a_3 - a_2) v_3 + (a_4 - a_3) v_4$$
+Since $v_1, v_2, v_3, v_4$ span $V$, then every $v \in V$ can be expressed
+$$v = b_1 v_1 + b_2 v_2 + b_3 v_3 + b_4 v_4$$
+But we can also set $a_1 = b_1$ and $a_2 = b_2 + a_1$ and $a_3 = b_3 + a_2$ and $a_4 = b_4 + a_3$. Hence, they span $V$ as well.
+
+\subsection*{Exercise 2.A.2}
+Too lazy.
+
+\subsection*{Exercise 2.A.3}
+Simply find $t$ such that the third vector is not contained in the span of the first two vectors.
+
+\subsection*{Exercise 2.A.4}
+Too lazy.
+
+\subsection*{Exercise 2.A.5}
+(a)
+If the field is real numbers, then the real part and complex part behave like independent components of 2D vectors, namely $(1, 1)$ and $(1, -1)$. They are clearly linearly independent.
+
+\noindent
+(b)
+With the complex numbers at our disposal, we can find $z \in \mathbb{C}$ such that $z (1 + i) = 1 - i$. Hence one is in the span of the other.
+
+\subsection*{Exercise 2.A.6}
+We want
+$$a_1 (v_1 - v_2) + a_2 (v_2 - v_3) + a_3 (v_3 - v_4) + a_4 v_4 = 0$$
+which can be rewritten
+$$a_1 v_1 + (a_2 - a_1) v_2 + (a_3 - a_2) v_3 + (a_4 - a_3) v_4 = 0$$
+Since $v_1, v_2, v_3, v_4$ are linearly independent, then we must have $a_1 = 0$ and $a_2 - a_1 = 0$ and $a_3 - a_2 = 0$ and $a_4 - a_3 = 0$. It's easy to see that these equations imply every $a_i = 0$.
+
+\subsection*{Exercise 2.A.7}
+Similarly to the previous exercise, we have
+$$5 a_1 v_1 + (a_2 - 4a_1) v_2 + a_3 v_3 + \cdots + a_m v_m = 0$$
+Hence
+$$5a_1 = 0$$
+$$\Rightarrow a_1 = 0$$
+$$\Rightarrow a_2 = 0$$
+So yes, they are linearly independent.
+
+\subsection*{Exercise 2.A.8}
+We simply factor out:
+$$a_1 (\lambda v_1) + \ldots + a_m (\lambda v_m) = 0$$
+$$\lambda (a_1 v_1 + \ldots + a_m v_m) = 0$$
+$$\Rightarrow a_1 v_1 + \ldots + a_m v_m = 0$$
+So yes, they are linearly independent.
+
+\subsection*{Exercise 2.A.9}
+False. Just take $v_1 = w_2 = (1, 0)$ and $v_2 = w_1 = (0, 1)$. The sums are $v_1 + w_1 = (1, 1)$ and $v_2 + w_2 = (1, 1)$, which are clearly not linearly independent since they are identical.
+
+\subsection*{Exercises 2.A.10+}
+Too lazy.
+
+\section{Bases}
+
+\subsection*{Exercise 2.B.1}
+$\{ 0 \}$ obviously has a single basis. Also, any space of the form $\{ 0, v \}$ with field $\{ 0, 1 \}$ has a single basis $v$. For any other bigger field $\{ 0, 1, a, \ldots \}$, we would have $av \neq v$ so it would be an additional element which forms a new basis. For any bigger space $\{ 0, v, w \}$, if they are linearly independent, then both $v, w$ and $v + w, w$ are bases. If they are linearly dependent, then clearly both $v$ and $w$ can single-handedly become the basis.
+
+\subsection*{Exercise 2.B.2}
+Too lazy.
+
+\end{document}
