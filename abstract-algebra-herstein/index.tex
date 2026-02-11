@@ -511,4 +511,141 @@ Too lazy.
 \subsection*{Problem 26}
 Too lazy.
 
+\section{A Counting Principle}
+
+\subsection*{Problem 1}
+Associativity is inherited. If $x, y \in H \cap K$, then $xy \in H$ and $xy \in K$, hence $xy \in H \cap K$. Both contain $e$. If $x \in H \cap K$, then $x^{-1} \in H$ and $x^{-1} \in K$, hence $x^{-1} \in H \cap K$.
+
+\subsection*{Problem 2}
+$(a)$ is a subgroup. But $(a^2)$ is also a subgroup. They share an element $a^m = x = (a^2)^n$ for some $m, n$. Hence, $a^{m - 2n} = e$, which gives an order of $o(a) = m - 2n$. In the case that $m = 2n$, then try higher prime powers, such as $(a^3), (a^5)$, and so on. It's impossible for $m$ to contain all prime factors, so eventually, there will be some $(a^p)$ for which $p \nmid m$.
+
+\subsection*{Problem 3}
+Which means the only subgroups are $\{ e \}$ and $G$ itself. So if you take any element $a \in G$, then $(a) = G$ or $(a) = \{ e \}$. The latter case simply means $a = e$.
+
+Now, in the first case, suppose for contradiction that $(a) = G$ is infinite. Since $G$ is a group, then for every $a^m$, it has an inverse $a^n$. Thus, for every $(a^2)^m$, it has an inverse $(a^2)^n$, because $(a^2)^m (a^2)^n = (a^m a^n)^2 = e^2 = e$. Hence, $(a^2)$ forms a nontrivial subgroup of $G$, contradicting the requirement. Therefore, $G$ must be finite.
+
+Now, suppose for contradiction that $G$ isn't of prime order. Then take any divisor of $p \mid o(G)$. Clearly, $(a^p)$ is a nontrivial subgroup of $G$, contradicting the requirement. Hence, $G$ must be of prime order.
+
+\subsection*{Problem 4}
+(a)
+Suppose $ah_1a^{-1}, ah_2a^{-1} \in aHa^{-1}$, then
+$$(ah_1a^{-1})(ah_2a^{-1}) = ah_1h_2a^{-1} = ah_3a^{-1} \in aHa^{-1}$$
+Now, since $e \in H$, then
+$$aea^{-1} = aa^{-1} = e \in aHa^{-1}$$
+Finally, since $H$ is a subgroup, then $h^{-1}$ exists for every $h$. So for $aha^{-1}$, choose $ah^{-1}a^{-1}$ as its inverse. We verify:
+$$(aha^{-1})(ah^{-1}a^{-1}) = ahh^{-1}a^{-1} = aea^{-1} = e$$
+
+\noindent
+(b)
+Given $h_1, h_2 \in H$, if $h_1 \neq h_2$, then $ah_1 \neq ah_2$, and then $ah_1a^{-1} \neq ah_2a^{-1}$. (These follow from left and right cancellation laws.) Therefore, $o(aHa^{-1}) = o(H)$.
+
+\subsection*{Problem 5}
+??
+
+\subsection*{Problem 6}
+(a)
+We have $H$ and $Ha$.
+
+\noindent
+(b)
+We have $H$, $Ha$, $Ha^2$, $Ha^3$ and $Ha^4$.
+
+\noindent
+(c)
+Here, $H$ contains all permutations that leave $x_1$ unmoved. Let $a$ be the transformation that shifts everything to the right once. Let $b$ be the transformation that shifts everything to the right twice. Then the cosets are $H$, $Ha$ and $Hb$. These correspond to fixing $x_1$ at the first position, then fixing $x_1$ at the second position, then fixing $x_1$ at the third position.
+
+\subsection*{Problem 7}
+Both (a) and (b) are cyclic groups, so they remain the same by their abelian property. For (c), we keep the same transformations $a$ and $b$. However, now it becomes fixing $x_1$ at the first position, then fixing $x_2$ at the first position, then fixing $x_3$ at the first position.
+
+\subsection*{Problem 8}
+For (a) and (b), yes, because they are abelian. For (c), no, as we demonstrated.
+
+\subsection*{Problem 9}
+(Searched it up: It uses the concept of normal groups discussed later.)
+
+The condition can be expressed in another way: if $aH = bH$ then $Ha = Hb$. Let $b$ be the inverse of some element $c$. The hypothesis should still hold: $aH = c^{-1}H$ then $Ha = Hc^{-1}$.
+
+Now, if $aH = c^{-1}H$, then
+$$a \in c^{-1}H$$
+$$\Rightarrow a = c^{-1}h \text{ for some h } \in H$$
+$$\Rightarrow ca = h \in H$$
+Similarly, if $Ha = Hc^{-1}$, then
+$$\Rightarrow ac \in H$$
+Hence, the hypothesis is equivalent to: $ca \in H$ implies $ac \in H$.
+
+Now, suppose $x = ghg^{-1} \in gHg^{-1}$ for some $h \in H$. Then $g^{-1}xg = h \in H$. We use the "abelian"-ish property of the hypothesis to switch their positions:
+$$g^{-1}(xg) \in H \quad \Rightarrow (xg)g^{-1} \in H$$
+which produces the desired result $x \in H$.
+
+\subsection*{Problem 10}
+$n$ cosets, each of the form $H_n + x$ where $x \in \{ 0, 1, \ldots, n - 1 \}$.
+
+\subsection*{Problem 11}
+$H_n \cap H_m = H_{\text{lcm} (n, m)}$
+
+\subsection*{Problem 12}
+Consider the cosets of $H \cap K$ in $G$, for example $(H \cap K)g$. The following holds:
+$$(H \cap K)g = (Hg \cap Kg)$$
+Since $H$ and $K$ have finite index in $G$, then the total number of intersections of their cosets is finite as well, namely $Ha_i \cap Kb_j$, which include $(Hg \cap Kg)$. The cosets of $H \cap K$ are each equal to one of these finitely many intersections, hence $H \cap K$ has finite index in $G$.
+
+\subsection*{Problem 13}
+If $x, y \in N(a)$, then $xya = xay = axy$, hence $xy \in N(a)$. Of course, $e \in N(a)$, since the identity commutes with everything. Finally, if $x \in N(a)$, then
+$$x^{-1}a = x^{-1}axx^{-1} = x^{-1}xax^{-1} = ax^{-1}$$
+
+\subsection*{Problem 14}
+Same as problem 13.
+
+\subsection*{Problem 15}
+Same as problem 13. And $Z = C(G)$.
+
+\subsection*{Problem 16}
+(a)
+If $a, b \in N(H)$, then $abH(ab)^{-1} = abHb^{-1}a^{-1} = aHa^{-1} = H$, hence $ab \in N(H)$. Of course, $eHe^{-1} = eHe = H$. Finally, suppose $a \in N(H)$. We show $a^{-1}Ha \subseteq H$. Given $h \in H$, we have
+$$a^{-1}ha$$
+$$= (ah^{-1}a^{-1})^{-1}$$
+$$= (h')^{-1} \in H$$
+where $h'$ is some element in $H$. Implicitly, this also shows the reverse inclusion. For any given $h \in H$, we can simply express it as the inverse of some other element $h'$, and work our way back the equality to show . Hence, proven.
+
+\noindent
+(b)
+Obviously, if $a \in H$, then by closure, we have $aha^{-1} \in H$, hence $a \in N(H)$.
+
+\subsection*{Problem 17}
+If $x \in C(H)$, then $xh = hx$ for all $h \in H$, then $xhx^{-1} = h$, hence $x \in N(H)$.
+
+As for the example, consider $G$ the dihedral group, with $H$ being the subgroup of rotations. Here, $N(H) = G$, because if $a$ is a rotation, then the resulting $aha^{-1}$ is still a rotation, and if $a$ is a reflection, then $aha^{-1}$ reflects twice, which preserves the orientation, so it's still a rotation.
+
+However, $C(H) \neq G$, because the order of application of rotations and reflections matters, hence the reflections are not included. The important distinction is that $C(H)$ requires both sides to be equal ($ah = ha$), whilst $N(H)$ only requires inclusion ($ah \in Ha$).
+
+So we can say that $C(H) \subseteq N(H)$.
+
+\section{Normal Subgroups and Quotient Groups}
+
+\subsection*{Problem 1}
+By the hypothesis, $HgHg^{-1} = Hx$ for some coset $Hx$ of $H$. The left side contains $e$, so the right side also contains $e$. Thus, it must be that $Hx$ is $H$ itself (since they are disjoint). Hence, $HgHg^{-1} = H$. Now, since $e \in H$, then $egHg^{-1} \subseteq H$, which simplifies to $gHg^{-1} \subseteq H$.
+
+\subsection*{Problem 2}
+We use the disjoint property of cosets. Both $Hx$ and $xH$ share the same complement $H$:
+$$G - Hx = H = G - xH$$
+$$\Rightarrow Hx = xH$$
+where we use the fact $Hx, xH \subseteq G$ to conclude the second equality.
+
+\subsection*{Problem 3}
+Suppose we have two elements of $NH$, namely $n_1h_1$ and $n_2h_2$. We derive:
+$$(n_1h_1)(n_2h_2) = n_1(h_1n_2)h_2 = n_1(n_xh_1)h_2$$
+which is contained in $NH$. The second equality used the fact that $hN$ is also a right coset $Nh$. So closure is satisfied.
+
+Of course, $NH$ contains $ee = e$.
+
+Finally, we know $NH = HN$. If $nh \in NH$, i.e. $h \in H$ and $n \in N.$, then by subgroup property, $h^{-1} \in H$ and $n^{-1} \in N$, hence $h^{-1}n^{-1} \in HN = NH$.
+
+\subsection*{Problem 4}
+Let $N_1, N_2 \subseteq G$, and $N = N_1 \cap N_2$. Then,
+$$gNg^{-1} = g (N_1 \cap N_2) g^{-1} \subseteq gN_1g^{-1} = N_1$$
+$$gNg^{-1} = g (N_1 \cap N_2) g^{-1} \subseteq gN_2g^{-1} = N_2$$
+Hence, $gNg^{-1} \subseteq N_1 \cap N_2 = N$.
+
+\subsection*{Problem 5}
+??
+
 \end{document}

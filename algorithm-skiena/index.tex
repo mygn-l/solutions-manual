@@ -1,0 +1,212 @@
+\documentclass{book}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{bm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+
+\graphicspath{ {./} }
+
+\title{Algorithm Skiena - Solutions Manual}
+\author{Mingruifu Lin}
+\date{August 2025}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Introduction to Algorithmic Design}
+
+\subsection*{Exercise 1-1}
+$a$ and $b$ can be negative.
+
+\subsection*{Exercise 1-2}
+$a$ and $b$ with opposite signs does the trick. $a$ and $b$ between 0 and 1 also works.
+
+\subsection*{Exercise 1-3}
+Connect them by a long highway at 100km/h, then connect them using a short, but traffic street at 1km/h.
+
+\subsection*{Exercise 1-4}
+Make a short windy road with more than 2 turns, then make a road that goes up, right, then down.
+
+\subsection*{Exercise 1-5}
+(a)
+$S = \{ 1, 2, 1 \}$ and $T = 2$
+
+\noindent
+(b)
+$S = \{ 1, 2 \}$ and $T = 2$
+
+\noindent
+(c)
+$S = \{ 1, 2 \}$ and $T = 1$
+
+\subsection*{Exercise 1-6}
+$$U = \{ 1, 2, 3, 4 \}$$
+$$S_1 = \{ 1, 2, 3 \}$$
+$$S_2 = \{ 1, 2 \}$$
+$$S_3 = \{ 3, 4 \}$$
+
+\subsection*{Exercise 1-7}
+The algorithm is implementing the correct mathematical recursion. For instance,
+$$z = pc + q$$
+for some $p, q$ where $q = z \mod c$ is the remainder. Isolating $p$, we get $p = \frac{z - q}{c} = \left\lfloor \frac{z}{c} \right\rfloor$. Thus,
+$$y \cdot z$$
+$$= y \cdot (pc + q)$$
+$$= y \cdot \left(\left\lfloor \frac{z}{c} \right\rfloor c + z \mod c\right)$$
+$$= cy \cdot \left\lfloor \frac{z}{c} \right\rfloor + y \cdot (z \mod c)$$
+The algorithm will also terminate. Given $z$, we find that $\left\lfloor \frac{z}{c} \right\rfloor$ will always be strictly smaller than $z$, because $c \geq 2$ and we are taking the floor. Since $z$ is finite to begin with, it will eventually reach zero, terminating the algorithm.
+
+\subsection*{Exercise 1-8}
+It terminates. Also,
+$$P(x) = a_nx^n + \cdots + a_0$$
+$$= (a_nx^{n - 1} + \cdots + a_1)x + a_0$$
+$$= ((a_nx^{n - 2} + \cdots + a_2)x + a_1)x + a_0$$
+$$\vdots$$
+$$= ((\cdots(((a_n)x + a_{n - 1})x + a_{n - 2}) \cdots)x + a_1)x + a_0$$
+hence the loop is correct. It starts at $a_n$ and repeatedly multiplies by $x$, then adds $a_i$. It ends correctly at $a_0$.
+
+\subsection*{Exercise 1-9}
+The maximum will always be at the end of each list for each iteration of the outer loop. This is because each subset has a maximum, and as soon as $j$ lands on the maximum, it will always be greater than its successors, so it will be thrown to the end.
+
+\subsection*{Exercises 1-10 to 1-14}
+Has been done too many times.
+
+\subsection*{Exercise 1-15}
+For $n = 1$:
+$$\frac{1}{1(1 + 1)} = \frac{1}{1 + 1}$$
+Now, suppose that
+$$\sum_{i = 1}^n \frac{1}{i(i + 1)} = \frac{n}{n + 1}$$
+Then,
+$$\sum_{i = 1}^{n + 1} \frac{1}{i(i + 1)}$$
+$$= \sum_{i = 1}^n \frac{1}{i(i + 1)} + \frac{1}{(n + 1)(n + 2)}$$
+$$= \frac{n}{n + 1} + \frac{1}{(n + 1)(n + 2)}$$
+$$= \frac{n(n + 2) + 1}{(n + 1)(n + 2)}$$
+$$= \frac{n^2 + 2n + 1}{(n + 1)(n + 2)}$$
+$$= \frac{(n + 1)^2}{(n + 1)(n + 2)}$$
+$$= \frac{n + 1}{n + 2}$$
+
+\subsection*{Exercise 1-16}
+It works for $n = 0$, since $0 + 0 = 0$ which is divisible by $3$. Now, suppose that
+$$3 \mid (n^3 + 2n)$$
+Then,
+$$(n + 1)^3 + 2(n + 1)$$
+$$= n^3 + 3n^2 + 5n + 3$$
+$$= (n^3 + 2n) + 3n^2 + 3n + 3$$
+We know $3 \mid (n^3 + 2n)$, and it's obvious that $3 \mid (3n^2 + 3n + 3)$. Hence, induction step proved.
+
+\subsection*{Exercise 1-17}
+First, it works for a tree with $1$ vertex, which obviously has no edge. Now, suppose that every tree with $n$ vertices has $n - 1$ edges. Given a tree with $n + 1$ vertices, we can remove a single leaf vertex to produce a tree with $n$ vertices, which has $n - 1$ edges. Since it's leaf, it must only have $1$ edge which connects it to its parent. Hence, summing the edges, it follows that the original tree has $(n - 1) + 1 = n$ edges.
+
+\subsection*{Exercise 1-18}
+Has been done too many times.
+
+\subsection*{Exercises 1-19 to 1-24}
+???
+
+\subsection*{Exercise 1-25}
+(a) 100 seconds
+
+\noindent
+(b) ~13.3 seconds
+
+\subsection*{Exercises 1-26 to 1-27}
+Too lazy.
+
+\subsection*{Exercise 1-28}
+An obvious method is using a "while" loop that repeatedly subtracts the divisor from the dividend, and checks when the remainder goes negative. A faster way is to use positional information. You subtract from the most significant digits first. When it's too low, you continue with the second most significant digits. And so on, until you reach the least significant digits.
+
+\subsection*{Exercise 1-29}
+Organize the horses in a $5 \times 5$ matrix. First, we race each column together and discard the 2 worst horses from each column. Push the remaining horses upwards, which reduces them to a $3 \times 5$ matrix. Then, within each column, sort them by speed, with the best at the top, worst at the bottom. Now, race the first row together. Discard the entire 4th and 5th worst columns, because if the leader (first of the column) is slow, then its successors are even slower. Then, sort the columns according to their leader, with the column with the fastest leader becoming the left column of the matrix, and the column with the slowest leader becoming the right. We are left with a $3 \times 3$ matrix. Notice that the lower-right triangle can also be discarded (try to figure it out yourself), which leaves us with the upper-left triangle and the diagonal. A total of 6 horses left. We already know the fastest horse is the upper-left horse. We simply race the remaining 5 horses, and keep the top 2. A total of 7 races.
+
+\subsection*{Exercises 1-30 to 1-34}
+???
+
+\subsection*{Programming Challenges}
+Links do not work.
+
+\chapter{Algorithm Analysis}
+
+\subsection*{Exercise 2-1}
+$$f(n) = \sum_{i = 1}^{n - 1} \sum_{j = i + 1}^n \sum_{k = 1}^j 1$$
+Running time: $O(n^3)$. Its shape resembles a tetrahedron.
+
+\subsection*{Exercise 2-2}
+$$f(n) = \sum_{i = 1}^n \sum_{j = 1}^i \sum_{k = j}^{i + j} 1$$
+Running time: $O(n^3)$. Its shape resembles a square pyramid (the second and third loop both have size $i$ each).
+
+\subsection*{Exercise 2-3}
+$$f(n) = \sum_{i = 1}^n \sum_{j = 1}^i \sum_{k = j}^{i + j} \sum_{l = 1}^{i + j - k} 1$$
+Running time: $O(n^4)$. Its shape is the same as Exercise 2-2, but each cell in the pyramid also contains an array.
+
+\subsection*{Exercise 2-4}
+$$f(n) = \sum_{i = 1}^n \sum_{j = i + 1}^n \sum_{k = i + j - 1}^n 1$$
+Running time: $O(n^3)$. Shape still resembles a tilted triangular pyramid.
+
+\subsection*{Exercise 2-5}
+(a) $2n$ multiplications and $n$ additions.
+
+\noindent
+(b) $2n$
+
+\noindent
+(c) See Exercise 1-8.
+
+\subsection*{Exercise 2-6}
+At some point, $A[i]$ will be the maximum. Since it's greater than everything, it's greater than the current $m$, so we set $m = A[i]$. Since it's greater than all other $A[j]$, then it will never get replaced.
+
+\subsection*{Exercise 2-7}
+(a) True.
+
+\noindent
+(b) False.
+
+\subsection*{Exercise 2-8}
+(a)
+$$f(n) = \log n^2 = 2 \log n = \Theta(\log n) = \Theta(\log n + 5) = \Theta(g(n))$$
+
+\noindent
+(b)
+$$f(n) = \sqrt{n} = \Omega(\log n) = \Omega(2 \log n) = \Omega(\log n^2) = \Omega(g(n))$$
+
+\noindent
+(c)
+$$f(n) = \log^2 n = \Omega(\log n) = \Omega(g(n))$$
+
+\noindent
+(d)
+$$f(n) = n = \sqrt{n}^2 = \Omega((\log n)^2) = \Omega(g(n))$$
+
+\noindent
+(e)
+$$f(n) = n \log n + n = \Omega(n \log n) = \Omega(\log n) = \Omega(g(n))$$
+
+\noindent
+(f)
+$$f(n) = 10 = \Theta(\log 10) = \Theta(g(n))$$
+
+\noindent
+(g)
+$$f(n) = 2^n = \Omega(n^2) = \Omega(10n^2) = \Omega(g(n))$$
+
+\noindent
+(h)
+$$f(n) = 2^n = O(3^n) = O(g(n))$$
+
+\subsection*{Exercise 2-9}
+(a)
+
+
+\end{document}
