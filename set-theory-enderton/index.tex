@@ -77,5 +77,27 @@ Set of integers divisible by 180.
 Let $A = \{\{1\}, \varnothing\}$ and $B = \{\{1\}\}$.
 
 \subsection*{Exercise 3}
+If $B \in A$, then $\bigcup A$ includes every $x \in B$. Hence, $B \subseteq \bigcup A$.
+
+\subsection*{Exercise 4}
+$$x \in \bigcup A \Rightarrow x \in X \in A \Rightarrow x \in X \in B \Rightarrow x \in \bigcup B$$
+
+\subsection*{Exercise 5}
+$$x \in \bigcup A \Rightarrow x \in X \in A$$
+Since $X \in A$, then $X$ is a subset of $B$. Hence,
+$$x \in X \subseteq B$$
+$$\Rightarrow x \in B$$
+
+\subsection*{Exercise 6}
+(a)
+$$x \in \bigcup \mathcal{P} A \Rightarrow x \in X \in \mathcal{P} A$$
+By definition of power set, this means that $X$ is a subset of $A$. Hence,
+$$x \in X \subseteq A$$
+$$\Rightarrow x \in A$$
+For the other direction, if $x \in A$, then the singleton $\{ x \}$ is a subset of $A$. In other words, $\{ x \} \in \mathcal{P} A$. Since $x \in \{ x \} \in \mathcal{P} A$, then $x \in \bigcup \mathcal{P} A$.
+
+\noindent
+(b)
+$$X \in A \Rightarrow X \subseteq \bigcup A \Rightarrow X \in \mathcal{P} \bigcup A$$
 
 \end{document}

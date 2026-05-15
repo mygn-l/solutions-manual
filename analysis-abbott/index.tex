@@ -1494,6 +1494,16 @@ $$f \left( \frac{p}{q} \right) = \frac{kp}{q} = kr$$
 
 \noindent
 (c)
+We already know that the rationals are lined up. We only need to fill the irrational holes. But I'm too dumb to prove it.
 
+\subsection*{Exercise 4.3.14}
+(a)
+The complement of $F$ is an open set, which is the union of open intervals. We can set $f(x) = c$ constant on those open intervals, which is obviously continuous. For the remaining points (which are in $F$), simply assign Dirichlet (but make sure to choose two values different from $c$).
+
+\noindent
+(b)
+Set $f(x) = 0$ for every irrational $x$. For the rational points inside $O$, use the function in 4.3.12. For the rational points outside $O$, set them to constant $0$ as well. Let $F = \mathbb{R} = O$.
+
+It's obviously discontinuous on $O$, because the distance to nearest element in $F$ is non-zero (as proven in 4.3.12), so the rationals differ from the irrationals still at zero. However, it's continuous outside $O$, because it's zero on the interior of $F$; moreover, at the boundaries, the distance to $F$ approaches zero, so the boundaries are continuous as well.
 
 \end{document}
