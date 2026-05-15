@@ -1047,6 +1047,34 @@ $$= \frac{1}{2} \cdot 1 + \frac{1}{2} \cdot 1$$
 $$= 1$$
 
 \subsection*{Exercise 4}
+(a)
+We normalize with respect to the tail mass.
+$$P(X \leq x \mid X > c) = \frac{F(x) - F(c)}{1 - F(c)}$$
 
+\noindent
+(b)
+The derivative is:
+$$P(x \mid X > c) = \frac{f(x)}{1 - F(c)}$$
+
+\noindent
+(c)
+$f(x)$ is positive, because it's a PDF. Also, $1 \geq F(c)$ since CDF approaches 1 from below. Hence, the entire thing is positive. Next, we derive
+$$\int_c^\infty \frac{f(x)}{1 - F(c)}$$
+$$= \frac{1}{1 - F(c)} \int_c^\infty f(x)$$
+$$= \frac{1}{1 - F(c)} (F(\infty) - F(c))$$
+$$= \frac{1}{1 - F(c)} (1 - F(c)) = 1$$
+
+\subsection*{Exercise 5}
+(a)
+$$E[A] = \int_0^1 \pi r^2 dr = \pi \left[ \frac{1}{3} r^3 \right]_0^1 = \frac{\pi}{3}$$
+$$E[(A - E[A])^2] = E[A^2] - E[A]^2$$
+$$= \int_0^1 (\pi r^2)^2 dr - \left(\frac{\pi}{3}\right)^2$$
+$$= \pi^2 \left[ \frac{1}{5} r^5 \right]_0^1 - \frac{\pi^2}{9} = \frac{\pi^2}{5} - \frac{\pi^2}{9}$$
+
+
+\noindent
+(b)
+$$F_A(x) = P(A \leq x) = P(\pi r^2 \leq x) = P \left( r \leq \sqrt{\frac{x}{\pi}} \right) = F_R \left(\sqrt{\frac{x}{\pi}} \right) = \sqrt{\frac{x}{\pi}}$$
+$$f_A(x) = \frac{1}{2\sqrt{\pi x}}$$
 
 \end{document}
