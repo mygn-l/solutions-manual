@@ -99,5 +99,32 @@ For the other direction, if $x \in A$, then the singleton $\{ x \}$ is a subset 
 \noindent
 (b)
 $$X \in A \Rightarrow X \subseteq \bigcup A \Rightarrow X \in \mathcal{P} \bigcup A$$
+Equality only holds when $A$ is a power set (of some arbitrary set).
+
+\subsection*{Exercise 7}
+(a)
+$$X \in \mathcal{P} A \cap \mathcal{P} B$$
+$$\Leftrightarrow X \in \mathcal{P} A \text{ and } X \in \mathcal{P} B$$
+$$\Leftrightarrow X \subseteq A \text{ and } X \subseteq B$$
+$$\Leftrightarrow X \subseteq A \cap B$$
+$$\Leftrightarrow X \in \mathcal{P} (A \cap B)$$
+
+\noindent
+(b)
+$$X \in \mathcal{P} A \cup \mathcal{P} B$$
+$$\Rightarrow X \in \mathcal{P} A \text{ or } X \in \mathcal{P} B$$
+$$\Rightarrow X \subseteq A \text{ or } X \subseteq B$$
+$$\Rightarrow X \subseteq A \cup B$$
+$$\Rightarrow X \in \mathcal{P} (A \cup B)$$
+The crucial step is when: $X \subseteq A \text{ or } X \subseteq B$ implies $X \subseteq A \cup B$. The reverse is not necessarily true. In fact, to make it true, either $A \subseteq B$ or $B \subseteq A$.
+
+\subsection*{Exercise 8}
+Suppose for contradiction that $X$ contains every singleton $\{ x \}$. Using the Union Axiom, we get $\bigcup X$ which contains every set $x$, which is impossible.
+
+\subsection*{Exercise 9}
+I mean, generically, the power set of an element in $B$ will not be a subset of $B$.
+
+\subsection*{Exercise 10}
+We know from a previous exercise that $B \subseteq \mathcal{P} \bigcup B$. So, if $a \in B$, then $a \in \mathcal{P} \bigcup B$, hence $a \subseteq \bigcup B$. Now, clearly, every subset of $a$ will be a subset of $\bigcup B$ by transitivity. Formally, $x \subseteq a \Rightarrow x \subseteq \bigcup B$. This is equivalent to $\mathcal{P} a \subseteq \mathcal{P} \bigcup B$. Hence, $\mathcal{P} a \in \mathcal{P} \mathcal{P} \bigcup B$.
 
 \end{document}
