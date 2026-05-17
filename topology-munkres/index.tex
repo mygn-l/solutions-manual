@@ -382,6 +382,84 @@ $(x, x) \in T$ for every $x \in \mathbb{R}$. By the way, $S$ is not an equivalen
 $T$ basically looks like the real number line, but we glue the interval $(0, 1)$ with $(1, 2)$ sort of in a superposition fashion. There's a hole in the middle, with only $(1, 1) \in T$ (not interval, here I'm expressing a pair).
 
 \subsection*{Exercise 6}
+These are parabolas. Higher parabolas are greater than lower parabolas, and within the same parabola, right points are greater than left points.
 
+First, obviously, every pair of points are comparable, by definition of the relation. Second, if two points are identical, then $y_0 - x_0^2 \neq y_1 - x_1^2$ is not satisfied, then $x_0 \neq x_1$ is not satisfied, hence identical points are not comparable.
+
+Third, transitivity is obvious, but tedious. If $(x_0, y_0) < (x_1, y_1) < (x_2, y_2)$, then the second point either sits on the same or higher parabola than the first, and the third either sits on the same or higher parabola than the second. In the same-same case, we have $y_2 - x_2^2 = y_1 - x_1^2 = y_0 - x_0^2$, so we skip the parabola inequality, directly resulting in $x_0 < x_1 < x_2$, hence $x_0 < x_2$. In the same-higher case, we get $y_2 - x_2^2 > y_1 - x_1^2 = y_0 - x_0^2$, hence $y_2 - x_2^2 > y_0 - x_0^2$. In the higher-same case, we get $y_2 - x_2^2 = y_1 - x_1^2 > y_0 - x_0^2$, hence $y_2 - x_2^2 > y_0 - x_0^2$. In the higher-higher case, we simply have $y_2 - x_2^2 > y_1 - x_1^2 > y_0 - x_0^2$, hence $y_2 - x_2^2 > y_0 - x_0^2$.
+
+\subsection*{Exercise 7}
+I'm assuming that the restriction excludes points in $A$ outside the restriction:
+$$A \rightarrow A \cap B$$
+$$C \rightarrow C \cap (B \times B)$$
+For comparability:
+$$x, y \in A \cap B$$
+$$\Rightarrow x, y \in A \text{ and } x, y \in B$$
+Since $C$ is an order relation on $A$, then we have $(x, y) \in C$ already. And since $x, y \in B$, then $(x, y) \in B \times B$. Hence,
+$$\Rightarrow (x, y) \in C \text{ and } (x, y) \in B \times B$$
+$$\Rightarrow (x, y) \in C \cap (B \times B)$$
+For nonreflexivity, since $(x, x) \not \in C$, then $(x, x) \not \in C \cap (B \times B)$ even less. Finally, for transitivity
+$$(x, y), (y, z) \in C \cap (B \times B)$$
+$$\Rightarrow (x, y), (y, z) \in C \text{ and } (x, y), (y, z) \in B \times B$$
+$$\Rightarrow (x, z) \in C \text{ and } x, y, z \in B$$
+$$\Rightarrow (x, z) \in C \text{ and } (x, z) \in B \times B$$
+$$\Rightarrow (x, z) \in C \cap (B \times B)$$
+
+\subsection*{Exercise 8}
+Too lazy.
+
+\subsection*{Exercise 9}
+The procedure is similar to Exercise 6.
+
+\subsection*{Exercise 10}
+(a)
+Suppose $0 < x < y < 1$. Then $x^2 < y^2$. Then $1 - x^2 > 1 - y^2$. Then $\frac{1}{1 - x^2} < \frac{1}{1 - y^2}$. Hence, $\frac{x}{1 - x^2} < \frac{y}{1 - y^2}$. If both are negative, i.e. $-1 < x < y < 0$, then $x^2 > y^2$, then $1 - x^2 < 1 - y^2$, then $\frac{1}{1 - x^2} > \frac{1}{1 - y^2}$ since both are negative. Hence, $x$ is scaled by a bigger factor, making it more negative $\frac{x}{1 - x^2} < \frac{y}{1 - y^2}$. Finally, if $x < 0 < y$, then since the denominators are always positive, they maintain their sign, so $\frac{x}{1 - x^2} < 0 < \frac{y}{1 - y^2}$.
+
+\noindent
+(b)
+Too lazy.
+
+\subsection*{Exercise 11}
+Suppose that $b, c$ are both immediate successors of $a$. Then we know $a < b$ and $a < c$. If $b \neq c$, then either $b < c$ or $c < b$ (comparability property). If $b < c$, then $a < b < c$, which violates the fact that $c$ is immediate successor of $a$. The other case is similar. Hence, $b$ and $c$ must be equal. Thus, immediate successors are unique. The procedure is similar for immediate predecessors.
+
+Suppose that $a, b$ are both largest elements. Then $a \leq b$, and $b \leq a$, hence $a = b$. Hence, largest elements are unique. The procedure is similar for smallest elements.
+
+\chapter{Topological Spaces and Continuous Functions}
+
+\section{Basis for a Topology}
+
+\subsection*{Exercise 1}
+$A$ is equal to the union of $U$'s. We know that topol. spaces are closed under arbitrary union.
+
+\subsection*{Exercise 2}
+Too lazy.
+
+\subsection*{Exercise 3}
+Empty set is included, because $X - \varnothing = X$ which is all of $X$. The set $X$ itself is included, because $X - X = \varnothing$ is countable (it's finite).
+
+Given a collection $W$ of open sets $U$, which satisfy $X - U$ is countable, we check:
+$$X - \bigcup_{U \in W} U = \bigcap_{U \in W} (X - U)$$
+We know each $X - U$ is countable. (Of course, one of them could satisfy $X - U = X$, but then it would have no effect on the intersection.) Obviously, arbitrary intersection of countable sets is countable, hence the complement of the union is finite, hence the union is inside $\mathcal{T}_c$.
+
+Finally, if $X - U_0$ and $X - U_1$ are countable, then $X - U_0 \cap U_1 = (X - U_0) \cup (X - U_1)$ is countable, hence $U_0 \cap U_1 \in \mathcal{T}_c$. If one of them satisfies $X - U = X$, then the result is all of $X$, so it's still included in $\mathcal{T}_c$. Thus $\mathcal{T}_c$ is a topology.
+
+\subsection*{Exercise 4}
+(a)
+$\varnothing, X \in \mathcal{T}_\alpha$ for every $\mathcal{T}_\alpha$ already, so they are also included in their intersection. Given a collection of sets in $\bigcap \{ \mathcal{T}_\alpha \}$, each set is also individually inside each $\mathcal{T}_\alpha$. Since the latter contain their union, then their intersection also contains their union. Similarly, given a finite amount of sets in $\bigcap \{ \mathcal{T}_\alpha \}$, each set is individually in each $\mathcal{T}_\alpha$.
+
+The union $\bigcup \{ \mathcal{T}_\alpha \}$ is generally not a topology though. We can take one open set from some $\mathcal{T}_\alpha$ and another from some other $\mathcal{T}_\beta$, and the union of these open sets would not necessarily be included in either topology, hence would not be included in the union of the two topologies.
+
+\noindent
+(b)
+The smallest surrounding topology must contain every arbitrary union and finite intersection of open sets from each individual topology. It's the smallest, because it satisfies every condition minimally. The largest contained topology is the intersection between the topologies. It's the largest, because it's obvious.
+
+By construction, it's obvious that they are both unique.
+
+\noindent
+(c)
+Too lazy.
+
+\subsection*{Exercise 5}
+The topology generated by $\mathcal{A}$ is formed by taking arbitrary unions of open sets in $\mathcal{A}$. The intersection must contain this topology. Every topology containing $\mathcal{A}$ must contain this topology, because it's the smallest, satisfying the conditions of a topological space minimally. Hence the intersection equals this topology. The same goes if $\mathcal{A}$ is a subbasis, where we take finite intersections alongside arbitrary unions.
 
 \end{document}
