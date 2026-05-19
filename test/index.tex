@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{bm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+
+\graphicspath{ {./} }
+
+\title{Axiomatic Theory of Design}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\subsection{Property}
+Property is an ordered pair:
+$$\vec{x} = (x_n, x_v)$$
+where $x_n \in D_x$ and $x_v \in R_x$.
+
+\subsection{Property set}
+Property set contains every possible property:
+$$X \subseteq D_x \times R_x$$
+$$\vec{x} \in X$$
+
+\subsection{Object}
+Object is a set of properties:
+$$O = \{ x_1, x_2, \ldots \} \subseteq X$$
+possibly infinite, and even uncountable?
+
+\subsection{Structure}
+Structure:
+$$\oplus O = O \cup (O \times O)$$
+Some laws:
+$$\oplus O = \oplus (O_1 \cup \cdots \cup O_n) = \bigcup_i (\oplus O_i) \cup \bigcup_{i \neq j} (O_i \times O_j)$$
+
+\subsection{Universe}
+Universe-environment-product:
+$$U = E \cup S$$
+Some laws:
+$$\oplus U = (\oplus E) \cup (\oplus S) \cup (E \times S) \cup (S \times E)$$
+
+\subsection{Performance}
+Performance:
+$$P \subseteq A \times R$$
+where $A \subseteq E \times S$ and $R \subseteq S \times E$.
+
+\subsection{Design requirement}
+$$r_d : S \rightarrow [S]$$
+where $[S]$ is the goal/constraint.
+
+\subsection{Design evaluation}
+$$\oplus (E \cup \bar{S} \cup S') = \oplus (E' \cup S')$$
+
+\end{document}
