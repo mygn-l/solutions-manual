@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{bm}
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+
+\graphicspath{ {./} }
+
+\title{Axiomatic Set Theory for Beginners}
+\author{Mingruifu Lin}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+Please learn Logic before reading this article. I recommend Beginning Logic by Lemmon.
+
+Set theory builds directly on top of predicate logic, introducing axioms about a specific relation symbol called "$\in$". It inherits the inference rules and formal language.
+
+We start from the beginning.
+\begin{axiom}
+    (Axiom of Empty Set) There exists a set with no elements, called the empty set, denoted $\varnothing$.
+    $$\exists B, \forall X : X \not \in B$$
+\end{axiom}
+
+Most axioms start with "$\forall$". But they are, in a way, conditional. If there's no object to talk about, then their statements are vacuous. The Empty Set axiom lays the foundation. For those coming from predicate logic, it may be useful to see the formal notation:
+$$(\exists B)((\forall X) (\neg (\in X B)))$$
+Notice that "$\in$" is just a relation, which is a 2-ary predicate.
+
+Now, we want some variety. Instead of bringing them into existence directly, we can pivot using the Empty Set axiom.
+\begin{axiom}
+    (Axiom of Power Set) The power set exists for every set.
+    $$\forall X, \exists P, \forall Y \subseteq X : Y \in P$$
+\end{axiom}
+As you can see, we can use the empty set as starting point by assigning it to $X$.
+
+Now, it may be useful to introduce an axiom that allows us to substitute one symbol for another.
+\begin{axiom}
+    (Axiom of Extensionality) Two sets are equal if they contain the same elements.
+    $$\forall X, Y : (\forall z : z \in X \leftrightarrow z \in Y) \rightarrow (X = Y)$$
+\end{axiom}
+If we only cared whether sets were equal, without ever needing to subsitute one for the other, then a definition would suffice. But we need substitution. The symbol "$=$" basically says that if you have a formula containing $X$, then replacing it by $Y$ doesn't change anything.
+
+Notice that we still cannot construct infinite sets. On a meta-level, although there exists sets containing $n$ elements for every $n \in \mathbb{N}$, we do not have any set containing $\infty$ elements. Hence, we cannot talk about sets isomorphic to the natural numbers, or larger.
+\begin{axiom}
+    (Axiom of Infinity) There exists an inductive set.
+    $$\exists B : (\varnothing \in B \land (z \in B \rightarrow (z \cup \{ z \}) \in B))$$
+\end{axiom}
+The operation $S(z) = z \cup \{ z \}$ is called the successor. Later, you'll see that natural numbers are simulated by sets, and the successor operator gives the "next" natural number. Anyways, this axiom basically says that it includes the empty set, and every successor of the empty set is included.
+
+\end{document}

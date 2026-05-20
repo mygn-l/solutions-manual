@@ -543,6 +543,55 @@ Since $X - A$ is open, and $Y$ is open, and $X$ is open, and $Y - B$ is open, th
 Too lazy.
 
 \subsection*{Exercise 5}
+Given $x \in X$ limit point of $(a, b)$, then it cannot be smaller than $a$. Otherwise, the ray $(-\infty, a)$ is a neighborhood disjoint from $(a, b)$ which contains $x$, contradicting the fact that $x$ is a limit point. Likewise, $x$ cannot be greater than $b$. Hence, either $x = a$ or $x = b$ or $x \in (a, b)$. This is equivalent to $x \in [a, b]$.
+
+Equality holds when $a$ and $b$ are not isolated from $(a, b)$, which means $a$ and $b$ are in the closure. For example, consider $X = \{ 0 \} \cup (1, \infty)$. Consider the interval $(0, 2)$. It is equal to $(1, 2)$, hence its closure is $(1, 2]$. Notice that $0$ is not included, because it's isolated.
+
+\subsection*{Exercise 6}
+(a)
+If $a$ is a limit point of $A$, then every neighborhood $U_a$ intersects $A$ at some point. Hence, every $U_x$ intersects $B$ at those points also. Hence, $a$ is a limit poinf of $B$.
+
+\noindent
+(b)
+$$x \in \overline{A \cup B}$$
+$$\Leftrightarrow U_x \cap (A \cup B) \neq \varnothing$$
+$$\Leftrightarrow (U_x \cap A) \cup (U_x \cap B) \neq \varnothing$$
+$$\Leftrightarrow U_x \cap A \neq \varnothing \text{ or } U_x \cap B \neq \varnothing$$
+$$\Leftrightarrow x \in \bar{A} \text{ or } x \in \bar{B}$$
+$$\Leftrightarrow x \in \bar{A} \cup \bar{B}$$
+
+\noindent
+(c)
+$$x \in \bigcup \bar{A}_\alpha$$
+$$\Rightarrow x \in \bar{A}_\alpha \text{ for some } \alpha$$
+$$\Rightarrow U_x \cap A_\alpha \neq \varnothing$$
+$$\Rightarrow U_x \cap \bigcup A_\alpha \neq \varnothing$$
+$$\Rightarrow x \in \overline{\bigcup A_\alpha}$$
+See next exercise for counter-example.
+
+\subsection*{Exercise 7}
+It's false that if every neighborhood intersects $\bigcup A_\alpha$, then one particular $A_\alpha$ is always intersected. Consider $\bigcup (\frac{1}{\alpha}, 1) = (0, 1)$. Obviously, $0$ is in the closure of $(0, 1)$. However, none of the $(\frac{1}{\alpha}, 1)$ is intersected by every neighborhood of $0$, because we simply choose the neighborhood $(-1, \frac{1}{\alpha})$, hence $0$ belongs to none of the individual closures.
+
+\subsection*{Exercises 8 - 9}
+Too lazy.
+
+\subsection*{Exercise 10}
+For every two distinct points $a$ and $b$, there are two cases. If $b$ is the immediate successor of $a$, then use the neighborhoods $(-\infty, b)$ and $(a, \infty)$. Their intersection equals $(a, b)$ which is empty since they are in successor relationship. In the other case, there must be an element $c$ between $a$ and $b$. Simply use the neighborhoods $(-\infty, c)$ and $(c, \infty)$, which are obviously disjoint. Hence, order topologies are Hausdorff.
+
+\subsection*{Exercise 11}
+Suppose $\langle a, b \rangle, \langle c, d \rangle \in X \times Y$. Since $X$ and $Y$ are Hausdorff, then we can find disjoint neighborhoods $U_a$ and $U_c$, as well as disjoint neighborhoods $U_b$ and $U_d$. Then $U_a \times U_b$ and $U_c \times U_d$ are disjoint in $X \times Y$ but each contain their respective point. Hence, the product is Hausdorff.
+
+\subsection*{Exercise 12}
+Let $Y$ be a subspace. If neighborhoods $U_a$ and $U_b$ are disjoint, then neigborhoods $U_a \cap Y$ and $U_b \cap Y$ are disjoint as well.
+
+\subsection*{Exercise 13}
+Suppose $X$ is Hausdorff. Suppose for contradiction that $\Delta$ is not closed, i.e. there exists $p = \langle p_1, p_2 \rangle$ that is limit point of $\Delta$, but $p \not \in \Delta$. For every pair of neighborhood $U_{p_1}, U_{p_2} \subseteq X$, their product $U_{p_1} \times U_{p_2} = U_p$ is a neighborhood of $p$, which intersects $\Delta$ since it's a limit point. Hence, some point $a \times a$ is contained in $U_p$. Hence, $a$ is contained in each individual $U_{p_1}$ and $U_{p_2}$, hence their intersection is non-empty. Reminder: this works for every pair of neighborhood of $p_1$ and $p_2$. Thus, this contradicts the fact that $X$ is Hausdorff. Hence, $\Delta$ is closed.
+
+Too lazy for other direction.
+
+\section{Continuous Functions}
+
+\subsection*{Exercise 1}
 
 
 \end{document}
