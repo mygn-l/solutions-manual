@@ -643,7 +643,17 @@ Too lazy.
 \subsection*{Exercise 5}
 If $f$ continuous, then each $f_\alpha$ is continuous. Reason: Example 2.
 
-\subsection*{Exercise 6}
+\section{The Metric Topology}
+
+\subsection*{Exercise 1}
+(a)
+The shapes are basically diamonds and octahedrons and higher dimensional ones. Every basis element of the product topology of standard topologies (which is the usual topology on $\mathbb{R}^n$) is the product of intervals $(a_1, b_1) \times \cdots \times (a_n, b_n)$. Then we can simply find $B_{d'}(\vec{x}, \epsilon)$ where $\vec{x}$ is a point inside this interval product, and $\epsilon$ is the minimum distance from $\vec{x}$ to each interval boundary. Since basis contained in basis, then the metric topology induced by $d'$ is finer than the product topology. Conversely, given an $\epsilon$-ball (or may I say, a diamond) around $\vec{x}$ in the metric topology, we choose each interval to be $(x_i - \frac{\epsilon}{n}, x_i + \frac{\epsilon}{n})$, their product becomes a basis element of the product topology. The maximal distance is achieved when a point approaches each boundary of every dimension, where its distance from $\vec{x}$ approaches $\frac{\epsilon}{n} + \cdots + \frac{\epsilon}{n} = \epsilon$. Of course, it stays below this value, because the intervals are open, so no point can rest exactly on the boundary to produce this value. Hence, the product topology is finer than the metric topology. Hence, they are equal.
+
+\noindent
+(b)
+Too hard for my dumbass.
+
+\subsection*{Exercise 2}
 
 
 \end{document}
