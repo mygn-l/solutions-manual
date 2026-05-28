@@ -424,6 +424,67 @@ Suppose that $b, c$ are both immediate successors of $a$. Then we know $a < b$ a
 
 Suppose that $a, b$ are both largest elements. Then $a \leq b$, and $b \leq a$, hence $a = b$. Hence, largest elements are unique. The procedure is similar for smallest elements.
 
+\subsection*{Exercise 12}
+(i) Every bottom element of each column has no immediate predecessor. The bottom-left (origin) is the smallest element.
+
+\noindent
+(ii) This is basically shifting the line $y = x$, where shifting bottom-right is larger and shifting top-left is smaller. Within a line, top-right is larger. Every point on the bottom or left has no immediate predecessor. There is no smallest element.
+
+\noindent
+(iii) This is basically shifting the line $y = -x$, where shifting bottom-left is smaller and shifting top-right is larger. Within a line, top-left is larger. The bottom-left (origin) is the smallest element. Except for the origin, every element has an immediate precedessor.
+
+\subsection*{Exercise 13}
+This is a standard exercise in Real Analysis. We'll abbreviate with LUB and GLB. We simply set the GLB of a subset to the LUB of its set of lower bounds. It can be proven that they are equivalent, hence GLB exists by extensionality.
+
+\subsection*{Exercise 14}
+(a)
+Well, if $C$ is symmetric, then $(a, b) \in C$ implies $(b, a) \in C$. By definition, $D$ contains $(b, a)$ as well, hence every element of $C$ is found in $D$. Likewise, if $(c, d) \in D$, then $(d, c) \in C$. By symmetry, $(c, d) \in C$, hence every element of $D$ is also included $C$. Hence $C = D$.
+
+For the other direction, suppose $C = D$. If $(a, b) \in C$, then by definition of $D$, we have $(b, a) \in D$. Since $C = D$, then $(b, a)$ must be included in $C$ as well. Hence $(a, b) \in C$ implies $(b, a) \in C$, hence $C$ is symmetric.
+
+\noindent
+(b)
+Given $a, b \in A$, obviously, either $(a, b) \in D$ or $(b, a) \in D$, since either must be in $C$. Also, $(a, a) \not \in D$ for every $a$, because it would imply $(a, a) \in C$, which contradicts Property 2 of the order relation $C$. Finally, if $(a, b), (b, c) \in D$, then $(b, a), (c, b) \in C$. By transitivity of $C$, it follows $(c, a) \in C$, hence $(a, c) \in D$. Since $D$ is comparable, nonreflexive, and transitive, it follows that $D$ is an order relation.
+
+\noindent
+(c)
+Too lazy.
+
+\subsection*{Exercise 15}
+Too lazy.
+
+\section{The Integers and the Real Numbers}
+Too lazy. These exercises are closer to Abstract Algebra.
+
+\section{Cartesian Product}
+
+\subsection*{Exercise 1}
+Well... assign $(a, b) \rightarrow (b, a)$. Clearly, every $(b, a)$ has a corresponding $(a, b)$, so it's surjective. Also, if $(a, b) \neq (c, d)$, then either $a \neq c$ or $b \neq d$, hence $(b, a) \neq (d, c)$, because otherwise, it would imply $b = d$ and $a = c$ which contradicts the previous, hence it's injective. Thus, the whole thing is bijective.
+
+\subsection*{Exercise 2}
+Too lazy.
+
+\subsection*{Exercise 3}
+(a)
+If $b_1 \times b_2 \times \cdots \in B$, then $b_1 \in B_1, b_2 \in B_2, \ldots$, hence $b_1 \in A_1, b_2 \in A_2, \ldots$, hence $b_1 \times b_2 \times \cdots \in A$.
+
+\noindent
+(b)
+If $b_0 \in B_i$, consider some $b \in B$ for which its $i$-th coordinate is $b_0$. It must exist, because $B$ is non-empty, hence each $B_i$ is non-empty, hence we can choose fillers for non-$i$ coordinates. By definition of subset, $b$ is matched with some $a \in A$. Hence, $b_0 \in A_i$.
+
+\noindent
+(c)
+We basically making the crucial step in (b) clear. It's a simple contradiction proof. If one of $A_i$ is empty, then we cannot produce any Cartesian product, contradicting the fact $A$ is non-empty. Hence, each $A_i$ is non-empty.
+
+For the converse, I searched online. We need the Axiom of Choice. It makes sense. Because we want to create a Cartesian product by selecting one element from each $A_\alpha$.
+
+\noindent
+(d)
+$A \cup B$ is a subset of the Cartesian product of $A_i \cup B_i$. On the other hand, $A \cap B$ is equal to the Cartesian product of $A_i \cap B_i$.
+
+\subsection*{Exercises 4 - 5}
+Too lazy.
+
 \chapter{Topological Spaces and Continuous Functions}
 
 \section{Basis for a Topology}
@@ -589,6 +650,60 @@ Suppose $X$ is Hausdorff. Suppose for contradiction that $\Delta$ is not closed,
 
 Too lazy for other direction.
 
+\subsection*{Exercise 14}
+It converges to every point in $\mathbb{R}$. For example, take any $x \in \mathbb{R}$. Take any neighborhood of $x$. It can only exclude a finite amount of points, so there will always be infinite points of $x_n$ still inside the neighborhood.
+
+\subsection*{Exercise 15}
+Since points are closed, then the second point (which is distinct) is not a limit point of the first. Hence, it has a neighborhood not containing the first.
+
+\subsection*{Exercises 16 - 17}
+Too lazy.
+
+\subsection*{Exercise 18}
+I forgot what an ordered square is.
+
+\subsection*{Exercise 19}
+(a)
+Suppose for contradiction that there exists a point $x \in \text{Int } A \cap \overline{X - A}$. Then $x$ must be part of an open set contained in $A$, so we can take an open neighborhood $B_x \subseteq A$. Also, $x$ is in the closure of the outside, so by definition every neighborhood intersects the outside: $B_x \cap (X - A) \neq \varnothing$. The latter means that there exists some $p \in B_x$ such that $p \not \in A$, but this contradicts $B_x \subseteq A$, hence there exists no such point $x$. Hence $\text{Int } A$ and $\overline{X - A}$ are disjoint.
+
+For the second part,
+$$\text{Int } A \cup \text{Bd } A$$
+$$= \text{Int } A \cup (\bar{A} \cap \overline{X - A})$$
+$$= (\text{Int } A \cup \bar{A}) \cap (\text{Int } A \cup \overline{X - A})$$
+$$= \bar{A} \cap X$$
+$$= \bar{A}$$
+
+\noindent
+(b - d)
+Skip.
+
+\subsection*{Exercise 20}
+(a)
+Its boundary is itself, and it has no interior.
+
+\noindent
+(b)
+Its interior is itself, and its boundary is the union of line $x = 0$ with the line $y = 0$ for $x > 0$.
+
+\noindent
+(c)
+The interior is the region $x > 0$, and its boundary is the union of line $x = 0$ with the line $y = 0$ for $x < 0$.
+
+\noindent
+(d)
+Since both the rational and irrational are dense in $\mathbb{R}$, then the boundary is the entire $\mathbb{R}^2$. It has no interior.
+
+\noindent
+(e - f)
+Use Desmos to see.
+
+\subsection*{Exercise 21}
+Closure is idempotent, and complementation is an involution. Thus, applying either twice in a row yields nothing new. Hence, denoting closure by C and complementation by S, we only have two chains of operations:
+$$SCSC \ldots$$
+$$CSCS \ldots$$
+
+We already have $A$. There are 13 more to find. Idk how to proceed now.
+
 \section{Continuous Functions}
 
 \subsection*{Exercise 1}
@@ -634,14 +749,35 @@ Too lazy.
 
 \section{The Product Topology}
 
-\subsection*{Exercises 1 - 3}
+\subsection*{Exercise 1}
+The original basis for the box topology used every open subset from each $X_\alpha$. This alternative basis only uses the basis from each $X_\alpha$.
+
+Anyways, given an original basis element $B$ of the box product space, we can decompose as $B = \prod U_\alpha$. For every $x \in B$, we decompose as $x = \prod x_\alpha$. For each $x_\alpha$, we can find a basis neighborhood $B_{x_\alpha} \subseteq U_\alpha$. Hence, $\prod B_{x_\alpha}$ is a neighborhood of $x$ fully contained inside $\prod U_\alpha$. The converse (every alternative basis can be expressed as original basis) is much easier, since there's complete freedom in choosing $U_\alpha$. Hence, this alternative basis is indeed a basis for the box topology.
+
+For the product topology, we examine the basis generated by the usual subbasis, which is done by taking finite intersections:
+$$\pi^{-1}_{\beta_1} (U_{\beta_1}) \cap \cdots \cap \pi^{-1}_{\beta_n} (U_{\beta_n})$$
+Some of the reverse projections will come from the same $X_{\beta_i}$. In those case, we know that $\pi^{-1}_{\beta_i}(U_{\beta_i 1}) \cap \pi^{-1}_{\beta_i}(U_{\beta_i 2}) = \pi^{-1}_{\beta_i}(U_{\beta_i 1} \cap U_{\beta_i 2})$. Hence, each basis of the product topology can be generated by taking the reverse projection of at most one set from each affected $X_\beta$. The rest of the reasoning is similar to box topology.
+
+\subsection*{Exercises 2 - 3}
 Too lazy.
 
 \subsection*{Exercise 4}
-?
+Use something similar to an identity map.
 
 \subsection*{Exercise 5}
 If $f$ continuous, then each $f_\alpha$ is continuous. Reason: Example 2.
+
+\subsection*{Exercise 6}
+Suppose $(x_i)$ converges to $x$. Given a neighborhood $B_{\pi_\alpha(x)}$, i.e. a neighborhood around the $\alpha$-th coordinate of $x$, we can form a neighborhood $B_x$ which is the product of: $X_\beta$ for every $\beta \neq \alpha$, and $B_{\pi_\alpha (x)}$ when $\beta = \alpha$. This is a basis in the product topology, hence it's a valid neighborhood of $x$. Hence, it contains every $x_{i > n}$ for some $n \in \mathbb{N}$. For each $x_{i > n}$, their $\alpha$-th coordinate is inside $B_{\pi_\alpha (x)}$. Hence, $\pi_\alpha(x_i)$ converges to $\pi_\alpha(x)$.
+
+Conversely, suppose each sequence $(\pi_\alpha (x_i))$ converges to $\pi_\alpha(x)$. For every neighborhood $B_x$, we can express it as a finite product of neighborhoods of each coordinate $\prod B_{\pi_\alpha (x)}$. Each of them contains every $\pi_\alpha (x_{i > n_\alpha})$ for some $n_\alpha$. Taking their max, it follows that $B_x$ contains every $x_{i > n}$ for some $n = \max \{ n_\alpha \}$. Since each $B_x$ eventually contains every $x_i$, hence $x_i$ converges to $x$.
+
+For the box topology, the above converse would be false, because we extract the maximum from a finite amount of neighborhoods, which may not exist for an infinite/uncountable number of neighborhoods allowed by the box topology.
+
+\subsection*{Exercise 7}
+In the box topology, take the sequence $x = (1, 1, \ldots)$ and let $B_x = (0.9, 1.1) \times (0.9, 1.1) \times \cdots$. None of the $y \in \mathbb{R}^\infty$ is contained in $B_x$, hence $x$ is not a limit point of $\mathbb{R}^\infty$. Hence, the closure of $\mathbb{R}^\infty$ in the box topology is itself.
+
+On the other hand, every neighborhood of $x$ in the product topology constrains only a finite number of coordinates. Hence, choose $y \in \mathbb{R}^\infty$ that satisfies those constraints, and let the rest be $0$. Hence, the closure of $\mathbb{R}^\infty$ in the product topology is the entire product space.
 
 \section{The Metric Topology}
 
@@ -654,6 +790,63 @@ The shapes are basically diamonds and octahedrons and higher dimensional ones. E
 Too hard for my dumbass.
 
 \subsection*{Exercise 2}
+I found the solution online. This space is homeomorphic to $\mathbb{R}_d \times \mathbb{R}$. The metric that induces $\mathbb{R}_d$ is
+$$d(x, y) = \begin{cases}
+    0 & \text{if } x = y \\
+    1 & \text{if } x \neq y
+\end{cases}$$
+which produces singletons. The metric on $\mathbb{R}$ is the standard metric. We combine them to produce a metric on their product, using the Manhattan distance for example. The metric would be
+$$d(x, y) = \begin{cases}
+    |x_2 - y_2| & \text{if } x_1 = y_1 \\
+    |x_2 - y_2| + 1 & \text{if } x_1 \neq y_1
+\end{cases}$$
+It is kinda obvious now. We can create intervals of radius $1$ or smaller on each vertical stripe, which does not flood over to the neighboring stripes. We can take the union of a bunch of such intervals to recreate any basis element of the dictionary topology. Conversely, the balls generated by the metric are either intervals within a vertical stripe, or rectangles that are infinitely horizontal (but limited vertically). Clearly, we can take the union of intervals from the dictionary to recreate them.
 
+\subsection*{Exercise 3}
+(a)
+Given a bounded basis element $V \subseteq \mathbb{R}$, which is an interval, we look at each $x_1 \times x_2 \in d^{-1}(\{ y \})$ for each $y \in V$. Our idea is to find a neighborhood $B_{x_1 \times x_2}$ that maps into $V$.
+
+Consider a basis neighborhood around $x_1 \times x_2$, which can be decomposed as the product $B_{x_1 \times x_2} = B_\epsilon (x_1) \times B_\epsilon (x_2)$ where each $B_\epsilon \subseteq X$. We need to find a small enough $\epsilon$. For every pair $x_1' \times x_2' \in B_{x_1 \times x_2}$, notice that, by triangle inequality, we have
+$$d(x_1', x_2') \leq d(x_1', x_1) + d(x_1, x_2) + d(x_2, x_2') \leq d(x_1, x_2) + 2\epsilon$$
+By symmetry, we also have a lower bound
+$$d(x_1, x_1') + d(x_1', x_2') + d(x_2', x_2) \geq d(x_1, x_2)$$
+$$\Rightarrow d(x_1', x_2') + 2\epsilon \geq d(x_1, x_2)$$
+$$\Rightarrow d(x_1', x_2') \geq d(x_1, x_2) - 2\epsilon$$
+Put together, it looks like:
+$$d(x_1, x_2) - 2\epsilon \leq d(x_1', x_2') \leq d(x_1, x_2) + 2\epsilon$$
+By choosing
+$$2\epsilon = \min \{ |\inf V - d(x_1, x_2)|, |\sup V - d(x_1, x_2)| \}$$
+we guarantee that
+$$\inf V \leq d(x_1', x_2') \leq \sup V$$
+$$\Rightarrow d(x_1', x_2') \in [\inf V, \sup V]$$
+If we make $\epsilon$ smaller (such as dividing by 2), it will fit inside the open interval version:
+$$d(x_1', x_2') \in (\inf V, \sup V) \subseteq V$$
+
+Hence, for every point $x = x_1 \times x_2$ in the preimage of $V$, we can find a neighborhood that maps inside $V$. Taking the union of these neighborhoods produces the preimage of $V$, which is thus also open. Hence the distance function is continuous.
+
+\noindent
+(b)
+Too lazy.
+
+\subsection*{Exercise 4}
+(a)
+In the product topology, since each component is continuous, all three functions are continuous.
+
+In the uniform topology, only $g$ and $h$ are continuous. For $f$, use the neighborhood $B_{0.5}(0)$. No matter what interval $(a, b) \subseteq \mathbb{R}$ is chosen, one of the bounds will get scaled past $0.5$ at some coordinate eventually.
+
+In the box topology, none of them are continuous. Since it's finer than the uniform topology, $f$ is already eliminated. A previous example in the textbook already eliminates $g$. But the general reasoning is that an interval in $\mathbb{R}$ must accomodate every dimension in $\mathbb{R}^\omega$. So for $h$, take the neighborhood $(-1, 1) \times (-\frac{1}{4}, \frac{1}{4}) \times (-\frac{1}{9}, \frac{1}{9}) \times \cdots$. The bounds shrink too fast for the harmonic sequence to catch up.
+
+\noindent
+(b)
+In the product topology, $(w_n)$ converges to $\vec{0}$, because each coordinate converges to $0$ individually. It does not converge in the uniform topology, nor the box topology.
+
+$(x_n)$ converges in the product topology under the same reasoning as $(w_n)$. However, it also converges to $\vec{0}$ under the uniform topology. For every neighborhood $B_\epsilon (\vec{0})$, we simply go far enough such that $\frac{1}{n} < \epsilon$. All the following $x_{i > n}$ will be contained in the neighborhood. Still, it does not converge in the box topology.
+
+$(y_n)$ converges in the product topology under the same reasoning as $(w_n)$. It also converges in the uniform topology under the same reasoning as $(x_n)$. It doesn't converge in the box topology. For example, take the neighborhood $(-1, 1) \times (-\frac{1}{4}, \frac{1}{4}) \times (-\frac{1}{9}, \frac{1}{9}) \times \cdots$ from part (a).
+
+$(z_n)$ converges in the product topology under the same reasoning as $(w_n)$. It also converges in the uniform topology under the same reasoning as $(x_n)$. It converges to $\vec{0}$ in the box topology, because it can be reduced to a 2-dimensional problem, and as we know, these topologies behave the same in finite-dimensional space.
+
+\subsection*{Exercise 5}
+Suppose a sequence $(x_n) \in \mathbb{R}^\omega$ converges to $L \neq 0$. Choose $\epsilon = \frac{|L|}{2}$ and form the neighborhood $B_\epsilon (x)$, where $x = (x_n)$. Visually, it looks like a horizontal band between $\frac{L}{2}$ and $\frac{3L}{2}$ in $\mathbb{R}^\omega$. Since every sequence in $\mathbb{R}^\infty$ is eventually zero, none of them is contained in this neighborhood. Hence, the closure of $\mathbb{R}^\infty$ in $\mathbb{R}^\omega$ must contain sequences that converge to zero at least. In fact, if a sequence $(x_n) \in \mathbb{R}^\omega$ converges to zero, then for every neighborhood $B_\epsilon (x)$, we can find some element $(y_n) \in \mathbb{R}^\infty$ inside the neighborhood. Since $(x_n)$ converges to zero, we can find $n \in \mathbb{N}$ such that $|x_{i > n}| < \epsilon$. For $i \leq n$, we set $y_i = x_i$, and for $i > n$, we set $y_i = 0$. Indeed, $y_i$ is eventually zero, hence it's an element of $\mathbb{R}^\infty$, but it's also contained in the neighborhood $B_\epsilon(x)$. Hence, the closure of $\mathbb{R}^\infty$ in $\mathbb{R}^\omega$ is every sequence that converges to zero.
 
 \end{document}
