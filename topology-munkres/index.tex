@@ -485,6 +485,34 @@ $A \cup B$ is a subset of the Cartesian product of $A_i \cup B_i$. On the other 
 \subsection*{Exercises 4 - 5}
 Too lazy.
 
+\section{Finite Sets}
+
+\subsection*{Exercise 1}
+(a)
+We have
+$$\{ 1, 2, 3 \} \rightarrow \{ 1, 2, 3 \}$$
+$$\{ 1, 2, 3 \} \rightarrow \{ 1, 2, 4 \}$$
+$$\{ 1, 2, 3 \} \rightarrow \{ 1, 3, 4 \}$$
+$$\{ 1, 2, 3 \} \rightarrow \{ 2, 3, 4 \}$$
+and each has 6 permutations, totaling 24 injective maps. None of them are surjective, hence none is a bijection.
+
+\noindent
+(b)
+Following the same procedure, there are $\binom{8}{10}$ choices on the right side, and each has $8!$ permutations.
+
+\subsection*{Exercise 2}
+If $A$ is finite, then any subset of $A$ is finite, by corollary 6.6. The contrapositive solves the exercise.
+
+\subsection*{Exercise 3}
+$$(0, 0, 0, \ldots) \rightarrow (1, 0, 0, \ldots)$$
+$$(1, 0, 0, \ldots) \rightarrow (0, 1, 0, \ldots)$$
+$$(0, 1, 0, \ldots) \rightarrow (0, 0, 1, \ldots)$$
+$$\vdots$$
+Basically, every binary number is mapped to a one-hot encoding. Left side is the entire $X^\omega$, while the right side is a proper subset.
+
+\subsection*{Exercises 4-7}
+Too lazy.
+
 \chapter{Topological Spaces and Continuous Functions}
 
 \section{Basis for a Topology}
@@ -698,11 +726,7 @@ Since both the rational and irrational are dense in $\mathbb{R}$, then the bound
 Use Desmos to see.
 
 \subsection*{Exercise 21}
-Closure is idempotent, and complementation is an involution. Thus, applying either twice in a row yields nothing new. Hence, denoting closure by C and complementation by S, we only have two chains of operations:
-$$SCSC \ldots$$
-$$CSCS \ldots$$
-
-We already have $A$. There are 13 more to find. Idk how to proceed now.
+Too hard.
 
 \section{Continuous Functions}
 
@@ -848,5 +872,13 @@ $(z_n)$ converges in the product topology under the same reasoning as $(w_n)$. I
 
 \subsection*{Exercise 5}
 Suppose a sequence $(x_n) \in \mathbb{R}^\omega$ converges to $L \neq 0$. Choose $\epsilon = \frac{|L|}{2}$ and form the neighborhood $B_\epsilon (x)$, where $x = (x_n)$. Visually, it looks like a horizontal band between $\frac{L}{2}$ and $\frac{3L}{2}$ in $\mathbb{R}^\omega$. Since every sequence in $\mathbb{R}^\infty$ is eventually zero, none of them is contained in this neighborhood. Hence, the closure of $\mathbb{R}^\infty$ in $\mathbb{R}^\omega$ must contain sequences that converge to zero at least. In fact, if a sequence $(x_n) \in \mathbb{R}^\omega$ converges to zero, then for every neighborhood $B_\epsilon (x)$, we can find some element $(y_n) \in \mathbb{R}^\infty$ inside the neighborhood. Since $(x_n)$ converges to zero, we can find $n \in \mathbb{N}$ such that $|x_{i > n}| < \epsilon$. For $i \leq n$, we set $y_i = x_i$, and for $i > n$, we set $y_i = 0$. Indeed, $y_i$ is eventually zero, hence it's an element of $\mathbb{R}^\infty$, but it's also contained in the neighborhood $B_\epsilon(x)$. Hence, the closure of $\mathbb{R}^\infty$ in $\mathbb{R}^\omega$ is every sequence that converges to zero.
+
+\section{The Quotient Topology}
+
+\subsection*{Exercise 1}
+There are 8 subsets to check for openness. Of course, the empty set and $A$ are already open. $\{ a \}$ is open because $p^{-1}(\{ a \}) = (0, \inf)$ is open. $\{ b \}$ is open because $p^{-1}(\{ b \}) = (-\inf, 0)$ is open. $\{ c \}$ is not open, because its preimage is a point, which is closed. Since $\{ a \}, \{ b \}$ are open, then their union is open. $\{ b, c \}$ is not open, because their preimage $[0, \inf)$ is half-open. Likewise, $\{ a, c \}$ is not open.
+
+\subsection*{Exercise 2}
+
 
 \end{document}

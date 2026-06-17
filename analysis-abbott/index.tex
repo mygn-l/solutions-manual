@@ -1506,4 +1506,48 @@ Set $f(x) = 0$ for every irrational $x$. For the rational points inside $O$, use
 
 It's obviously discontinuous on $O$, because the distance to nearest element in $F$ is non-zero (as proven in 4.3.12), so the rationals differ from the irrationals still at zero. However, it's continuous outside $O$, because it's zero on the interior of $F$; moreover, at the boundaries, the distance to $F$ approaches zero, so the boundaries are continuous as well.
 
+\section{Continuous Functions on Compact Sets}
+
+\subsection*{Exercise 4.4.1}
+(a)
+Too lazy.
+
+\noindent
+(b)
+Let $x_n = \sqrt[3]{n}$ and $y_n = \sqrt[3]{n - 1}$. Their difference goes to zero. However, $f(x_n) - f(y_n) = 1$ for all $n$, hence let $\epsilon_0 = 1$.
+
+\noindent
+(c)
+It's pretty intuitive.
+
+\subsection*{Exercise 4.4.2}
+(a)
+No.
+
+\noindent
+(b)
+Yes.
+
+\noindent
+(c)
+Yes. The idea is to separate the function, where the right part has amplitude greater than epsilon. The left part (amplitude smaller than epsilon) clearly satisfies the condition already for any delta. The right part is bounded, so you also easily find another delta. Then you choose the smallest of the two deltas (between left and right).
+
+\subsection*{Exercise 4.4.3}
+Too lazy. It's obvious.
+
+\subsection*{Exercise 4.4.4}
+(a)
+True. Suppose for contradiction that $\frac{1}{f}$ is unbounded, then we can find a sequence $x_n \in [a, b]$ such that $f(x_n)$ approaches zero. Since $f$ is continuous, then $f$ must actually attain zero, contradicting the fact $f > 0$.
+
+\noindent
+(b)
+True. Extend $f$ by setting the value of limit points of $A$ to be equal to the limit of $f$ at those points. This defines a new function $\hat{f}$ on $\bar{A}$. It is still uniformly continuous, and since it's a compact set, it must attain its maximum and minimum. Hence, $f$ is bounded.
+
+\noindent
+(c)
+False. Simply let $f$ be a step function. If $A$ is compact, then it's bounded, hence $f(A)$ is a finite number of isolated points, which is compact. But $f$ is not continuous.
+
+\subsection*{Exercises 4.4.5+}
+Too lazy.
+
 \end{document}
