@@ -161,23 +161,32 @@ Any bijective function has an inverse, which is also a bijection.
 Simply take the composition of the bijection.
 
 \subsection*{Problem 5}
-???
+For every $s \in S$, we know $\imath(s) = s$, hence:
+$$\sigma(\imath(s)) = \sigma(s)$$
+Also, since $\sigma(s) \in S$, then identity also applies to $\sigma(s)$, hence:
+$$\imath(\sigma(s)) = \sigma(s)$$
+Hence,
+$$\imath(\sigma(s)) = \sigma(\imath(s)) = \sigma(s)$$
 
 \subsection*{Problem 6}
-This is akin to Cantor's diagonal argument. In the original argument, we create a real number which differs from every listed real number by a single digit, hence it is not in the list. Here, the idea is similar.
+This is Cantor's diagonal argument.
 
-Suppose I have a bijection $f: S \rightarrow S^*$, where each $s \in S$ is mapped to a subset $f(s) \in S^*$. Let me construct the set $B = \{ s \in S \mid s \not \in f(s) \}$. In other words, this is the set of elements which are not contained in the subset associated with them. As you see, $B$ differs from $f(s)$ by the single element $s$ for each $f(s)$. If $f(s)$ contains $s$, then $B$ does not contain $s$, and if $f(s)$ does not contain $s$, then $B$ contains $s$. Since for all bijections $f$, we can such a set $B$, hence there exists no bijection between $S$ and $S^*$.
+Suppose I have a bijection $f: S \rightarrow S^*$, where each $s_\alpha \in S$ is mapped to a subset $f(s_\alpha) \in S^*$. Let me construct the set $B = \{ s \in S \mid s \not \in f(s) \}$, which exists. None of the $f(s_\alpha)$ are equal to $B$. Consider the element $s_\alpha$. If $s_\alpha \in f(s_\alpha)$, then by definition of $B$, we have $s_\alpha \not \in B$, and if $s_\alpha \not \in f(s_\alpha)$, then $s_\alpha \in B$. Hence, $f(s_\alpha)$ and $B$ always differ by whether they contain $s_\alpha$. Hence, $B$ is a subset of $S$ which is not equal to all $f(s_\alpha)$. Hence, $f$ is not surjective, hence not a bijection. Since for every $f$, we can find such a $B$, we conclude that there exists no bijection between $S$ and $S^*$.
 
 \subsection*{Problem 7}
 There are $n!$ ways to permute $n$ objects.
 
 \subsection*{Problem 8}
-(a) and (b)
-??
+(a)
+If not injective, then two distinct elements will map to one element. Then there remains $n - 2$ elements that must, by surjectivity, map to $n - 1$ elements, which is impossible.
+
+\noindent
+(b)
+If not surjective, then one element is never mapped to. So we have $n$ elements mapping to $n - 1$ elements, which is impossible. Both (a) and (b) probably require some form of induction, but I'm too lazy.
 
 \noindent
 (c)
-For (a), as we learned in real analysis, you can map $[0, 1)$ to $\mathbb{R}$, so you repeat the procedure for every $[n, n + 1)$ for $n \in \mathbb{Z}$. This is onto, but not one-to-one. For (b), simply map $\mathbb{R}$ to $(0, 1)$, which is one-to-one, but not onto.
+For (a), consider the map $f: \mathbb{R} \rightarrow \mathbb{R}$ composed of $[0, 1) \rightarrow \mathbb{R}$, and $[1, 2) \rightarrow \mathbb{R}$, and $[2, 3) \rightarrow \mathbb{R}$, and so on (and also in the negative direction). In real analysis, we learned that there is bijection between every half-open interval and $\mathbb{R}$. For (b), simply map $\mathbb{R}$ to $(0, 1)$, also borrowing a bijection from real analysis.
 
 \subsection*{Problem 9}
 (a)
@@ -185,25 +194,34 @@ Using the real numbers again, let $\sigma: \mathbb{R} \rightarrow \mathbb{R}$ an
 
 \noindent
 (b)
-Just some domain BS. The first function must be one-to-one, but its range may not cover the entire domain of the second function. So you can do whatever you want to the things outside of the domain.
+$$\sigma: X \rightarrow Y$$
+$$\tau: Y \rightarrow Z$$
+Consider $Y - \sigma(X)$. Notice that $\tau$ needn't be injective on $Y - \sigma(X)$. Because the composition only cares about the behavior of $X \rightarrow \sigma(X) \rightarrow \tau(\sigma(X))$.
 
 \subsection*{Problem 10}
-Classic real analysis exercise. Skipped.
+Classic real analysis exercise.
 
 \subsection*{Problem 11}
 (a)
-Obvious?
+$a \sigma_A = a \sigma \in T$
 
 \noindent
 (b)
-Too easy.
+Suppose $a, b \in A$ and $a \neq b$. We know $a, b \in S$, hence $a \sigma \neq b \sigma$ which is equivalent to $a \sigma_A \neq b \sigma_B$.
 
 \noindent
 (c)
-Again, domain BS.
+Obviously, $\sigma_A$ could be the injective portion of $\sigma$.
 
 \subsection*{Problem 12}
-??
+Given $a \in A$, then $a \sigma \in A$. Hence, we can apply the restricted version $\sigma_A$ on $a \sigma$. Thus
+$$(a \sigma) \sigma = (a \sigma) \sigma_A$$
+Since $a \in A$, then $a \sigma = a \sigma_A$, which we use to change the right side of the equation:
+$$(a \sigma) \sigma = (a \sigma_A) \sigma_A$$
+This is equivalent to
+$$a (\sigma \circ \sigma) = a (\sigma_A \circ \sigma_A)$$
+Since $a \in A$, we can restrict the left side to only
+$$a(\sigma \circ \sigma)_A = a(\sigma_A \circ \sigma_A)$$
 
 \subsection*{Problem 13}
 (a)
@@ -211,7 +229,7 @@ Let $\sigma: n \mapsto 2n$.
 
 \noindent
 (b)
-Let $\sigma: \mathbb{R} \rightarrow (0, 1)$, which is easily found if you know real analysis.
+Let $\sigma: \mathbb{R} \rightarrow (0, 1)$, borrowing a function from real analysis.
 
 \noindent
 (c)
@@ -222,10 +240,13 @@ $$g(x) = \begin{cases}
 \end{cases}$$
 
 \subsection*{Problem 14}
-Classic exercise in real analysis.
+We already know there exists a bijection $f: \mathbb{Z} \leftrightarrow \mathbb{Z}^2$. If there exists a bijection $g: S \leftrightarrow \mathbb{Z}$, consider the function $h: \mathbb{Z}^2 \rightarrow S^2$ defined by $h(x \times y) = g^{-1}(x) \times g^{-1}(y)$. Using the bijectivity of $g$, it can be shown that $h$ is bijective. The bijection we were looking for is the composition $g \circ f \circ h: S \leftrightarrow S^2$.
 
-\subsection*{Problems 15 and 16}
-Obvious.
+\subsection*{Problem 15}
+If $f: T \rightarrow S$ and $g: U \rightarrow T$ are surjective, then the composition $g \circ f$ is surjective. I don't know how to prove that there exists no surjection in the other direction.
+
+\subsection*{Problem 16}
+Too lazy.
 
 \section{The Integers}
 
@@ -276,6 +297,14 @@ indicates that $r_{k - 2}$ is obviously divisible by $r_k$. Here, we thus proved
 $$r_k \mid r_k \text{ and } r_k \mid r_{k - 1} \quad \Rightarrow \quad r_k \mid r_{k - 1} \text{ and } r_k \mid r_{k - 2}$$
 which completes our induction step. ($a$ and $b$ are precisely $r_{(-1)}$ and $r_0$.)
 
+\subsection*{Problem 7}
+Nope.
+
+\subsection*{Problem 8}
+First, if it's not divisible by any prime below $n$, since every composite below $n$ can be written as multiple of some smaller prime, then the prime not being a divisor means that the composite is not a divisor as well. Hence, checking for prime divisibility already guarantees that the composites are not divisors.
+
+Second, if $p$ divides $n$, then we can write $pq = n$ for some $q$. If $p > \sqrt{n}$, then $\frac{n}{p} < \frac{n}{\sqrt{x}}$ which is equivalent to $q < \sqrt{n}$. Hence, for every integer $p > \sqrt{n}$, it suffices to check for some other $q < \sqrt{n}$.
+
 \chapter{Group Theory}
 
 \section{Some Preliminary Lemmas}
@@ -302,8 +331,9 @@ Just repeatedly swap.
 \subsection*{Problem 3}
 For all $a, b$, we have
 $$(a \cdot b)^2 = a^2 \cdot b^2$$
+Developing both sides, we have
 $$a \cdot b \cdot a \cdot b = a \cdot a \cdot b \cdot b$$
-Take inverse on each end.
+Take $a$ inverse on left, and $b$ inverse on right.
 $$\Rightarrow b \cdot a = a \cdot b$$
 
 \subsection*{Problem 4}
@@ -325,13 +355,13 @@ $$\Rightarrow ba (ba)^i = ab (ba)^i$$
 Taking the inverse on each side gives the desired result.
 
 \subsection*{Problem 5}
-??
+Too dumb for this.
 
 \subsection*{Problem 6}
 Let $x = 1 \leftrightarrow 2$. Let $y = 2 \leftrightarrow 3$. Then $(xy)^2$ will cause $123 \rightarrow 312$, while $x^2 y^2$ would be identity $123 \rightarrow 123$.
 
 \subsection*{Problem 7}
-The identity operation, as well as the 2-element swaps, satisfy $x^2 = e$. The 3-element cycles satisfy $x^3 = e$. It's then easy to count.
+The identity operation, plus the 3 swaps, satisfy $x^2 = e$. Then, the identity, plus the 2 cycles satisfy $x^3 = e$.
 
 \subsection*{Problem 8}
 Suppose for contradiction that $a^N \neq e$ for all $N \in \mathbb{N}$. We show that this implies $a^X \neq a^Y$ for all pairs $X \neq Y$. Suppose for (nested) contradiction that $a^X = a^Y$ for some pair $X > Y > 1$. Then taking the inverse on both sides yields $a^{X - Y} = e$, contradicting the fact that $a^N \neq e$ for all $N$. Hence, $a^X \neq a^Y$, i.e. the powers of $a$ are pairwise distinct. However, we know our group is finite, but $a^N$ creates infinite distinct elements. Hence, it must be false, so $a^N = e$ for some $N$.
@@ -353,7 +383,7 @@ All cases have been gone over. Hence proven.
 
 \noindent
 (c)
-Too lazy. We know every group of prime order must be cyclic, therefore abelian.
+We know every group of prime order must be cyclic, therefore abelian. (Using later results in book, because I'm too dumb)
 
 \subsection*{Problem 10}
 For every pair $x, y$, we have
@@ -378,7 +408,7 @@ $$aya = a$$
 $$ea = a$$
 
 \subsection*{Problem 13}
-??
+I'm too dumb.
 
 \subsection*{Problem 14}
 Since the group is finite, for every $a$, there exists $m$ such that $a^m = a$. Let $e_a = a^{m - 1}$ be an identity of $a$. It's clear by associativity that it's both left and right identity of $a$.
@@ -403,21 +433,13 @@ It's already finite, closed, and associative. Suppose for contradiction that $ab
 (b) Skip
 
 \subsection*{Problem 16}
-??
+I'm too dumb.
 
 \subsection*{Problem 17}
 Consider the naturals $\mathbb{N} = \{1, 2, \ldots \}$ under addition. It's associative and closed, and the cancellation laws work. However, the latter still don't allow us to dip lower than $1$. Hence, we don't have access to the identity element.
 
 \subsection*{Problem 18}
-Since inverses are organized in pairs, we have
-$$e \quad \begin{array}{c c c c}
-    a_1 & a_2 & \cdots & a_{n - 1} \\
-    b_1 & b_2 & \cdots & b_{n - 1}
-\end{array} \quad c$$
-Let us define the product as follows:
-$$a_i b_i = b_i a_i = e$$
-$$c^2 = e$$
-Idk...
+$S_3$ are the reflections/rotations of an equilateral triangle. We can simply look at higher $n$-gons (squares, regular pentagons, etc). Each has $n$ rotations (including identity), and 2 reflections (including identity), which is a total of $n \cdot 2 = 2n$ group elements. The triangle being the smallest regular polygon, it makes sense that $n > 2$.
 
 \subsection*{Problem 19}
 Nah.
@@ -505,10 +527,7 @@ $$\begin{pmatrix}
 \end{pmatrix}$$
 It contains 6 elements. The identity is present. If you check all cases, you will see that it is closed and each element has an inverse. Matrix multiplication is already associative.
 
-\subsection*{Problem 25}
-Too lazy.
-
-\subsection*{Problem 26}
+\subsection*{Problems 25-26}
 Too lazy.
 
 \section{A Counting Principle}
@@ -540,7 +559,7 @@ $$(aha^{-1})(ah^{-1}a^{-1}) = ahh^{-1}a^{-1} = aea^{-1} = e$$
 Given $h_1, h_2 \in H$, if $h_1 \neq h_2$, then $ah_1 \neq ah_2$, and then $ah_1a^{-1} \neq ah_2a^{-1}$. (These follow from left and right cancellation laws.) Therefore, $o(aHa^{-1}) = o(H)$.
 
 \subsection*{Problem 5}
-??
+We assign $ha \rightarrow ah$ for every $h \in H$. Clearly, this is surjective. Now, if $ah_1 = ah_2$, then by cancellation law $h_1 = h_2$, hence $h_1 a = h_2 a$, thus the map is also injective.
 
 \subsection*{Problem 6}
 (a)
@@ -619,16 +638,31 @@ However, $C(H) \neq G$, because the order of application of rotations and reflec
 
 So we can say that $C(H) \subseteq N(H)$.
 
+\subsection*{Problem 18-28}
+To be completed.
+
+\subsection*{Problem 29}
+Coprimes are: 1, 3, 5, 7. Since $3^2 = 9 \equiv 1 \pmod 8$, hence $U_8$ is not cyclic.
+
+\subsection*{Problem 30}
+Coprimes are: 1, 2, 4, 5, 7, 8.
+
+$2^2 = 4$; $2^3 = 8$; $2^4 = 16 \equiv 7 \pmod 9$; $2^5 = 32 \equiv 5 \pmod 9$; $2^6 = 64 \equiv 1 \pmod 9$. Hence, $U_9$ is cyclic with generator $2$.
+
+Its other generator is: 5.
+
+\subsection*{Problem 31}
+
+
 \section{Normal Subgroups and Quotient Groups}
 
 \subsection*{Problem 1}
-By the hypothesis, $HgHg^{-1} = Hx$ for some coset $Hx$ of $H$. The left side contains $e$, so the right side also contains $e$. Thus, it must be that $Hx$ is $H$ itself (since they are disjoint). Hence, $HgHg^{-1} = H$. Now, since $e \in H$, then $egHg^{-1} \subseteq H$, which simplifies to $gHg^{-1} \subseteq H$.
+Consider the cosets $Hg$ and $Hg^{-1}$. By hypothesis, $HgHg^{-1} = Hx$ for some coset $Hx$. The left side contains $e$ (since $egeg^{-1} = e$), so the right side also contains $e$. Thus, it must be that $Hx = H$, because the subgroup itself is its only coset that contains $e$. Hence, $HgHg^{-1} = H$. Now, since $e \in H$, then $egHg^{-1} \subseteq H$, which simplifies to $gHg^{-1} \subseteq H$.
 
 \subsection*{Problem 2}
-We use the disjoint property of cosets. Both $Hx$ and $xH$ share the same complement $H$:
+We use the disjoint property of cosets. Suppose $x \not \in H$. Both $Hx$ and $xH$ share the same complement $H$:
 $$G - Hx = H = G - xH$$
 $$\Rightarrow Hx = xH$$
-where we use the fact $Hx, xH \subseteq G$ to conclude the second equality.
 
 \subsection*{Problem 3}
 Suppose we have two elements of $NH$, namely $n_1h_1$ and $n_2h_2$. We derive:
@@ -646,6 +680,19 @@ $$gNg^{-1} = g (N_1 \cap N_2) g^{-1} \subseteq gN_2g^{-1} = N_2$$
 Hence, $gNg^{-1} \subseteq N_1 \cap N_2 = N$.
 
 \subsection*{Problem 5}
-??
+Intersection of subgroups is still a group, and since $H \cap N$ is subset of $H$, it follows that $H \cap N$ is a subgroup of $H$.
+
+Now, since $N$ is normal in $G$, then for every $h \in H \subseteq G$, we have
+$$hNh \subseteq N$$
+which implies
+$$\Rightarrow h(H \cap N)h \subseteq N$$
+Also, since $H$ is a subgroup, and the left side is the product of elements in $H$, we have
+$$\Rightarrow h(H \cap N)h \subseteq H$$
+Hence,
+$$h(H \cap N)h \subseteq H \cap N$$
+for every $h \in H$, thus $H \cap N$ is normal in $H$.
+
+\subsection*{Problem 6}
+If $H$ is a subgroup, then $ghg^{-1} = hgg^{-1} = h \in H$, hence $H$ is normal.
 
 \end{document}
