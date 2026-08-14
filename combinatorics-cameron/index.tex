@@ -30,7 +30,7 @@
 \chapter{On Numbers and Counting}
 
 \subsection*{Exercise 1}
-The assumption that there is a largest natural number is wrong.
+Missing proof of existence of largest natural number, so cannot say "let $n$ be the largest...".
 
 \subsection*{Exercise 2}
 Fuh naw.
@@ -63,57 +63,43 @@ $$< e \left(\frac{n}{2}\right)^n$$
 Hence proven.
 
 \subsection*{Exercise 4}
-No idea.
+(a)
+Given, $\log x$ and $x^c$ for $c > 0$, since both go to infinity, we apply L'Hopital's
+$$\lim \frac{\log x}{x^c} = \lim \frac{\frac{1}{x}}{c\frac{1}{x^{1 - c}}} = \frac{1}{c} \lim x^{-c} = 0$$
+
+\noindent
+(b)
+Given $c, d > 1$, we know
+$$\lim \frac{c^x}{x^d} = \infty$$
+which is equivalent to the existence of $x$ such that $\frac{c^x}{x^d} > M$ for any $M$. Simply choose $M = 1$. Since $c^x$ is positive, in order to produce positive result greater than $1$, it follows that  $x^d$ must be positive. Hence, there exists $x$ such that $\frac{c^x}{x^d} > 1 \Rightarrow c^x > x^d$ with no sign flip.
 
 \subsection*{Exercise 5}
-Ambiguously phrased.
-
-\subsection*{Exercise 6}
-Verified.
-
-\subsection*{Exercise 7}
-Verified.
+Not sure what unlabelled means.
 
 \subsection*{Exercise 8}
-There are $2^n$ configurations of inputs. Let's list them on a single row. Then, for each of the $2^n$ configurations, we have 2 options, either true or false, hence $2^{2^n}$ boolean functions. This is akin to choosing from the subset of $2^n$ configurations those who bear the value "true", and labelling the rest "false".
+There are $2^n$ configurations of inputs. For each of the $2^n$ configurations, we have 2 output options, either true or false, hence $2^{2^n}$ boolean functions.
 
 \subsection*{Exercise 9}
-I guess they can start from the existence of the empty set, which gives 0. Then work their way up using this axiom.
+I think studying set theory would be more beneficial and effective than this question. Skipped.
 
 \subsection*{Exercise 10}
-We can easily use L'Hopital to deduce that $\lim_{n \rightarrow \infty} \frac{g(n)}{f(n)} \geq \lim_{n \rightarrow \infty} \frac{ab^n}{bn^d} = \infty$. This means that it is unbounded, hence we can find $C = 1$ such that $\frac{g(n)}{f(n)} > C = 1$, hence $g(n) > f(n)$. Too lazy to find the equality point.
+$$\frac{g(n)}{f(n)} > \frac{kc^n}{bn^d}$$
+for some $b, k$ and sufficiently large $n$. By L'Hopital's, the right limit tends to infinity, hence there exists $N$ such that the right side is greater than $1$ for all $n \geq N$ (similar to Exercise 4). Hence $g(n) > f(n)$ for $n \geq N$.
 
 \subsection*{Exercise 11}
-For the first, since $b$ subsets each with $k$ elements, then the combined total count of elements of $bk$. For the second, there are $v$ elements, each found in exactly $r$ subsets, which adds up to $vr$, which is also the combined total count of elements in subsets. Too lazy for examples.
+For the first, since $b$ subsets each with $k$ elements, then the combined total count of elements of $bk$. For the second, there are $v$ elements, each found in exactly $r$ subsets, which adds up to $vr$, which is also the combined total count of elements in subsets.
 
 \subsection*{Exercise 12}
 (i)
-Suppose $c = ab$. If $a$ is even, then
-$$c = \frac{a}{2} (2b)$$
-If $a$ is odd, then
-$$c = ab - b + b$$
-$$= (a - 1)b + b$$
-$$= \frac{a - 1}{2}(2b) + b$$
-At the end of the algorithm after $n$ steps, we have $c = 1b_n + b_{i_1} + b_{i_2} + \cdots + b_{i_m}$, where, as per the instructions, we have $a_n = 1$. The $b_i$ come from the shedding of the odd $a$'s. Hence proven.
-
-\noindent
-(ii)
-Idk, too lazy.
-
-\noindent
-(iii)
-Fuh naw.
+Too lazy. Pretty intuitive and obvious.
 
 \subsection*{Exercise 13}
-Yeah, Buddha is dumb af.
+192
 
 \subsection*{Exercise 14}
 Number of books:
 $$B = 25^{410 \cdot 40 \cdot 80}$$
 Number of rooms:
 $$R = \frac{B}{20 \cdot 35}$$
-
-\subsection*{Exercise 15}
-Hell nah.
 
 \end{document}
