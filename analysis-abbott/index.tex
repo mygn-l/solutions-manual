@@ -1547,7 +1547,71 @@ True. Extend $f$ by setting the value of limit points of $A$ to be equal to the 
 (c)
 False. Simply let $f$ be a step function. If $A$ is compact, then it's bounded, hence $f(A)$ is a finite number of isolated points, which is compact. But $f$ is not continuous.
 
-\subsection*{Exercises 4.4.5+}
+\subsection*{Exercise 4.4.5}
+Given $x \in (a, c) = (a, b] \cup [b, c)$ and $\epsilon$, we can find $\delta$ such that $|f(x) - f(y)| < \epsilon$ for all $y \in (x - \delta, x + \delta) \cap (a, c)$. First, for every $y$ that belongs to the same original part as $x$, we can simply find $\delta_1$ such that $|f(x) - f(y)| < \epsilon$ for all $|y - x| < \delta_1$. Second, for $y$'s that belong to the other part, we can find $\delta_2$ such that $|f(y) - f(b)| < \frac{\epsilon}{2}$, and $|f(b) - f(x)| < \frac{\epsilon}{2}$, hence $|f(x) - f(y)| < |f(x) - f(b)| + |f(b) - f(y)| < \epsilon$. By taking the minimum of $\delta_1$ and $\delta_2$, we ensure that $f(y)$ in both parts are within $\epsilon$ of $f(x)$. Hence $f$ is uniformly continuous over $(a, c)$.
+
+\subsection*{Exercise 4.4.6}
+(a)
+Let $f(x) = \frac{1}{x}$, and the Cauchy sequence converge to $0$.
+
+\noindent
+(b)
+I don't know. I think it's impossible.
+
+\noindent
+(c)
+Impossible. Since the domain is closed, every Cauchy sequence converges to a finite value. By sequence definition of continuity, the image should also converge, hence is Cauchy.
+
+\subsection*{Exercise 4.4.7}
+For every $\epsilon$, choose $\delta = \epsilon$. Then $f(x - \delta) = \sqrt{x - \delta}$ and $f(x + \delta) = \sqrt{x + \delta}$, which by substitution, are simply $\sqrt{x - \epsilon}$ and $\sqrt{x + \epsilon}$, which are clearly within the bounds of $f(x) - \epsilon = \sqrt{x} - \epsilon$ and $f(x) + \epsilon = \sqrt{x} + \epsilon$.
+
+\subsection*{Exercise 4.4.8}
+(a)
+Impossible. By extreme value theorem, it must attain a minimum $m$ and a maximum $M$ strictly contained in $(0, 1)$, hence $(0, m)$ and $(M, 1)$ are not reached.
+
+\noindent
+(b)
+Obviously possible.
+
+\noindent
+(c)
+$f(x) = (1 - x) \sin \left( \frac{1}{x} \right)$
+
+\section{The Intermediate Value Theorem}
+
+\subsection*{Exercise 4.5.1}
+
+\section{Sets of Discontinuity}
+
+\subsection*{Exercise 4.6.1}
+(a)
+$$f(x) = \min \{ x - \lfloor x \rfloor, \lceil x \rceil - x \} g(x)$$
+where $g$ is Dirichlet. This is basically Dirichlet dampened off at every integer.
+
+\noindent
+(b)
+$$f(x) = \begin{cases}
+    0, & x < 0 \\
+    h(x), & 0 \leq x \leq 1 \\
+    0, & 1 < x
+\end{cases}$$
+where $h$ is the modified Dirichlet.
+
+\subsection*{Exercise 4.6.2}
+$D_f$ is simply $A$.
+
+\subsection*{Exercise 4.6.3}
 Too lazy.
+
+\subsection*{Exercise 4.6.4}
+The forward direction is trivial. For the reverse section, you simply consider the two $\delta$ for a given shared $\epsilon$, the smallest becoming the shared $\delta$.
+
+\subsection*{Exercise 4.6.5}
+Every $x$ has a value $f(x)$. Two cases: either limit exists or not at $x$. First, if limit exists, by monotonicity, $f(a) < f(x) < f(b)$ for sequences $a < x$ and $x < b$ that converge to $x$, hence by squeeze theorem $f(x) = L$.
+
+Now, if limit does not exist, then we need to show it must have a left and right limit. By monotone convergence theorem, since every sequence $f(a)$ is bounded by $f(x)$ and is monotone, then it must converge. Same with $f(b)$. Hence, left and right limit always exist.
+
+\subsection*{Exercise 4.6.6}
+
 
 \end{document}
