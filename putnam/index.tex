@@ -102,4 +102,56 @@ Substituting $0$, the whole thing becomes $0$. Hence, the second derivative is z
 
 For $t$ near $0$, the denominator is always negative. However, the derivative of the numerator is $6$ (positive) at $t = 0$, and since the value of the numerator is $0$ at $t = 0$, the numerator changes sign when $t < 0$ becomes $t > 0$. Hence, there is a sign change in the second derivative at $t = 0$, hence it's an inflection point.
 
+\section*{A4}
+I don't understand the problem.
+
+\section*{A5}
+(1)
+Using L'Hopital's,
+$$\lim_{x \to \infty} \frac{x^2}{e^x} = \lim_{x \to \infty} \frac{2x}{e^x} = \lim_{x \to \infty} \frac{2}{e^x} = 0$$
+Alternatively, we can argue exponential growth dominates polynomial growth.
+
+\noindent
+(b)
+Since
+$$\lim_{x \to 0} (1 + \sin 2x)^{\frac{1}{x}}$$
+$$= e^{\lim_{x \to 0} \frac{1}{x} \log (1 + \sin 2x)}$$
+with L'Hopital's,
+$$= e^{\lim_{x \to 0} \frac{2 \cos 2x}{1 + \sin 2x}} = e^2$$
+is finite. Inside $[0, \infty)$, it's the only undefined point of the integrand, which has a finite limit, hence the integral is bounded for every $k$. Hence, as $k \to 0$, the integral goes to $0$. Therefore, we can apply L'Hopital's
+$$\lim_{k \to 0} \frac{\int_0^k (1 + \sin 2x)^{\frac{1}{x}} dx}{k}$$
+$$= \lim_{k \to 0} (1 + \sin 2k)^{\frac{1}{k}}$$
+which we found to be equal to $e^2$.
+
+\section*{A6}
+Suppose the pool is a 1x1 square.
+Let $s, r$ be swimming and running speeds respectively. If $s > r$, then the obvious solution is to swim diagonally directly to the opposite corner. If $s < r$, there are two cases.
+
+If swimming the hypothenuse is slower than running both edges, i.e. $\frac{\sqrt{2}}{s} > \frac{2}{r} \Rightarrow s < \frac{r}{\sqrt{2}}$, then the solution is to run along the edges.
+
+If she starts swimming at the start, there are three options. Reaching the bottom or left edges, reaching the top or right edges, or reaching the opposite corner. The latter, by our initial assumption $\frac{\sqrt{2}}{s} > \frac{2}{r}$, is obviously slower. Obviously, there's a fourth option to reach somewhere else in the water, but she will eventually reach one of those three options, and this fourth option checkpoint would simply be a point in her path to one of those three options.
+
+If she lands on the bottom or left edges, then she effectively used a longer path than simply running directly to the landing point. Hence, this option is discarded.
+
+If she lands on the top or right edges, she has many options. Going back to the starting point or to the bottom or left edge is stupidly wrong. The remaining options are landing back onto the top or right edge, or simply reaching the opposite corner. Re-landing onto the top or right edge is, again, a longer path than simply running along the edge. Hence, her only viable option is running directly to the opposite corner.
+
+Depending on her landing ordinate $0 < y < 1$ on the right edge (the reasoning is equivalent for the top edge), her time is
+$$T = \frac{\sqrt{1 + x^2}}{s} + \frac{1 - x}{r} > \frac{\sqrt{1 + x^2}}{\frac{r}{\sqrt{2}}} + \frac{1 - x}{r}$$
+$$= \frac{1 - x + \sqrt{2}\sqrt{1 + x^2}}{r}$$
+The numerator is always greater or equal to 2, because
+$$\sqrt{2}\sqrt{1 + x^2} - x + 1 \geq 2$$
+$$\Rightarrow \sqrt{2}\sqrt{1 + x^2} \geq x + 1$$
+$$\Rightarrow 2 (1 + x^2) \geq x^2 + 2x + 1$$
+$$\Rightarrow x^2 + 1 \geq 2x$$
+$$\Rightarrow (x - 1)^2 \geq 0$$
+is true.
+
+Hence, $T > \frac{2}{r}$, thus running along the edges is always faster if swimming the hypothenuse is slower than running the edges, if she starts by swimming.
+
+Another case is when $\frac{r}{\sqrt{2}} \leq s < r$, i.e. swimming the hypothenuse is faster than running the edges, but running speed is still higher than swimming speed. Going back to our three options,
+
+\section*{A7}
+(1)
+
+
 \end{document}
