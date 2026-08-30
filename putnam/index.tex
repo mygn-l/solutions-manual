@@ -176,6 +176,128 @@ To summarize, we have the lines:
 \end{itemize}
 
 \section*{B1}
+(1)
+Solution found online. Consider the cofactor matrix $A_{ij}$ and the transpose of the original matrix $A^T$.
+$$
+\begin{bmatrix}
+  A_{11} & A_{12} & A_{13} & A_{14} \\
+  A_{21} & A_{22} & A_{23} & A_{24} \\
+  A_{31} & A_{32} & A_{33} & A_{34} \\
+  A_{41} & A_{42} & A_{43} & A_{44} \\
+\end{bmatrix}
+\begin{bmatrix}
+  a_{11} & a_{21} & a_{31} & a_{41} \\
+  a_{12} & a_{22} & a_{32} & a_{42} \\
+  a_{13} & a_{23} & a_{33} & a_{43} \\
+  a_{14} & a_{24} & a_{34} & a_{44} \\
+\end{bmatrix}
+$$
+If we compute the matrix product, we notice that
+$$a_{i1} A_{1i} + a_{i2} A_{2i} + a_{i3} A_{3i} + a_{i4} A_{4i} = \det{A} = d$$
+but
+$$a_{i1} A_{1j} + a_{i2} A_{2j} + a_{i3} A_{3j} + a_{i4} A_{4j} = 0$$
+for $i \neq j$, because it's equivalent to the determinant of $A$ where the $j$-th row is replaced with the $i$-th row. Hence, the resulting matrix is
+$$
+\begin{bmatrix}
+  d & 0 & 0 & 0 \\
+  0 & d & 0 & 0 \\
+  0 & 0 & d & 0 \\
+  0 & 0 & 0 & d \\
+\end{bmatrix}
+$$
+which has determinant $d^4$. Since it was the result of multiplying the transpose with the cofactor matrix, and the transpose has determinant $d$, then the cofactor matrix itself has determinant $\frac{d^4}{d} = d^3$.
 
+\noindent
+(2)
+If $P(x_1) = x_1$, then $P(P(x_1)) = P(x_1) = x_1$, hence $P(P(x_1)) = x_1$, so $x_1$ is a root of $P(P(x)) = x$. Same for the other root $x_2$.
+
+I'm too dumb for the rest.
+
+\section*{B2}
+Solution found online.
+$$yy'' = 2y'y'$$
+$$\Rightarrow \frac{y''}{y'} = 2\frac{y'}{y}$$
+$$\Rightarrow \log y' = 2 \log y + C$$
+$$\Rightarrow y' = Cy^2$$
+$$\Rightarrow C\frac{dy}{y^2} = dx$$
+$$\Rightarrow -\frac{C}{y} = x + D$$
+Since it passes through $x = 1, y = 1$, then $-C = 1 + D$. Hence, we have the family of solutions
+$$\frac{1 + D}{x + D} = y$$
+
+\section*{B3}
+Using the disk's reference frame, the insect is simply turning at a constant speed and advancing at a constant speed. Hence, its path is an arc of a bigger circle. The disk's edge and the big circle intersect at right angles, hence the insect's path touches the disk's edge at right angle. Since at the end of its path, the insect is facing north, the insect touches the edge again at the disk's northernmost point.
+
+\section*{B4}
+Using algebra, we can find the parabola's equation:
+$$x^2 + \left( \frac{m}{2} - y \right)^2 = \left( \frac{m}{2} + y \right)^2$$
+$$x^2 + y^2 - my + \frac{m^2}{4} = y^2 + my + \frac{m^2}{4}$$
+$$y = \frac{x^2}{2m}$$
+assuming the parabola passes through the origin. The derivative is thus
+$$y' = \frac{x}{m}$$
+This is the slope of the tangent line. For the perpendicular line, the slope is $-\frac{m}{x}$. By symmetry, we can restrict ourselves to using $x < 0$, hence the lines have positive slope $\frac{m}{x_0}$ where $x_0$ is the horizontal distance from the origin. Using algebra, we can find the line's equation:
+$$b = \frac{m}{x_0} \cdot x_0 + \frac{x_0^2}{2m} = m + \frac{x_0^2}{2m}$$
+$$\Rightarrow y = \frac{m}{x_0} x + m + \frac{x_0^2}{2m}$$
+Equating with the parabola, we get
+$$\frac{m}{x_0} x + m + \frac{x_0^2}{2m} = \frac{x^2}{2m}$$
+$$0 = \frac{x^2}{2m} - \frac{m}{x_0} x - m - \frac{x_0^2}{2m}$$
+$$= x_0 x^2 - 2m^2 x - 2m^2 x_0 - x_0^3$$
+The quadratic formula gives
+$$x = \frac{m^2}{x_0} + \sqrt{\frac{m^4}{x_0^2} + 2m^2 + x_0^2}$$
+which can be simplified
+$$x = \frac{m^2}{x_0} + \sqrt{\left( \frac{m^2}{x_0} + x_0 \right)^2} = \frac{2m^2}{x_0} + x_0$$
+The corresponding $y$ value is
+$$\frac{2m^3}{x_0^2} + 2m + \frac{x_0^2}{2m}$$
+The distance is
+$$\sqrt{\left( \frac{2m^3}{x_0^2} + 2m + \frac{x_0^2}{2m} - \frac{x_0^2}{2m} \right)^2 + \left( x_0 + \frac{2m^2}{x_0} + x_0 \right)^2}$$
+$$= \sqrt{\left( \frac{2m^3}{x_0^2} + 2m \right)^2 + \left( 2x_0 + \frac{2m^2}{x_0} \right)^2}$$
+$$= \sqrt{\frac{4m^6}{x_0^4} + \frac{12m^4}{x_0^2} + 12m^2 + 4x_0^2}$$
+$$= \frac{2}{x_0^2}\sqrt{m^6 + 3m^4 x_0^2 + 3m^2 x_0^4 + x_0^6}$$
+$$= \frac{2}{x_0^2}(m^2 + x_0^2)^\frac{3}{2}$$
+We can thus minimize it with respect to some $z = x_0^2$:
+$$\frac{(m^2 + z)^\frac{3}{2}}{z}$$
+The derivative is
+$$\frac{\frac{3}{2}z(m^2 + z)^\frac{1}{2} - (m^2 + z)^\frac{3}{2}}{z^2}$$
+Setting it to zero, we get
+$$\frac{3}{2}z(m^2 + z)^\frac{1}{2} = (m^2 + z)^\frac{3}{2}$$
+$$\frac{3}{2}z = m^2 + z$$
+$$z = 2m^2$$
+Plugging it back into the distance, we get a minimum distance of
+$$\frac{2}{2m^2}(m^2 + 2m^2)^\frac{3}{2} = \frac{(3m^2)^\frac{3}{2}}{m^2} = \sqrt{27} m = 3\sqrt{3} m$$
+
+\section*{B5}
+The hyperbola's equation has the form
+$$x^2 - y^2 = c$$
+assuming it's horizontal. The vertical hyperbola would simply exchange $x$ and $y$, but the solution is similar.
+
+The derivative is
+$$\frac{dy}{dx} = \frac{x}{y}$$
+
+The tangent's y-intercept can be found for a given $x_0$
+$$b = y_0 - \frac{x_0^2}{y_0}$$
+Let $D$ be the distance from the line to the origin. We can solve for $D$ using the fact that the right triangle formed by the tangent, y-axis, and distance, has the same legs proportion as the tangent's slope:
+$$D^2 + \left( \frac{x_0}{y_0} D \right)^2 = b^2$$
+$$D^2 = \frac{\left( y_0 - \frac{x_0^2}{y_0} \right)^2}{1 + \frac{x_0^2}{y_0^2}}$$
+$$= \frac{\left( y_0^2 - x_0^2 \right)^2}{y_0^2 + x_0^2}$$
+
+Let $h$ be the segment representing the distance from the tangent to the origin. For a given counterclockwise angle $\theta$ for $h$ from the positive x-axis, the tangent's slope is
+$$-\frac{\cos \theta}{\sin \theta}$$
+which must correspond to the derivative, hence
+$$\frac{x_0}{y_0} = -\frac{\cos \theta}{\sin \theta}$$
+$$x_0^2 \sin^2 \theta - y_0^2 \cos^2 \theta = 0$$
+We can derive the appropriate polar formulas for $x^2_0$ and $y^2_0$:
+$$x_0^2 \sin^2 \theta - (x_0^2 - c) \cos^2 \theta = 0$$
+$$x_0^2 = -\frac{c \cos^2 \theta}{\sin^2 \theta - \cos^2 \theta}$$
+and
+$$(y_0^2 + c) \sin^2 \theta - y_0^2 \cos^2 \theta = 0$$
+$$y_0^2 = -\frac{c \sin^2 \theta}{\sin^2 \theta - \cos^2 \theta}$$
+
+We can rewrite the distance formula using these polar coordinates
+$$D^2 = \frac{\left( -\frac{c \sin^2 \theta}{\sin^2 \theta - \cos^2 \theta} + \frac{c \cos^2 \theta}{\sin^2 \theta - \cos^2 \theta} \right)^2}{-\frac{c \sin^2 \theta}{\sin^2 \theta - \cos^2 \theta} - \frac{c \cos^2 \theta}{\sin^2 \theta - \cos^2 \theta}}$$
+$$= \frac{\left( \frac{c \cos 2\theta}{-\cos 2\theta} \right)^2}{-\frac{c}{- \cos 2\theta}}$$
+$$= \frac{c^2}{\frac{c}{\cos 2\theta}}$$
+$$= c \cos 2\theta$$
+Hence, the equation of the locus is
+$$r = \sqrt{c \cos 2\theta}$$
+which remains undefined for $\theta \in [\frac{\pi}{4}, \frac{3\pi}{4}] \cup [\frac{5\pi}{4}, \frac{7\pi}{4}]$, to match the fact that the tangent is impossible for those angles by graphical inspection. Basically, it's a figure 8 without the center.
 
 \end{document}
