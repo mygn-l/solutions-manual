@@ -300,4 +300,91 @@ Hence, the equation of the locus is
 $$r = \sqrt{c \cos 2\theta}$$
 which remains undefined for $\theta \in [\frac{\pi}{4}, \frac{3\pi}{4}] \cup [\frac{5\pi}{4}, \frac{7\pi}{4}]$, to match the fact that the tangent is impossible for those angles by graphical inspection. Basically, it's a figure 8 without the center.
 
+\chapter{Putnam 1939}
+
+\section*{A1}
+Graph is symmetric above and below the x-axis, but the positive gradient is only found on the top. Hence, we have
+$$y = \sqrt{x^3} = x^\frac{3}{2}$$
+The derivative is
+$$y' = \frac{3}{2}\sqrt{x}$$
+which must be equal to 1, hence
+$$\frac{3}{2}\sqrt{x} = 1$$
+$$\Rightarrow x = \left( \frac{2}{3} \right)^2 = \frac{4}{9}$$
+The path integral formula is
+$$\int_0^\frac{4}{9} \sqrt{1 + \left( y' \right)^2}dx$$
+which we substitute and solve
+$$\int_0^\frac{4}{9} \sqrt{1 + \left( \frac{3}{2}\sqrt{x} \right)^2}dx$$
+$$= \int_0^\frac{4}{9} \sqrt{1 + \frac{9}{4}x} \; dx$$
+$$= \left[ \frac{4}{9} \cdot \frac{2}{3} \left( 1 + \frac{9}{4}x \right)^\frac{3}{2} \right]_0^\frac{4}{9}$$
+$$= \frac{8}{27} \left( 1 + \frac{9}{4} \cdot \frac{4}{9} \right)^\frac{3}{2} - \frac{8}{27}$$
+$$= \frac{8}{27} \left( 2\sqrt{2} - 1 \right)$$
+
+\section*{A2}
+Derivative is
+$$y' = 3x^2$$
+The tangent's equation can be found
+$$b = y_0 - x_0 \cdot y'_0 = x_0^3 - x_0 \cdot 3x_0^2 = -2x_0^3$$
+$$y = 3x_0^2 \cdot x - 2x_0^3$$
+The intersections with the cubic can be found
+$$3x_0^2 \cdot x - 2x_0^3 = x^3$$
+$$0 = x^3 - (3x_0^2) x + 2x_0^3$$
+$$= (x - x_0)(x - x_0)(x + 2x_0)$$
+We already know it intersects at $x = x_0$, hence the desired point is $x = -2x_0$. The derivative at that point equals
+$$y' = 3(-2x_0)^2 = 4 (3x_0^2)$$
+which is exactly four times the derivative $3x_0^2$ at $x = x_0$.
+
+\section*{A3}
+We can express the cubic as a product using its roots
+$$y = (x - \alpha)(x - \beta)(x - \gamma)$$
+Hence, we can find formulas for $a, b, c$ in terms of these roots
+$$= (x^2 - (\alpha + \beta)x + \alpha\beta)(x - \gamma)$$
+$$= x^3 + (-\alpha - \beta - \gamma)x^2 + (\alpha\beta + \alpha\gamma + \beta\gamma)x - \alpha\beta\gamma$$
+$$\Rightarrow a = -\alpha - \beta - \gamma$$
+$$\Rightarrow b = \alpha\beta + \alpha\gamma + \beta\gamma$$
+$$\Rightarrow c = -\alpha\beta\gamma$$
+Hence, for roots $\alpha^3, \beta^3, \gamma^3$, we have these corresponding $a', b', c'$ values
+$$a' = -\alpha^3 - \beta^3 - \gamma^3$$
+$$b' = \alpha^3\beta^3 + \alpha^3\gamma^3 + \beta^3\gamma^3$$
+$$c' = -\alpha^3\beta^3\gamma^3$$
+We want to express each of these using the original $a, b, c$.
+First, notice that
+$$a^3 = -\alpha^3 - \beta^3 - \gamma^3 - 3\alpha^2\beta - 3\alpha^2\gamma - 3\alpha\beta^2 - 3\alpha\gamma^2 - 3\beta^2\gamma - 3\beta\gamma^2 - 6\alpha\beta\gamma$$
+$$ab = -\alpha^2\beta - \alpha\beta^2 - \alpha^2\gamma - \alpha\gamma^2 - \beta^2\gamma - \beta\gamma^2 - 3\alpha\beta\gamma$$
+$$b^3 = \alpha^3\beta^3 + \alpha^3\gamma^3 + \beta^3\gamma^3$$
+$$+ \; 3\alpha^3\beta^2\gamma + 3\alpha^3\beta\gamma^2 + 3\alpha^2\beta^3\gamma + 3\alpha^2\beta\gamma^3 + 3\alpha\beta^3\gamma^2 + 3\alpha\beta^2\gamma^3 + 6\alpha^2\beta^2\gamma^2$$
+$$abc = \alpha^3\beta^2\gamma + \alpha^3\beta\gamma^2 + \alpha^2\beta^3\gamma + \alpha^2\beta\gamma^3 + \alpha\beta^3\gamma^2 + \alpha\beta^2\gamma^3 + 3\alpha^2\beta^2\gamma^2$$
+Hence,
+$$a' = a^3 - 3ab + 3c$$
+$$b' = b^3 - 3abc + 3c^2$$
+$$c' = c^3$$
+Thus our cubic is
+$$y = x^3 + (a^3 - 3ab + 3c)x^2 + (b^3 - 3abc + 3c^2)x + c^3$$
+
+\section*{A4}
+A line can only intersect another line at most once; otherwise, they are parallel, which clearly doesn't work if we want our line to intersect all four lines.
+
+Our four points are $(a, 1, 0)$, $(0, b, 1)$, $(1, 0, c)$, $\left(d, d, -\frac{d}{6}\right)$. Since two points specify a line, we need to fix two points such that the line passes through the remaining two. Using the first two points, we have the vector $(-a, b - 1, 1)$ and we can choose the first point $(a, 1, 0)$ as origin. Thus, the line's parametric equation is
+$$L = (-a, b - 1, 1) t + (a, 1, 0)$$
+We want to intersect the third line, hence we equate
+$$(1, 0, c) = (-a, b - 1, 1) t + (a, 1, 0)$$
+Thus, $t = c$, from which we derive
+$$1 = -ac + a \quad \Rightarrow \quad a = \frac{1}{1 - c}$$
+$$0 = (b - 1)c + 1 \quad \Rightarrow \quad b = 1 - \frac{1}{c}$$
+Our line is refined
+$$L = \left( -\frac{1}{1 - c}, -\frac{1}{c}, 1 \right) t + \left( \frac{1}{1 - c}, 1, 0 \right)$$
+To intersect the fourth line, we equate again
+$$\left(d, d, -\frac{d}{6}\right) = \left( -\frac{1}{1 - c}, -\frac{1}{c}, 1 \right) t + \left( \frac{1}{1 - c}, 1, 0 \right)$$
+Thus, $t = -\frac{d}{6}$, from which we derive
+$$d = \frac{1 + \frac{d}{6}}{1 - c}$$
+$$d = 1 + \frac{d}{6c}$$
+$$\Rightarrow c = \frac{-1 \pm 5}{12}$$
+i.e. $c = -\frac{1}{2}$ or $c = \frac{1}{3}$. The corresponding lines are
+$$L = \left( -\frac{2}{3}, 2, 1 \right)t + \left( \frac{2}{3}, 1, 0 \right) = \left( -2, 6, 3 \right)t + \left( \frac{2}{3}, 1, 0 \right)$$
+$$L = \left( -\frac{3}{2}, -3, 1 \right)t + \left( \frac{3}{2}, 1, 0 \right) = \left( -3, -6, 2 \right)t + \left( \frac{3}{2}, 1, 0 \right)$$
+
+\chapter{Putnam 2000}
+
+\section{A1}
+
+
 \end{document}
