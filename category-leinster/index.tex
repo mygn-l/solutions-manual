@@ -1,0 +1,58 @@
+\documentclass{book}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{bm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+
+\graphicspath{ {./} }
+
+\title{Category Theory Leinster - Solutions Manual}
+\author{Mingruifu Lin}
+\date{September 2026}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Categories, functors and natural Transformations}
+
+\section{Categories}
+
+\subsection*{Exercise 1.1.12}
+I'm not someone with much ideas.
+
+\subsection*{Exercise 1.1.13}
+Suppose both $g_1$ and $g_2$ are inverses of $f$. First, we have
+$$g_1f = 1_A$$
+Multiply both sides by $g_2$
+$$g_1fg_2 = 1_A g_2$$
+Since $fg_2 = 1_B$, we have
+$$g_1 1_B = 1_A g_2$$
+Note that the difference in identity makes sense ($g_1$ requires type $B$, but $g_2$ produces type $A$). Anyways, applying identity, we end up with
+$$g_1 = g_2$$
+
+\subsection*{Exercise 1.1.14}
+Composition is defined
+$$\mathscr{A}((A', B'), (A'', B'')) \times \mathscr{A}((A, B), (A', B')) \rightarrow \mathscr{A}((A, B), (A'', B''))$$
+$$(g_A \times g_B) \times (f_A \times f_B) \mapsto (g_A \circ f_A) \times (g_B \circ f_B)$$
+And identity is defined
+$$1_{(A, B)} = 1_A \times 1_B$$
+
+\subsection*{Exercise 1.1.15}
+I don't understand the question, nor do I know what's a homotopy class.
+
+\end{document}

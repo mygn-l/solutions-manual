@@ -382,9 +382,109 @@ i.e. $c = -\frac{1}{2}$ or $c = \frac{1}{3}$. The corresponding lines are
 $$L = \left( -\frac{2}{3}, 2, 1 \right)t + \left( \frac{2}{3}, 1, 0 \right) = \left( -2, 6, 3 \right)t + \left( \frac{2}{3}, 1, 0 \right)$$
 $$L = \left( -\frac{3}{2}, -3, 1 \right)t + \left( \frac{3}{2}, 1, 0 \right) = \left( -3, -6, 2 \right)t + \left( \frac{3}{2}, 1, 0 \right)$$
 
-\chapter{Putnam 2000}
+\chapter{Putnam 1994}
 
-\section{A1}
+\section*{A1}
+Here, the sum notation doesn't include the upper endpoint,
+$$
+\sum_{i = 2^n}^{2^{n + 1}} a_i \leq
+\sum_{i = 2^n}^{2^{n + 1}} (a_{2i} + a_{2i + 1}) =
+\sum_{i = 2^{n + 1}}^{2^{n + 2}} a_i$$
+Since $a_1 > 0$, for the base case $i = 0$, we have
+$$\sum_{i = 1}^2 a_i = a_1 > 0$$
+Hence, every such sum $\sum_{i = 2^j}^{2^{j + 1}} a_i$ is greater or equal to $a_1 > 0$ for all $j$. Now, since
+$$\sum_{i = 1}^\infty a_i = \sum_{j = 0}^\infty \sum_{i = 2^j}^{2^{j + 1}} a_i \geq \sum_{j = 0}^\infty a_1$$
+with the latter sum diverging to $\infty$, it follows that the original sum diverges as well.
+
+\section*{A3}
+Let's draw the triangle $ABC$ with the right angle $C$ north, and the hypothenuse $AB$ horizontal. Suppose for contradiction that it is possible to fill $ABC$ such that same color points are always less than $2 - \sqrt{2}$ distance from each other.
+
+Let $A$ have Color A, and $B$ have Color B, since they are obviously too far from each other ($\sqrt{2} > 2 - \sqrt{2}$, because $\sqrt{2} \approx 1.4$ and $2 - \sqrt{2} \approx 0.6)$.
+
+Trace two circles $P$ and $Q$ of radius $2 - \sqrt{2}$ around $A$ and $B$ respectively. Let $E$ be the intersection point of $P$ and $AB$, and give it Color E. The ratio $n = \frac{EB}{AB}$ is equal to $n = \frac{\sqrt{2} - (2 - \sqrt{2})}{\sqrt{2}} = 2 - \sqrt{2}$. Dropping a perpendicular from $E$ to $BC$, we form an isosceles right triangle $EFB$ at $F$, with $FB = n \cdot 1 = 2 - \sqrt{2}$ where we used the similar triangles ratio $n$. Hence, $EF = 2 - \sqrt{2}$ as well.
+
+Thus, $F$ must be a different color from $E$, call it Color F. Now, $C$, being even farther from $E$ than $F$, thus has a different color from $E$. It's also too far from $A$ and $B$, hence it must have the only remaining Color F.
+
+Let $G$ be intersection between $Q$ and $AB$. By symmetry, $G$ is also too far from $C$, just like $E$, and it's also too far from $A$ and $B$, hence it must have the only remaining Color $E$. By symmetry, dropping a perpendicular from $G$ to $AC$, and calling the base point $H$, we know $H$ must have a different color than $G$, so by elimination, it must have Color $C$.
+
+Finally, notice that $CFH$ is an isosceles right triangle. With sides $1 - (2 - \sqrt{2}) = \sqrt{2} - 1$, its hypothenuse $FH$ is equal to $\sqrt{2}(\sqrt{2} - 1) = 2 - \sqrt{2}$, which is exactly the out-of-bound length between same color points. Since $F$ and $H$ share a same color, but are at a distance of $2 - \sqrt{2}$, it's a contradiction, hence the original assumption is wrong. Hence, there exists two points of the same color at a distance at least $2 - \sqrt{2}$ for any possible coloring of $ABC$.
+
+\section*{A4}
+Since $A$ and $B$ have integer entries, then $A + nB$ have integer entries as well.
+
+The inverse of a matrix
+$$A = \begin{pmatrix}
+  P & Q \\
+  R & S \\
+\end{pmatrix}
+$$
+is given by 
+$$A^{-1} = \frac{1}{\det A} \begin{pmatrix}
+  S & -Q \\
+  -R & P \\
+\end{pmatrix}
+$$
+
+Now, since $A$ is integer entries, it follows that $\det A = PS - QR$ must be an integer. The determinant of the inverse if given by $\det A^{-1} = \frac{1}{\det A}$. Obviously, $\det A \neq 0$. But also, $|\det A| \leq 1$; otherwise, $\det A^{-1}$ would be a fraction (not an integer). Since by assumption, the entries of $A^{-1}$ are integers, then its determinant must also be an integer, so it's impossible for $\det A^{-1}$ to be a fraction. Thus, either $\det A = 1$ or $-1$.
+
+For similar reasons, either $\det A + nB = 1$ or $-1$. Now, let
+$$B = \begin{pmatrix}
+  W & X \\
+  Y & Z \\
+\end{pmatrix}
+$$
+The determinants are
+$$\det A + nB = (P + nW)(S + nZ) + (Q + nX)(R + xY)$$
+$$= PS + nPZ + nWS + n^2 WZ - QR - nQY - nXR - n^2 XY = \pm 1$$
+where $n$ ranges from $0$ to $4$. Taking the difference between successive equations, we get
+$$PZ + WS + (2m + 1)WZ - QY - XR - (2m + 1)XY = \pm 2 \text{ or } 0$$
+where it's a known fact that the difference between successive squares are the odd numbers. Here, $m$ ranges from $0$ to $3$, for a total of $4$ equations.
+
+Notice that this is an arithmetic sequence where $2WZ - 2XY$ is the step size. However, there is only $3$ possible values: $-2, 0, 2$. The step size cannot be $1$, otherwise we have odd values, which don't correspond to the allowed values. It also cannot be greater or equal to $3$, because the range is $2 - (-2) = 4$, so two steps would already overshoot past the range of values (starting from $2 \cdot 3 = 6$). Hence, $2WZ - 2XY = 0$. Thus, every $A + nB$ share a same determinant of either $1$ or $-1$.
+
+Now, $\det A + 5B$ is simply the next term in this arithmetic sequence, which is a constant $1$ or $-1$. Hence, it's invertible.
+
+Using the same reasoning as before, $A + 5B$ has integer entries, and since its determinant is $1$ or $-1$, then its inverse, which only consists of swapping components in the matrix and dividing by the determinant (which is $1$ or $-1$), is obviously integer entries as well. To be most explicit, integer divided by $1$ or $-1$ either preserves or flips its sign, so the components remain integers.
+
+\section*{A5}
+Consider the set $S_1$ of one-term sums, which is basically the original terms of $(r_n)$. Since the latter converges to $0$, then for every interval $(a, b)$, consider the interval $(x, b) \subseteq (a, b)$ for which $[x, b] \cap \{ 0 \} = \varnothing$ (if $b = 0$, then choose $(a, x)$). $S_1$ must contain a finite number of one-term sums; otherwise, $(r_n)$ doesn't converge (distance between terms remains larger than $|x|$). Since $(x, b)$ (or $(a, x)$) contains only a finite amount of one-term sums, label the latter in increasing order $s_1, \ldots, s_n$, and take the interval $(c, d) = (s_1, s_2)$ to be your answer.
+
+Now, suppose that for the set $S_n$ of $n$-term sums, for every interval $(a, b)$, there exists $(c, d)$ that does not intersect $S_n$. Consider the set $S_{n + 1} = \{ s_\alpha + r_i \mid s_\alpha \in S_n, r_i \in (r_n) \}$.
+
+\section*{B1}
+The first few squares are
+$$1, 4, 9, 16, 25, 36, 49, 64, 81, 100$$
+$$121, 144, 169, 196, 225, 256, 289, 324, 361, 400$$
+$$441, 484, 529, 576, 625$$
+
+For integer $1$, the squares within $250$ are $1$ through $225$, which is exactly $15$. As we increase up to $5$, the squares still range from $1$ to $225$, where $5 + 250 = 255$ falls just short of $1$ to reach $256$.
+
+As we reach $6$, the number of squares just keeps increasing, since the lower bound always includes $1$ while the upper bound keeps gulping more squares. Every number from $6$ up to $251$ includes squares from $1$ to $225$, plus any additional ones gulped by the upper bound, hence the number of squares is greater than the initial $15$.
+
+At $252$, we finally lose the square $1$.
+
+TOO TEDIOUS.
+
+\section*{B2}
+We simply need
+$$x^4 + 9x^3 + cx^2 + 9x + 4$$
+to have 3 nonzero concavities, hence 2 inflection points.
+
+Taking 2nd derivative, we get
+$$12x^2 + 54x + 2c = 0$$
+and we want two solutions (for two inflection points), hence
+$$54^2 - 4 \cdot 12 \cdot 2c > 0$$
+$$\Rightarrow c < \frac{3^5}{8}$$
+
+Now, we show that $2$ inflection points is the only requirement. The desired line actually passes through these two inflection points, so we already have two distinct intersection points.
+
+Looking at the original quartic equation, the dominant term $x^4$ tends to $\infty$ toward both sides. When the graph dips below the line when we go left from the left inflection points, since it tends to $\infty$, then by IVT, the graph must intersect the line again. Likewise for the right part of the graph.
+
+A quartic can only have 2 inflection points max (by simple inspection of the quadratic equation for finding the inflection points). So the only other cases to conside are 1 and 0 inflection points.
+
+\section*{B3}
+
+\section*{B4}
 
 
 \end{document}
